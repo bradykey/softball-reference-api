@@ -1,6 +1,7 @@
 package com.softballreference.softballreferenceapi.service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.ArrayList;
 
 import com.softballreference.softballreferenceapi.model.dao.GameDao;
@@ -40,5 +41,23 @@ public class RestService {
         games.forEach(game -> gameResponses.add(ResponseEntityBuilder.buildGameResponse(game)));
 
         return gameResponses;
+    }
+
+    /**
+     * Fetches the single {@link Game} object associated with the passed in
+     * {@code gameId} and wrapped in a {@link GameResponse}.
+     * 
+     * @param gameId the {@code Long} Id associated with the {@link Game} to fetch.
+     * @return a {@link GameResponse} object built from the {@link Game} entity
+     *         associated with the {@code gameId}, or {@code null} if one doesn't
+     *         exist in the db.
+     */
+    public GameResponse getGameById(Long gameId) {
+        Optional<Game> gameOptional = gameDao.findById(gameId);
+
+        if (gameOptional.isPresent())
+            return ResponseEntityBuilder.buildGameResponse(gameOptional.get());
+        else
+            return null;
     }
 }
