@@ -13,6 +13,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * This is the main Service class that will actually call the DAO @Repositories
+ * methods.
+ *
+ * NOTE: The fact that this class is @Transactional means that any of the lazy
+ * loading done with entities mapped to DAO @Repositories. Therefore, any access
+ * of entity relationships will be done in a lazy-loaded fashion of called
+ * within this class.
+ */
 @Service
 @Transactional
 public class RestService {
