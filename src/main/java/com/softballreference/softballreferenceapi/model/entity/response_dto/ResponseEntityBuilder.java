@@ -11,7 +11,12 @@ public class ResponseEntityBuilder {
     public static GameResponse buildGameResponse(Game game) {
         GameResponse gameResponse = new GameResponse();
 
-        // TODO -- actually do some mapping...
+        gameResponse.setId(game.getId());
+        gameResponse.setDate(game.getDate());
+        gameResponse.setOpponent(game.getOpponent());
+        gameResponse.setScore(game.getScore());
+        gameResponse.setOpponentScore(game.getOpponentScore());
+        gameResponse.setField(game.getField());
 
         return gameResponse;
     }

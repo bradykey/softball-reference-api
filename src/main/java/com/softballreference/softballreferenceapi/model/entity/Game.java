@@ -55,4 +55,62 @@ public class Game implements java.io.Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "TeamLeagueId")
     private TeamLeague teamLeague;
+
+    // GETTERS AND SETTERS
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public String getOpponent() {
+        return opponent;
+    }
+
+    public void setOpponent(String opponent) {
+        this.opponent = opponent;
+    }
+
+    public Integer getScore() {
+        return score;
+    }
+
+    public void setScore(Integer score) {
+        this.score = score;
+    }
+
+    public Integer getOpponentScore() {
+        return opponentScore;
+    }
+
+    public void setOpponentScore(Integer opponentScore) {
+        this.opponentScore = opponentScore;
+    }
+
+    public String getField() {
+        return field;
+    }
+
+    public void setField(String field) {
+        this.field = field;
+    }
+
+    public TeamLeague getTeamLeague() {
+        return teamLeague;
+    }
+
+    public void setTeamLeague(TeamLeague teamLeague) {
+        this.teamLeague = teamLeague;
+    }
 }
