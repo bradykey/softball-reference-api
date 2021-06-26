@@ -18,6 +18,15 @@ import javax.validation.constraints.NotNull;
 @Table(name = "TeamLeague")
 public class TeamLeague implements java.io.Serializable {
 
+    /*
+     * Generated this with the following @
+     * ...\softball-reference-api\target\classes:
+     * 
+     * >> serialver -classpath "./"
+     * com.softballreference.softballreferenceapi.model.entity.TeamLeague
+     */
+    private static final long serialVersionUID = -609088203340518764L;
+
     /* PK */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

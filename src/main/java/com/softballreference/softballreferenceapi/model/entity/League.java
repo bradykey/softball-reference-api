@@ -14,6 +14,15 @@ import javax.persistence.Table;
 @Table(name = "League")
 public class League implements java.io.Serializable {
 
+    /*
+     * Generated this with the following @
+     * ...\softball-reference-api\target\classes:
+     * 
+     * >> serialver -classpath "./"
+     * com.softballreference.softballreferenceapi.model.entity.League
+     */
+    private static final long serialVersionUID = -4624975846046029703L;
+
     /* PK */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

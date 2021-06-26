@@ -17,6 +17,15 @@ import javax.validation.constraints.NotNull;
 @Table(name = "Game")
 public class Game implements java.io.Serializable {
 
+    /*
+     * Generated this with the following @
+     * ...\softball-reference-api\target\classes:
+     * 
+     * >> serialver -classpath "./"
+     * com.softballreference.softballreferenceapi.model.entity.Game
+     */
+    private static final long serialVersionUID = -8642709480466642814L;
+
     /* PK */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
