@@ -1,7 +1,5 @@
 package com.softballreference.softballreferenceapi.model.entity;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,31 +11,18 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+/**
+ * Association Table (AT) that maps TeamLeague to Player
+ */
 @Entity
-@Table(name = "Game")
-public class Game implements java.io.Serializable {
+@Table(name = "TeamLeaguePlayer")
+public class TeamLeaguePlayer implements java.io.Serializable {
 
     /* PK */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id")
     private Long id;
-
-    /* PROPERTIES */
-    @Column(name = "Date")
-    private Date date;
-
-    @Column(name = "Opponent")
-    private String opponent;
-
-    @Column(name = "Score")
-    private Integer score;
-
-    @Column(name = "OpponentScore")
-    private Integer opponentScore;
-
-    @Column(name = "Field")
-    private String field;
 
     /* RELATIONSHIPS */
 
@@ -46,4 +31,10 @@ public class Game implements java.io.Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "TeamLeagueId")
     private TeamLeague teamLeague;
+
+    // FK -- Player
+    @NotNull
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "PlayerId")
+    private Player player;
 }
