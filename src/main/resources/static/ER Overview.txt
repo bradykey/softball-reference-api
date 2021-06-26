@@ -1,0 +1,56 @@
+Game
+====
+GameId PK
+TeamLeagueId FK
+Date (DateTime)
+Opponent (String)
+Score (Int)
+OpponentScore (Int)
+Field (String)
+
+TeamLeague AT
+==========
+TeamLeagueId PK
+TeamId FK
+LeagueId FK
+
+Team LUT
+====
+TeamId PK
+TeamName (String)
+
+League LUT
+======
+LeagueId PK
+LeagueName (String)
+Season (String)
+
+TeamLeaguePlayer AT
+================
+TeamLeaguePlayerId PK
+TeamLeagueId FK
+PlayerId FK
+
+Player LUT
+======
+PlayerId PK
+Name (String)
+
+Stat
+====
+StatId PK
+TeamLeaguePlayer FK
+GameId FK
+PlateAppearances
+Runs
+Singles
+Doubles
+Triples
+HomeRuns
+RunsBattedIn
+BaseOnBalls
+StrikeOuts
+Sacrifices
+HomeRunForOuts
+GroundedIntoDoublePlays
+LeftOnBase
