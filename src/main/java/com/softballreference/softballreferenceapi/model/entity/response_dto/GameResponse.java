@@ -17,20 +17,32 @@ public class GameResponse {
     private String field;
 
     /* RELATIONSHIPS */
-
-    // private TeamLeagueResponse teamLeague;
+    private TeamLeagueResponse teamLeague;
 
     public GameResponse() {
 
     }
 
-    public GameResponse(Long id, Date date, String opponent, Integer score, Integer opponentScore, String field) {
+    /**
+     * Overloaded constructor
+     * 
+     * @param id
+     * @param date
+     * @param opponent
+     * @param score
+     * @param opponentScore
+     * @param field
+     * @param teamLeague
+     */
+    public GameResponse(Long id, Date date, String opponent, Integer score, Integer opponentScore, String field,
+            TeamLeagueResponse teamLeague) {
         this.id = id;
         this.date = date;
         this.opponent = opponent;
         this.score = score;
         this.opponentScore = opponentScore;
         this.field = field;
+        this.teamLeague = teamLeague;
     }
 
     // GETTERS AND SETTERS
@@ -81,5 +93,13 @@ public class GameResponse {
 
     public void setField(String field) {
         this.field = field;
+    }
+
+    public TeamLeagueResponse getTeamLeague() {
+        return teamLeague;
+    }
+
+    public void setTeamLeague(TeamLeagueResponse teamLeague) {
+        this.teamLeague = teamLeague;
     }
 }
