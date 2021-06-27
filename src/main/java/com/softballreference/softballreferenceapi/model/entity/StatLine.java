@@ -12,15 +12,15 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "Stat")
-public class Stat implements java.io.Serializable {
+@Table(name = "StatLine")
+public class StatLine implements java.io.Serializable {
 
     /*
      * Generated this with the following @
      * ...\softball-reference-api\target\classes:
      * 
      * >> serialver -classpath "./"
-     * com.softballreference.softballreferenceapi.model.entity.Stat
+     * com.softballreference.softballreferenceapi.model.entity.StatLine
      */
     private static final long serialVersionUID = -119814132784595617L;
 

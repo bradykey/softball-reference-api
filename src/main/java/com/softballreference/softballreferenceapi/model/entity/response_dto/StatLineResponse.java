@@ -1,6 +1,6 @@
 package com.softballreference.softballreferenceapi.model.entity.response_dto;
 
-public class StatResponse {
+public class StatLineResponse {
     /* PK */
     private Long id;
 
@@ -25,7 +25,7 @@ public class StatResponse {
     private TeamLeaguePlayerResponse teamLeaguePlayer;
     private GameResponse game;
 
-    public StatResponse() {
+    public StatLineResponse() {
 
     }
 
@@ -51,7 +51,7 @@ public class StatResponse {
      * @param teamLeaguePlayer
      * @param game
      */
-    public StatResponse(Long id, Integer battingOrder, Integer plateAppearances, Integer runs, Integer singles,
+    public StatLineResponse(Long id, Integer battingOrder, Integer plateAppearances, Integer runs, Integer singles,
             Integer doubles, Integer triples, Integer homeRuns, Integer runsBattedIn, Integer baseOnBalls,
             Integer strikeouts, Integer sacrifices, Integer homeRunForOuts, Integer foulOuts,
             Integer groundedIntoDoublePlays, Integer leftOnBase, TeamLeaguePlayerResponse teamLeaguePlayer,

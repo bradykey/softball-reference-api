@@ -52,5 +52,5 @@ public class TeamLeaguePlayer implements java.io.Serializable {
 
     // 1-to-Many
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "teamLeaguePlayer")
-    private Set<Stat> stats;
+    private Set<StatLine> stats;
 }

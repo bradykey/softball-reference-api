@@ -60,7 +60,7 @@ public class Game implements java.io.Serializable {
 
     // 1-to-Many
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "game")
-    private Set<Stat> stats;
+    private Set<StatLine> stats;
 
     // GETTERS AND SETTERS
 
