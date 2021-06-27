@@ -1,10 +1,14 @@
 package com.softballreference.softballreferenceapi.model.entity;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -32,4 +36,10 @@ public class Player implements java.io.Serializable {
     /* PROPERTIES */
     @Column(name = "Name")
     private String name;
+
+    /* RELATIONSHIPS */
+
+    // 1-to-Many
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "player")
+    private Set<TeamLeaguePlayer> teamLeaguePlayers;
 }
