@@ -50,6 +50,9 @@ public class Game implements java.io.Serializable {
     @Column(name = "Field")
     private String field;
 
+    @Column(name = "WasHome")
+    private Boolean wasHome;
+
     /* RELATIONSHIPS */
 
     // FK -- TeamLeague
@@ -60,9 +63,9 @@ public class Game implements java.io.Serializable {
 
     // 1-to-Many
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "game")
-    private Set<StatLine> stats;
+    private Set<StatLine> statLines;
 
-    // GETTERS AND SETTERS
+    /* GETTERS AND SETTERS */
 
     public Long getId() {
         return id;
@@ -112,6 +115,14 @@ public class Game implements java.io.Serializable {
         this.field = field;
     }
 
+    public Boolean getWasHome() {
+        return wasHome;
+    }
+
+    public void setWasHome(Boolean wasHome) {
+        this.wasHome = wasHome;
+    }
+
     public TeamLeague getTeamLeague() {
         return teamLeague;
     }
@@ -119,4 +130,13 @@ public class Game implements java.io.Serializable {
     public void setTeamLeague(TeamLeague teamLeague) {
         this.teamLeague = teamLeague;
     }
+
+    public Set<StatLine> getStatLines() {
+        return statLines;
+    }
+
+    public void setStatLines(Set<StatLine> statLines) {
+        this.statLines = statLines;
+    }
+
 }

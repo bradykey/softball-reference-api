@@ -57,4 +57,47 @@ public class TeamLeague implements java.io.Serializable {
     // 1-to-Many
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "teamLeague")
     private Set<TeamLeaguePlayer> teamLeaguePlayers;
+
+    /* GETTERS AND SETTERS */
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
+    }
+
+    public League getLeague() {
+        return league;
+    }
+
+    public void setLeague(League league) {
+        this.league = league;
+    }
+
+    public Set<Game> getGames() {
+        return games;
+    }
+
+    public void setGames(Set<Game> games) {
+        this.games = games;
+    }
+
+    public Set<TeamLeaguePlayer> getTeamLeaguePlayers() {
+        return teamLeaguePlayers;
+    }
+
+    public void setTeamLeaguePlayers(Set<TeamLeaguePlayer> teamLeaguePlayers) {
+        this.teamLeaguePlayers = teamLeaguePlayers;
+    }
+
 }

@@ -42,4 +42,31 @@ public class Player implements java.io.Serializable {
     // 1-to-Many
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "player")
     private Set<TeamLeaguePlayer> teamLeaguePlayers;
+
+    /* GETTERS AND SETTERS */
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Set<TeamLeaguePlayer> getTeamLeaguePlayers() {
+        return teamLeaguePlayers;
+    }
+
+    public void setTeamLeaguePlayers(Set<TeamLeaguePlayer> teamLeaguePlayers) {
+        this.teamLeaguePlayers = teamLeaguePlayers;
+    }
+
 }

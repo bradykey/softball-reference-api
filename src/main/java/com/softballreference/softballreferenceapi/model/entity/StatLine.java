@@ -89,4 +89,150 @@ public class StatLine implements java.io.Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "GameId")
     private Game game;
+
+    /* GETTERS AND SETTERS */
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Integer getBattingOrder() {
+        return battingOrder;
+    }
+
+    public void setBattingOrder(Integer battingOrder) {
+        this.battingOrder = battingOrder;
+    }
+
+    public Integer getPlateAppearances() {
+        return plateAppearances;
+    }
+
+    public void setPlateAppearances(Integer plateAppearances) {
+        this.plateAppearances = plateAppearances;
+    }
+
+    public Integer getRuns() {
+        return runs;
+    }
+
+    public void setRuns(Integer runs) {
+        this.runs = runs;
+    }
+
+    public Integer getSingles() {
+        return singles;
+    }
+
+    public void setSingles(Integer singles) {
+        this.singles = singles;
+    }
+
+    public Integer getDoubles() {
+        return doubles;
+    }
+
+    public void setDoubles(Integer doubles) {
+        this.doubles = doubles;
+    }
+
+    public Integer getTriples() {
+        return triples;
+    }
+
+    public void setTriples(Integer triples) {
+        this.triples = triples;
+    }
+
+    public Integer getHomeRuns() {
+        return homeRuns;
+    }
+
+    public void setHomeRuns(Integer homeRuns) {
+        this.homeRuns = homeRuns;
+    }
+
+    public Integer getRunsBattedIn() {
+        return runsBattedIn;
+    }
+
+    public void setRunsBattedIn(Integer runsBattedIn) {
+        this.runsBattedIn = runsBattedIn;
+    }
+
+    public Integer getBaseOnBalls() {
+        return baseOnBalls;
+    }
+
+    public void setBaseOnBalls(Integer baseOnBalls) {
+        this.baseOnBalls = baseOnBalls;
+    }
+
+    public Integer getStrikeouts() {
+        return strikeouts;
+    }
+
+    public void setStrikeouts(Integer strikeouts) {
+        this.strikeouts = strikeouts;
+    }
+
+    public Integer getSacrifices() {
+        return sacrifices;
+    }
+
+    public void setSacrifices(Integer sacrifices) {
+        this.sacrifices = sacrifices;
+    }
+
+    public Integer getHomeRunForOuts() {
+        return homeRunForOuts;
+    }
+
+    public void setHomeRunForOuts(Integer homeRunForOuts) {
+        this.homeRunForOuts = homeRunForOuts;
+    }
+
+    public Integer getFoulOuts() {
+        return foulOuts;
+    }
+
+    public void setFoulOuts(Integer foulOuts) {
+        this.foulOuts = foulOuts;
+    }
+
+    public Integer getGroundedIntoDoublePlays() {
+        return groundedIntoDoublePlays;
+    }
+
+    public void setGroundedIntoDoublePlays(Integer groundedIntoDoublePlays) {
+        this.groundedIntoDoublePlays = groundedIntoDoublePlays;
+    }
+
+    public Integer getLeftOnBase() {
+        return leftOnBase;
+    }
+
+    public void setLeftOnBase(Integer leftOnBase) {
+        this.leftOnBase = leftOnBase;
+    }
+
+    public TeamLeaguePlayer getTeamLeaguePlayer() {
+        return teamLeaguePlayer;
+    }
+
+    public void setTeamLeaguePlayer(TeamLeaguePlayer teamLeaguePlayer) {
+        this.teamLeaguePlayer = teamLeaguePlayer;
+    }
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
 }

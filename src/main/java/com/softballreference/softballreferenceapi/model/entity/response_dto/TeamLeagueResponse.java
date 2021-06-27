@@ -5,6 +5,10 @@ public class TeamLeagueResponse {
     private Long id;
 
     /* PROPERTIES */
+    /**
+     * TODO -- I think this is where I want the non-mapped summary stat-lines for an
+     * entire player.
+     */
 
     /* RELATIONSHIPS */
     private TeamResponse team;

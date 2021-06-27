@@ -12,7 +12,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
- * Lookup Table (LUT) for the Teams stats are captured for.
+ * Lookup Table (LUT) for the Teams the stats are captured for.
  */
 @Entity
 @Table(name = "Team")
@@ -42,4 +42,30 @@ public class Team implements java.io.Serializable {
     // 1-to-Many
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "team")
     private Set<TeamLeague> teamLeagues;
+
+    /* GETTERS AND SETTERS */
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Set<TeamLeague> getTeamLeagues() {
+        return teamLeagues;
+    }
+
+    public void setTeamLeagues(Set<TeamLeague> teamLeagues) {
+        this.teamLeagues = teamLeagues;
+    }
 }
