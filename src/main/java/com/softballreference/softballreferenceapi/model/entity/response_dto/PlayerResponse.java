@@ -2,40 +2,36 @@ package com.softballreference.softballreferenceapi.model.entity.response_dto;
 
 public class PlayerResponse {
     /* PK */
-    private Long id;
+    private Long teamLeaguePlayerId;
 
     /* PROPERTIES */
-    private String name;
+    private String playerName;
 
     /* RELATIONSHIPS */
+    private AccumulatedResponse accumulated;
 
-    public PlayerResponse() {
-
+    /* GETTERS AND SETTERS */
+    public Long getTeamLeaguePlayerId() {
+        return teamLeaguePlayerId;
     }
 
-    /**
-     * Overloaded constructor
-     * 
-     */
-    public PlayerResponse(Long id, String name) {
-        this.id = id;
-        this.name = name;
+    public void setTeamLeaguePlayerId(Long teamLeaguePlayerId) {
+        this.teamLeaguePlayerId = teamLeaguePlayerId;
     }
 
-    // GETTERS AND SETTERS
-    public Long getId() {
-        return id;
+    public String getPlayerName() {
+        return playerName;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
     }
 
-    public String getName() {
-        return name;
+    public AccumulatedResponse getAccumulated() {
+        return accumulated;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAccumulated(AccumulatedResponse accumulated) {
+        this.accumulated = accumulated;
     }
 }

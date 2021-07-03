@@ -1,223 +1,177 @@
 package com.softballreference.softballreferenceapi.model.entity.response_dto;
 
 public class StatLineResponse {
-    /* PK */
-    private Long id;
-
     /* PROPERTIES */
-    private Integer battingOrder;
-    private Integer plateAppearances;
-    private Integer runs;
-    private Integer singles;
-    private Integer doubles;
-    private Integer triples;
-    private Integer homeRuns;
-    private Integer runsBattedIn;
-    private Integer baseOnBalls;
-    private Integer strikeouts;
-    private Integer sacrifices;
-    private Integer homeRunForOuts;
-    private Integer foulOuts;
-    private Integer groundedIntoDoublePlays;
-    private Integer leftOnBase;
+    private Integer bO;
+    private Integer pA;
+    private Integer r;
+    private Integer b1;
+    private Integer b2;
+    private Integer b3;
+    private Integer hR;
+    private Integer rBI;
+    private Integer bB;
+    private Integer sO;
+    private Integer sAC;
+    private Integer hR4O;
+    private Integer fO;
+    private Integer gIDP;
+    private Integer lOB;
+    private Float aVG;
+    private Float oBP;
+    private Float sLG;
+    private Float oPS;
 
-    /* RELATIONSHIPS */
-    private TeamLeaguePlayerResponse teamLeaguePlayer;
-    private GameResponse game;
-
-    public StatLineResponse() {
-
+    /* GETTERS AND SETTERS */
+    public Integer getBO() {
+        return bO;
     }
 
-    /**
-     * Overloaded constructor
-     * 
-     * @param id
-     * @param battingOrder
-     * @param plateAppearances
-     * @param runs
-     * @param singles
-     * @param doubles
-     * @param triples
-     * @param homeRuns
-     * @param runsBattedIn
-     * @param baseOnBalls
-     * @param strikeouts
-     * @param sacrifices
-     * @param homeRunForOuts
-     * @param foulOuts
-     * @param groundedIntoDoublePlays
-     * @param leftOnBase
-     * @param teamLeaguePlayer
-     * @param game
-     */
-    public StatLineResponse(Long id, Integer battingOrder, Integer plateAppearances, Integer runs, Integer singles,
-            Integer doubles, Integer triples, Integer homeRuns, Integer runsBattedIn, Integer baseOnBalls,
-            Integer strikeouts, Integer sacrifices, Integer homeRunForOuts, Integer foulOuts,
-            Integer groundedIntoDoublePlays, Integer leftOnBase, TeamLeaguePlayerResponse teamLeaguePlayer,
-            GameResponse game) {
-        this.id = id;
-        this.battingOrder = battingOrder;
-        this.plateAppearances = plateAppearances;
-        this.runs = runs;
-        this.singles = singles;
-        this.doubles = doubles;
-        this.triples = triples;
-        this.homeRuns = homeRuns;
-        this.runsBattedIn = runsBattedIn;
-        this.baseOnBalls = baseOnBalls;
-        this.strikeouts = strikeouts;
-        this.homeRunForOuts = homeRunForOuts;
-        this.foulOuts = foulOuts;
-        this.groundedIntoDoublePlays = groundedIntoDoublePlays;
-        this.leftOnBase = leftOnBase;
-        this.teamLeaguePlayer = teamLeaguePlayer;
-        this.game = game;
+    public void setBO(Integer bO) {
+        this.bO = bO;
     }
 
-    // GETTERS AND SETTERS
-
-    public Long getId() {
-        return id;
+    public Integer getPA() {
+        return pA;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setPA(Integer pA) {
+        this.pA = pA;
     }
 
-    public Integer getBattingOrder() {
-        return battingOrder;
+    public Integer getR() {
+        return r;
     }
 
-    public void setBattingOrder(Integer battingOrder) {
-        this.battingOrder = battingOrder;
+    public void setR(Integer r) {
+        this.r = r;
     }
 
-    public Integer getPlateAppearances() {
-        return plateAppearances;
+    public Integer getB1() {
+        return b1;
     }
 
-    public void setPlateAppearances(Integer plateAppearances) {
-        this.plateAppearances = plateAppearances;
+    public void setB1(Integer b1) {
+        this.b1 = b1;
     }
 
-    public Integer getRuns() {
-        return runs;
+    public Integer getB2() {
+        return b2;
     }
 
-    public void setRuns(Integer runs) {
-        this.runs = runs;
+    public void setB2(Integer b2) {
+        this.b2 = b2;
     }
 
-    public Integer getSingles() {
-        return singles;
+    public Integer getB3() {
+        return b3;
     }
 
-    public void setSingles(Integer singles) {
-        this.singles = singles;
+    public void setB3(Integer b3) {
+        this.b3 = b3;
     }
 
-    public Integer getDoubles() {
-        return doubles;
+    public Integer getHR() {
+        return hR;
     }
 
-    public void setDoubles(Integer doubles) {
-        this.doubles = doubles;
+    public void setHR(Integer hR) {
+        this.hR = hR;
     }
 
-    public Integer getTriples() {
-        return triples;
+    public Integer getRBI() {
+        return rBI;
     }
 
-    public void setTriples(Integer triples) {
-        this.triples = triples;
+    public void setRBI(Integer rBI) {
+        this.rBI = rBI;
     }
 
-    public Integer getHomeRuns() {
-        return homeRuns;
+    public Integer getBB() {
+        return bB;
     }
 
-    public void setHomeRuns(Integer homeRuns) {
-        this.homeRuns = homeRuns;
+    public void setBB(Integer bB) {
+        this.bB = bB;
     }
 
-    public Integer getRunsBattedIn() {
-        return runsBattedIn;
+    public Integer getSO() {
+        return sO;
     }
 
-    public void setRunsBattedIn(Integer runsBattedIn) {
-        this.runsBattedIn = runsBattedIn;
+    public void setSO(Integer sO) {
+        this.sO = sO;
     }
 
-    public Integer getBaseOnBalls() {
-        return baseOnBalls;
+    public Integer getSAC() {
+        return sAC;
     }
 
-    public void setBaseOnBalls(Integer baseOnBalls) {
-        this.baseOnBalls = baseOnBalls;
+    public void setSAC(Integer sAC) {
+        this.sAC = sAC;
     }
 
-    public Integer getStrikeouts() {
-        return strikeouts;
+    public Integer getHR4O() {
+        return hR4O;
     }
 
-    public void setStrikeouts(Integer strikeouts) {
-        this.strikeouts = strikeouts;
+    public void setHR4O(Integer hR4O) {
+        this.hR4O = hR4O;
     }
 
-    public Integer getSacrifices() {
-        return sacrifices;
+    public Integer getFO() {
+        return fO;
     }
 
-    public void setSacrifices(Integer sacrifices) {
-        this.sacrifices = sacrifices;
+    public void setFO(Integer fO) {
+        this.fO = fO;
     }
 
-    public Integer getHomeRunForOuts() {
-        return homeRunForOuts;
+    public Integer getGIDP() {
+        return gIDP;
     }
 
-    public void setHomeRunForOuts(Integer homeRunForOuts) {
-        this.homeRunForOuts = homeRunForOuts;
+    public void setGIDP(Integer gIDP) {
+        this.gIDP = gIDP;
     }
 
-    public Integer getFoulOuts() {
-        return foulOuts;
+    public Integer getLOB() {
+        return lOB;
     }
 
-    public void setFoulOuts(Integer foulOuts) {
-        this.foulOuts = foulOuts;
+    public void setLOB(Integer lOB) {
+        this.lOB = lOB;
     }
 
-    public Integer getGroundedIntoDoublePlays() {
-        return groundedIntoDoublePlays;
+    public Float getAVG() {
+        return aVG;
     }
 
-    public void setGroundedIntoDoublePlays(Integer groundedIntoDoublePlays) {
-        this.groundedIntoDoublePlays = groundedIntoDoublePlays;
+    public void setAVG(Float aVG) {
+        this.aVG = aVG;
     }
 
-    public Integer getLeftOnBase() {
-        return leftOnBase;
+    public Float getOBP() {
+        return oBP;
     }
 
-    public void setLeftOnBase(Integer leftOnBase) {
-        this.leftOnBase = leftOnBase;
+    public void setOBP(Float oBP) {
+        this.oBP = oBP;
     }
 
-    public TeamLeaguePlayerResponse getTeamLeaguePlayer() {
-        return teamLeaguePlayer;
+    public Float getSLG() {
+        return sLG;
     }
 
-    public void setTeamLeaguePlayer(TeamLeaguePlayerResponse teamLeaguePlayer) {
-        this.teamLeaguePlayer = teamLeaguePlayer;
+    public void setSLG(Float sLG) {
+        this.sLG = sLG;
     }
 
-    public GameResponse getGame() {
-        return game;
+    public Float getOPS() {
+        return oPS;
     }
 
-    public void setGame(GameResponse game) {
-        this.game = game;
+    public void setOPS(Float oPS) {
+        this.oPS = oPS;
     }
 }

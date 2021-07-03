@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import com.softballreference.softballreferenceapi.model.dao.GameDao;
 import com.softballreference.softballreferenceapi.model.entity.Game;
-import com.softballreference.softballreferenceapi.model.entity.response_dto.GameResponse;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.GameStatLineResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.ResponseEntityBuilder;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,14 +38,14 @@ public class RestService {
      */
 
     /**
-     * Returns a List of {@link GameResponse} objects from the {@link GameDao}.
+     * Returns a List of {@link GameStatLineResponse} objects from the {@link GameDao}.
      * 
      * @return the {@link Game} objects that are in the {@code Game} table.
      */
-    public List<GameResponse> getAllGames() {
+    public List<GameStatLineResponse> getAllGames() {
         List<Game> games = gameDao.findAll();
 
-        List<GameResponse> gameResponses = new ArrayList<GameResponse>();
+        List<GameStatLineResponse> gameResponses = new ArrayList<GameStatLineResponse>();
 
         games.forEach(game -> gameResponses.add(ResponseEntityBuilder.buildGameResponse(game)));
 
@@ -54,14 +54,14 @@ public class RestService {
 
     /**
      * Fetches the single {@link Game} object associated with the passed in
-     * {@code gameId} and wrapped in a {@link GameResponse}.
+     * {@code gameId} and wrapped in a {@link GameStatLineResponse}.
      * 
      * @param gameId the {@code Long} Id associated with the {@link Game} to fetch.
-     * @return a {@link GameResponse} object built from the {@link Game} entity
+     * @return a {@link GameStatLineResponse} object built from the {@link Game} entity
      *         associated with the {@code gameId}, or {@code null} if one doesn't
      *         exist in the db.
      */
-    public GameResponse getGameById(Long gameId) {
+    public GameStatLineResponse getGameById(Long gameId) {
         Optional<Game> gameOptional = gameDao.findById(gameId);
 
         if (gameOptional.isPresent())

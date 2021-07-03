@@ -1,14 +1,18 @@
 package com.softballreference.softballreferenceapi.model.entity.response_dto;
 
 import java.util.Date;
+import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.softballreference.softballreferenceapi.model.entity.StatLine;
 
-public class GameResponse {
+public class GameStatLineResponse {
     /* PK */
-    private Long id;
+    private Long gameId;
 
     /* PROPERTIES */
+    private String team;
+    private String league;
     @JsonFormat(pattern = "yyy-MM-dd HH:mm:ss")
     private Date date;
     private String opponent;
@@ -17,42 +21,32 @@ public class GameResponse {
     private String field;
 
     /* RELATIONSHIPS */
-    private TeamLeagueResponse teamLeague;
+    private AccumulatedResponse accumulated;
+    private List<StatLine> statLines;
 
-    public GameResponse() {
-
+    /* GETTERS AND SETTERS */
+    public Long getGameId() {
+        return gameId;
     }
 
-    /**
-     * Overloaded constructor
-     * 
-     * @param id
-     * @param date
-     * @param opponent
-     * @param score
-     * @param opponentScore
-     * @param field
-     * @param teamLeague
-     */
-    public GameResponse(Long id, Date date, String opponent, Integer score, Integer opponentScore, String field,
-            TeamLeagueResponse teamLeague) {
-        this.id = id;
-        this.date = date;
-        this.opponent = opponent;
-        this.score = score;
-        this.opponentScore = opponentScore;
-        this.field = field;
-        this.teamLeague = teamLeague;
+    public void setGameId(Long gameId) {
+        this.gameId = gameId;
     }
 
-    // GETTERS AND SETTERS
-
-    public Long getId() {
-        return id;
+    public String getTeam() {
+        return team;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setTeam(String team) {
+        this.team = team;
+    }
+
+    public String getLeague() {
+        return league;
+    }
+
+    public void setLeague(String league) {
+        this.league = league;
     }
 
     public Date getDate() {
@@ -95,11 +89,20 @@ public class GameResponse {
         this.field = field;
     }
 
-    public TeamLeagueResponse getTeamLeague() {
-        return teamLeague;
+    public AccumulatedResponse getAccumulated() {
+        return accumulated;
     }
 
-    public void setTeamLeague(TeamLeagueResponse teamLeague) {
-        this.teamLeague = teamLeague;
+    public void setAccumulated(AccumulatedResponse accumulated) {
+        this.accumulated = accumulated;
     }
+
+    public List<StatLine> getStatLines() {
+        return statLines;
+    }
+
+    public void setStatLines(List<StatLine> statLines) {
+        this.statLines = statLines;
+    }
+
 }

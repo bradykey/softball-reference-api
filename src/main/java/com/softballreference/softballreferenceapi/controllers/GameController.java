@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.softballreference.softballreferenceapi.exception.RecordNotFoundException;
 import com.softballreference.softballreferenceapi.model.dao.GameDao;
-import com.softballreference.softballreferenceapi.model.entity.response_dto.GameResponse;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.GameStatLineResponse;
 import com.softballreference.softballreferenceapi.service.RestService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,27 +26,28 @@ public class GameController {
     RestService restService;
 
     /**
-     * Returns all of the {@link GameResponse}s from the {@link GameDao}.
+     * Returns all of the {@link GameStatLineResponse}s from the {@link GameDao}.
      * 
      * Since the @RequestMapping was used at the class level to define all URIs to
      * be sub-uris of {@code /games}, any GET http reqquest at the {@code /games}
      * URI will call this method.
      * 
-     * @return a List of {@link GameResponse} objects matching what's in the
+     * @return a List of {@link GameStatLineResponse} objects matching what's in the
      *         {@link GameDao} as part of an {@link HttpStatus.OK} response.
      */
     @GetMapping
-    public ResponseEntity<List<GameResponse>> getAllGames() {
-        return new ResponseEntity<List<GameResponse>>(restService.getAllGames(), new HttpHeaders(), HttpStatus.OK);
+    public ResponseEntity<List<GameStatLineResponse>> getAllGames() {
+        return new ResponseEntity<List<GameStatLineResponse>>(restService.getAllGames(), new HttpHeaders(),
+                HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<GameResponse> getGameById(@PathVariable("id") Long gameId) {
-        GameResponse entity = restService.getGameById(gameId);
+    public ResponseEntity<GameStatLineResponse> getGameById(@PathVariable("id") Long gameId) {
+        GameStatLineResponse entity = restService.getGameById(gameId);
 
         if (entity == null)
             throw new RecordNotFoundException("No game exists for given id", gameId);
 
-        return new ResponseEntity<GameResponse>(entity, new HttpHeaders(), HttpStatus.OK);
+        return new ResponseEntity<GameStatLineResponse>(entity, new HttpHeaders(), HttpStatus.OK);
     }
 }
