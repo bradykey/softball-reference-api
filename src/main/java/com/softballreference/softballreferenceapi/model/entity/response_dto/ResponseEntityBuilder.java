@@ -1,6 +1,5 @@
 package com.softballreference.softballreferenceapi.model.entity.response_dto;
 
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
