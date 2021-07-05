@@ -28,7 +28,8 @@ public class ResponseEntityBuilder {
 
         teamLeagueResponse.setTeamLeagueId(teamLeague.getId());
         teamLeagueResponse.setTeam(teamLeague.getTeam().getName());
-        teamLeagueResponse.setLeague(teamLeague.getLeague().getName());
+        teamLeagueResponse
+                .setLeague(teamLeague.getLeague().getName() + " (" + teamLeague.getLeague().getSeason() + ")");
 
         return teamLeagueResponse;
     }
@@ -63,7 +64,8 @@ public class ResponseEntityBuilder {
 
         summaryStatLineResponse.setTeamLeagueId(teamLeague.getId());
         summaryStatLineResponse.setTeam(teamLeague.getTeam().getName());
-        summaryStatLineResponse.setLeague(teamLeague.getLeague().getName());
+        summaryStatLineResponse
+                .setLeague(teamLeague.getLeague().getName() + " (" + teamLeague.getLeague().getSeason() + ")");
         List<PlayerResponse> playerResponses = new ArrayList<PlayerResponse>();
         teamLeague.getTeamLeaguePlayers().forEach(tLP -> playerResponses.add(buildPlayerResponse(tLP)));
         summaryStatLineResponse.setPlayers(playerResponses);
