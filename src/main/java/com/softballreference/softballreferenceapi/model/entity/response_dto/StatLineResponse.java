@@ -4,7 +4,13 @@ public class StatLineResponse {
     /* PROPERTIES */
     private Integer bO;
     private Integer pA;
+    // Calculated
+    private Integer aB;
     private Integer r;
+    // Calculated
+    private Integer h;
+    // Calculated
+    private Integer tB;
     private Integer b1;
     private Integer b2;
     private Integer b3;
@@ -17,9 +23,13 @@ public class StatLineResponse {
     private Integer fO;
     private Integer gIDP;
     private Integer lOB;
+    // Calculated
     private Float aVG;
+    // Calculated
     private Float oBP;
+    // Calculated
     private Float sLG;
+    // Calculated
     private Float oPS;
 
     /* GETTERS AND SETTERS */
@@ -39,12 +49,36 @@ public class StatLineResponse {
         this.pA = pA;
     }
 
+    public Integer getAB() {
+        return aB;
+    }
+
+    public void setAB(Integer aB) {
+        this.aB = aB;
+    }
+
     public Integer getR() {
         return r;
     }
 
     public void setR(Integer r) {
         this.r = r;
+    }
+
+    public Integer getH() {
+        return h;
+    }
+
+    public void setH(Integer h) {
+        this.h = h;
+    }
+
+    public Integer getTB() {
+        return tB;
+    }
+
+    public void setTB(Integer tB) {
+        this.tB = tB;
     }
 
     public Integer getB1() {

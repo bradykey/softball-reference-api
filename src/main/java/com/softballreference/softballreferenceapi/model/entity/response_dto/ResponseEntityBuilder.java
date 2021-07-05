@@ -1,5 +1,6 @@
 package com.softballreference.softballreferenceapi.model.entity.response_dto;
 
+import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -40,6 +41,8 @@ public class ResponseEntityBuilder {
                 summaryStatLineResponse.getPlayers().stream().map(PlayerResponse::getAccumulated)
                         .map(AccumulatedResponse::getStatLine).collect(Collectors.toList())));
 
+        // loop back around and fill the ...Plus stats for each player
+
         return summaryStatLineResponse;
     }
 
@@ -56,7 +59,7 @@ public class ResponseEntityBuilder {
 
         playerResponse.setTeamLeaguePlayerId(teamLeaguePlayer.getId());
         playerResponse.setPlayerName(teamLeaguePlayer.getPlayer().getName());
-        // must convert to StatLineResponses first.
+        // must convert to StatLineResponses first
         List<StatLineResponse> statLineResponses = new ArrayList<StatLineResponse>();
         teamLeaguePlayer.getStatLines().forEach(sL -> statLineResponses.add(buildStatLineResponse(sL)));
         playerResponse.setAccumulated(buildAccumulatedResponse(statLineResponses));
@@ -64,21 +67,130 @@ public class ResponseEntityBuilder {
         return playerResponse;
     }
 
+    /**
+     * Builds a {@link StatLineResponse} object directly from a lazy-loaded,
+     * attached, hibernate (@link StatLine) entity. This is also where the
+     * calculated stats are performed.
+     * 
+     * @param statLine the {@link StatLine} entity to build the response from
+     * @return the filled in {@link StatLineResponse}
+     */
     public static StatLineResponse buildStatLineResponse(StatLine statLine) {
         StatLineResponse statLineResponse = new StatLineResponse();
+
+        // Fill the discrete stats
+        statLineResponse.setBO(statLine.getBattingOrder());
+        statLineResponse.setPA(statLine.getPlateAppearances());
+        statLineResponse.setR(statLine.getRuns());
+        statLineResponse.setB1(statLine.getSingles());
+        statLineResponse.setB2(statLine.getDoubles());
+        statLineResponse.setB3(statLine.getTriples());
+        statLineResponse.setHR(statLine.getHomeRuns());
+        statLineResponse.setBB(statLine.getBaseOnBalls());
+        statLineResponse.setSO(statLine.getStrikeouts());
+        statLineResponse.setFO(statLine.getFoulOuts());
+        statLineResponse.setGIDP(statLine.getGroundedIntoDoublePlays());
+        statLineResponse.setLOB(statLine.getLeftOnBase());
+
+        // Fill the calculated stats
+
+        // AB -- PA - (BB+SAC)
+        statLineResponse.setAB(statLine.getPlateAppearances() - (statLine.getBaseOnBalls() + statLine.getSacrifices()));
+        // H -- 1B+2B+3B+HR
+        statLineResponse
+                .setH(statLine.getSingles() + statLine.getDoubles() + statLine.getTriples() + statLine.getHomeRuns());
+        // TB -- (1B*1) + (2B*2) + (3B*3) + (HR*4)
+        statLineResponse.setTB(statLine.getSingles() + (statLine.getDoubles() * 2) + (statLine.getTriples() * 3)
+                + (statLine.getHomeRuns() * 4));
+
+        // This is pass-by-reference, so it fills the aggregate stats in-line.
+        calculateAndFillAggregateStatsForStatLineResponse(statLineResponse);
 
         return statLineResponse;
     }
 
     /**
+     * Fill the AVG, OBP, and SLG aggregate stats in-line of the passed in
+     * {@link StatLineResponse}.
+     * 
+     * Average (AVG) = H/AB
+     * 
+     * On Base Percentage (OBP) = (H + BB) / PA
+     * 
+     * Slugging (SLG) = TB/AB
+     * 
+     * On-base + Slugging (OPS) = OBP + SLG
+     * 
+     * NOTE: The following fields **MUST** be already filled ont he
+     * {@link StatLineResponse}:
+     * 
+     * H, AB, BB, PA, TB
+     * 
+     * @param statLineResponseToFill
+     * @throws IllegalArgumentException thrown if H, AB, BB, PA, or TB are
+     *                                  {@code null}
+     */
+    public static void calculateAndFillAggregateStatsForStatLineResponse(StatLineResponse statLineResponseToFill)
+            throws IllegalArgumentException {
+        if (statLineResponseToFill.getH() == null || statLineResponseToFill.getAB() == null
+                || statLineResponseToFill.getBB() == null || statLineResponseToFill.getPA() == null
+                || statLineResponseToFill.getTB() == null)
+            throw new IllegalArgumentException(
+                    "Either H, AB, BB, PA or TB are null and the aggregate stats cannot be calculated.");
+
+        // AVG -- H/AB
+        statLineResponseToFill
+                .setAVG(statLineResponseToFill.getH().floatValue() / statLineResponseToFill.getAB().floatValue());
+        // OBP -- (H + BB) / PA
+        statLineResponseToFill
+                .setOBP((statLineResponseToFill.getH().floatValue() + statLineResponseToFill.getBB().floatValue())
+                        / statLineResponseToFill.getPA().floatValue());
+        // SLG -- TB/AB
+        statLineResponseToFill
+                .setSLG(statLineResponseToFill.getTB().floatValue() / statLineResponseToFill.getAB().floatValue());
+        // OPS -- OBP + SLG
+        statLineResponseToFill.setOPS(statLineResponseToFill.getOBP() + statLineResponseToFill.getSLG());
+    }
+
+    /**
      * Builds a special {@link AccumulatedResponse} object. This object doesn't map
      * directly to an entity in the database, but is built by summing all of the
-     * passed in {@link StatLineResponse} objects and accumulating them.
+     * passed in {@link StatLineResponse} object's categories and accumulating them.
      * 
      * @param statLines the {@link StatLineResponse} objects to accumulate
      * @return the stats accumulated into an {@link AccumulatedResponse}
      */
     public static AccumulatedResponse buildAccumulatedResponse(List<StatLineResponse> statLines) {
+        AccumulatedResponse accumulatedResponse = new AccumulatedResponse();
 
+        StatLineResponse statLineAccumulatedResponse = new StatLineResponse();
+
+        /**
+         * For each of the discrete elements, use the stream.reduce() method to apply an
+         * accumulator to each element in the stream, where the first operand is the
+         * return value of the previous application, and the second one is the current
+         * stream element.
+         */
+        statLineAccumulatedResponse.setPA(statLines.stream().map(StatLineResponse::getPA).reduce(0, Integer::sum));
+        statLineAccumulatedResponse.setPA(statLines.stream().map(StatLineResponse::getR).reduce(0, Integer::sum));
+        statLineAccumulatedResponse.setPA(statLines.stream().map(StatLineResponse::getB1).reduce(0, Integer::sum));
+        statLineAccumulatedResponse.setPA(statLines.stream().map(StatLineResponse::getB2).reduce(0, Integer::sum));
+        statLineAccumulatedResponse.setPA(statLines.stream().map(StatLineResponse::getB3).reduce(0, Integer::sum));
+        statLineAccumulatedResponse.setPA(statLines.stream().map(StatLineResponse::getHR).reduce(0, Integer::sum));
+        statLineAccumulatedResponse.setPA(statLines.stream().map(StatLineResponse::getBB).reduce(0, Integer::sum));
+        statLineAccumulatedResponse.setPA(statLines.stream().map(StatLineResponse::getSO).reduce(0, Integer::sum));
+        statLineAccumulatedResponse.setPA(statLines.stream().map(StatLineResponse::getFO).reduce(0, Integer::sum));
+        statLineAccumulatedResponse.setPA(statLines.stream().map(StatLineResponse::getGIDP).reduce(0, Integer::sum));
+        statLineAccumulatedResponse.setPA(statLines.stream().map(StatLineResponse::getLOB).reduce(0, Integer::sum));
+        statLineAccumulatedResponse.setPA(statLines.stream().map(StatLineResponse::getAB).reduce(0, Integer::sum));
+        statLineAccumulatedResponse.setPA(statLines.stream().map(StatLineResponse::getH).reduce(0, Integer::sum));
+        statLineAccumulatedResponse.setPA(statLines.stream().map(StatLineResponse::getTB).reduce(0, Integer::sum));
+
+        // Accumulate and fill the aggregate stats in-line.
+        calculateAndFillAggregateStatsForStatLineResponse(statLineAccumulatedResponse);
+
+        accumulatedResponse.setStatLine(statLineAccumulatedResponse);
+
+        return accumulatedResponse;
     }
 }

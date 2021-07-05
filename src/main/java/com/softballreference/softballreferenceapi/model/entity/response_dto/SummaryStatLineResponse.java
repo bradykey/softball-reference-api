@@ -2,8 +2,6 @@ package com.softballreference.softballreferenceapi.model.entity.response_dto;
 
 import java.util.List;
 
-import com.softballreference.softballreferenceapi.model.entity.Player;
-
 public class SummaryStatLineResponse {
     /* PK */
     private Long teamLeagueId;
