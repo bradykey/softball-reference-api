@@ -13,7 +13,6 @@ import com.softballreference.softballreferenceapi.model.entity.TeamLeaguePlayer;
  * non-mapped properties) from their entity equivalents.
  */
 public class ResponseEntityBuilder {
-
     /**
      * Builds a {@link SummaryStatLineResponse} object. The entire thing can be
      * built from a lazy-loaded, attached, hibernate {@link TeamLeague} entity.
