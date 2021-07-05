@@ -1,6 +1,6 @@
 package com.softballreference.softballreferenceapi.model.entity.response_dto;
 
-public class TeamLeagueResponse {
+public class TeamLeagueBindResponse {
     /* PK */
     private Long teamLeagueId;
 

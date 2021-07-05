@@ -58,6 +58,19 @@ public class TeamLeague implements java.io.Serializable {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "teamLeague")
     private Set<TeamLeaguePlayer> teamLeaguePlayers;
 
+    public TeamLeague() {
+
+    }
+
+    /**
+     * OVERLOADED CONSTRUCTOR
+     * 
+     * @param teamLeagueId
+     */
+    public TeamLeague(Long teamLeagueId) {
+        this.id = teamLeagueId;
+    }
+
     /* GETTERS AND SETTERS */
 
     public Long getId() {

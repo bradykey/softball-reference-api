@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.softballreference.softballreferenceapi.model.entity.Game;
 import com.softballreference.softballreferenceapi.model.entity.StatLine;
 import com.softballreference.softballreferenceapi.model.entity.TeamLeague;
 import com.softballreference.softballreferenceapi.model.entity.TeamLeaguePlayer;
@@ -13,6 +14,43 @@ import com.softballreference.softballreferenceapi.model.entity.TeamLeaguePlayer;
  * non-mapped properties) from their entity equivalents.
  */
 public class ResponseEntityBuilder {
+
+    /**
+     * Builds a basic {@link TeamLeagueBindResponse} object. This is just for a
+     * dropdown bind, and not a legit response view.
+     * 
+     * @param teamLeague the {@link TeamLeague} to wrap in a
+     *                   {@link TeamLeagueBindResponse}s
+     * @return the wrapped {@link TeamLeagueBindResponse} object.
+     */
+    public static TeamLeagueBindResponse buildTeamLeagueBindResponse(TeamLeague teamLeague) {
+        TeamLeagueBindResponse teamLeagueResponse = new TeamLeagueBindResponse();
+
+        teamLeagueResponse.setTeamLeagueId(teamLeague.getId());
+        teamLeagueResponse.setTeam(teamLeague.getTeam().getName());
+        teamLeagueResponse.setLeague(teamLeague.getLeague().getName());
+
+        return teamLeagueResponse;
+    }
+
+    /**
+     * Builds a basic {@link GameBindResponse} object. This is just for a dropdown
+     * bind, and not a legit response view.
+     * 
+     * @param Game the {@link Game} to wrap in a {@link GameBindResponse}s
+     * @return the wrapped {@link GameBindResponse} object.
+     */
+    public static GameBindResponse buildGameBindResponse(Game game) {
+        GameBindResponse gameResponse = new GameBindResponse();
+
+        gameResponse.setGameId(game.getId());
+        gameResponse.setDate(game.getDate());
+        gameResponse.setOpponent(game.getOpponent());
+        gameResponse.setTeamLeagueId(game.getTeamLeague().getId());
+
+        return gameResponse;
+    }
+
     /**
      * Builds a {@link SummaryStatLineResponse} object. The entire thing can be
      * built from a lazy-loaded, attached, hibernate {@link TeamLeague} entity.
