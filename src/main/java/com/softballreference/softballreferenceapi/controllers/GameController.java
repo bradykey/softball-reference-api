@@ -26,24 +26,26 @@ public class GameController {
     RestService restService;
 
     /**
-     * Returns all of the {@link GameStatLineResponse}s from the {@link GameDao}.
+     * Fetches the single {@link GameStatLineResponse} associated with the passed in
+     * Id.
      * 
-     * Since the @RequestMapping was used at the class level to define all URIs to
-     * be sub-uris of {@code /games}, any GET http reqquest at the {@code /games}
-     * URI will call this method.
+     * The @GetMapping annotation ties this method to the /games/{id} URI from aGET
+     * http request, while the @PathVariable annotation binds the template variable
+     * from therequest URI mapping to the method parameter. If they have the same
+     * name then you don't need to qualify the annotation with the string name.
      * 
-     * @return a List of {@link GameStatLineResponse} objects matching what's in the
-     *         {@link GameDao} as part of an {@link HttpStatus.OK} response.
+     * @param gameId
+     * @return the {@link GameStatLineResponse} associated with the {@code Long} Id
+     *         as part of an HttpStatus.OK response.
+     * @throws RecordNotFoundException The exception is thrown if now {@link Game}
+     *                                 is associated with the Id. NOTE: This
+     *                                 exception is of type {@link RuntimeException}
+     *                                 so this method does not need to declare it as
+     *                                 "throwable".
      */
-    @GetMapping
-    public ResponseEntity<List<GameStatLineResponse>> getAllGames() {
-        return new ResponseEntity<List<GameStatLineResponse>>(restService.getAllGames(), new HttpHeaders(),
-                HttpStatus.OK);
-    }
-
     @GetMapping("/{id}")
     public ResponseEntity<GameStatLineResponse> getGameById(@PathVariable("id") Long gameId) {
-        GameStatLineResponse entity = restService.getGameById(gameId);
+        GameStatLineResponse entity = restService.getGameByIdForGameStatLine(gameId);
 
         if (entity == null)
             throw new RecordNotFoundException("No game exists for given id", gameId);

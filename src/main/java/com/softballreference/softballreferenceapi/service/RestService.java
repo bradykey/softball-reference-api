@@ -125,7 +125,7 @@ public class RestService {
      *         entity associated with the {@code gameId}, or {@code null} if one
      *         doesn't exist in the db.
      */
-    public GameStatLineResponse getGameById(Long gameId) {
+    public GameStatLineResponse getGameByIdForGameStatLine(Long gameId) {
         // Optional<Game> gameOptional = gameDao.findById(gameId);
 
         // if (gameOptional.isPresent())
