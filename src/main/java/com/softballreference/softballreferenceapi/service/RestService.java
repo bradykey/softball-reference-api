@@ -47,6 +47,19 @@ public class RestService {
      */
 
     /**
+     * Returns a boolean as to whether the {@link TeamLeague} exists by the passed
+     * in Id.
+     * 
+     * @param teamLeagueId the {@code Long} Id associated with the
+     *                     {@link TeamLeague} to check.
+     * @return {@code TRUE} if the {@link TeamLeague} exists, {@code FALSE}
+     *         otherwise.
+     */
+    public boolean doesTeamLeagueExistById(Long teamLeagueId) {
+        return teamLeagueDao.existsById(teamLeagueId);
+    }
+
+    /**
      * Returns a List of all the {@link TeamLeague} objects that exist in the
      * {@link TeamLeagueDao} in the form of a {@link TeamLeagueBindResponse}
      * wrapper. This should just be used to bind controls for what
@@ -83,15 +96,18 @@ public class RestService {
         Game probe = new Game();
         probe.setTeamLeague(new TeamLeague(teamLeagueId));
 
-        Example<Game> example = Example.of(probe);
+        List<Game> games = gameDao.findAll(Example.of(probe));
 
-        List<Game> games = gameDao.findAll(example);
-
+        // convert from entities into responses
         List<GameBindResponse> gameResponses = new ArrayList<GameBindResponse>();
         games.forEach(game -> gameResponses.add(ResponseEntityBuilder.buildGameBindResponse(game)));
 
         return gameResponses;
     }
+
+    /*
+     * MAIN VIEW RESPONSE METHODS
+     */
 
     /**
      * Fetches the single {@link TeamLeague} object associated with the passed in
@@ -103,7 +119,7 @@ public class RestService {
      *         {@link TeamLeague} entity associated with the {@code teamLeagueId},
      *         or {@code null} if one doesn't exist in the db.
      */
-    public SummaryStatLineResponse getTeamLeagueByIdForSummaryStatLine(Long teamLeagueId) {
+    public SummaryStatLineResponse getSummaryStatLineResponseByTeamLeagueId(Long teamLeagueId) {
         Optional<TeamLeague> teamLeagueOptional = teamLeagueDao.findById(teamLeagueId);
 
         if (teamLeagueOptional.isPresent())
@@ -111,10 +127,6 @@ public class RestService {
         else
             return null;
     }
-
-    /*
-     * GAME TABLE METHODS
-     */
 
     /**
      * Fetches the single {@link Game} object associated with the passed in
@@ -125,7 +137,7 @@ public class RestService {
      *         entity associated with the {@code gameId}, or {@code null} if one
      *         doesn't exist in the db.
      */
-    public GameStatLineResponse getGameByIdForGameStatLine(Long gameId) {
+    public GameStatLineResponse getGameStatLineResponseByGameId(Long gameId) {
         // Optional<Game> gameOptional = gameDao.findById(gameId);
 
         // if (gameOptional.isPresent())
