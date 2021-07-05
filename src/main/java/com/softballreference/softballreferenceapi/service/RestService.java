@@ -138,13 +138,11 @@ public class RestService {
      *         doesn't exist in the db.
      */
     public GameStatLineResponse getGameStatLineResponseByGameId(Long gameId) {
-        // Optional<Game> gameOptional = gameDao.findById(gameId);
+        Optional<Game> gameOptional = gameDao.findById(gameId);
 
-        // if (gameOptional.isPresent())
-        // return ResponseEntityBuilder.buildGameStatLineResponse(gameOptional.get());
-        // else
-        // return null;
-
-        return null;
+        if (gameOptional.isPresent())
+            return ResponseEntityBuilder.buildGameStatLineResponse(gameOptional.get());
+        else
+            return null;
     }
 }

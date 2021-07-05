@@ -22,7 +22,7 @@ public class GameStatLineResponse {
 
     /* RELATIONSHIPS */
     private AccumulatedResponse accumulated;
-    private List<StatLine> statLines;
+    private List<StatLineResponse> statLines;
 
     /* GETTERS AND SETTERS */
     public Long getGameId() {
@@ -97,11 +97,11 @@ public class GameStatLineResponse {
         this.accumulated = accumulated;
     }
 
-    public List<StatLine> getStatLines() {
+    public List<StatLineResponse> getStatLines() {
         return statLines;
     }
 
-    public void setStatLines(List<StatLine> statLines) {
+    public void setStatLines(List<StatLineResponse> statLines) {
         this.statLines = statLines;
     }
 

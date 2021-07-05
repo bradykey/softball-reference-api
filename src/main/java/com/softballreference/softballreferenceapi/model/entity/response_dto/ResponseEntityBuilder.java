@@ -78,8 +78,36 @@ public class ResponseEntityBuilder {
                         .map(AccumulatedResponse::getStatLine).collect(Collectors.toList())));
 
         // loop back around and fill the ...Plus stats for each player
+        // TODO
 
         return summaryStatLineResponse;
+    }
+
+    /**
+     * Builds a {@link GameStatLineResponse} object. The entire thing can be built
+     * from a lazy-loaded, attached, hibernate {@link Game} entity.
+     * 
+     * @param game the {@link Game} entity to build the response from
+     * @return the filled in {@link GameStatLineResponse}
+     */
+    public static GameStatLineResponse buildGameStatLineResponse(Game game) {
+        GameStatLineResponse gameStatLineResponse = new GameStatLineResponse();
+
+        gameStatLineResponse.setGameId(game.getId());
+        gameStatLineResponse.setTeam(game.getTeamLeague().getTeam().getName());
+        gameStatLineResponse.setLeague(game.getTeamLeague().getLeague().getName());
+        gameStatLineResponse.setDate(game.getDate());
+        gameStatLineResponse.setOpponent(game.getOpponent());
+        gameStatLineResponse.setScore(game.getScore());
+        gameStatLineResponse.setOpponentScore(game.getOpponentScore());
+        gameStatLineResponse.setField(game.getField());
+        // must convert to StatLineResponses first, before accumulating
+        List<StatLineResponse> statLineResponses = new ArrayList<StatLineResponse>();
+        game.getStatLines().forEach(sL -> statLineResponses.add(buildStatLineResponse(sL)));
+        gameStatLineResponse.setAccumulated(buildAccumulatedResponse(statLineResponses));
+        gameStatLineResponse.setStatLines(statLineResponses);
+
+        return gameStatLineResponse;
     }
 
     /**
@@ -113,6 +141,8 @@ public class ResponseEntityBuilder {
      */
     public static StatLineResponse buildStatLineResponse(StatLine statLine) {
         StatLineResponse statLineResponse = new StatLineResponse();
+
+        statLineResponse.setPlayerName(statLine.getTeamLeaguePlayer().getPlayer().getName());
 
         // Fill the discrete stats
         statLineResponse.setBO(statLine.getBattingOrder());
@@ -208,19 +238,19 @@ public class ResponseEntityBuilder {
          * stream element.
          */
         statLineAccumulatedResponse.setPA(statLines.stream().map(StatLineResponse::getPA).reduce(0, Integer::sum));
-        statLineAccumulatedResponse.setPA(statLines.stream().map(StatLineResponse::getR).reduce(0, Integer::sum));
-        statLineAccumulatedResponse.setPA(statLines.stream().map(StatLineResponse::getB1).reduce(0, Integer::sum));
-        statLineAccumulatedResponse.setPA(statLines.stream().map(StatLineResponse::getB2).reduce(0, Integer::sum));
-        statLineAccumulatedResponse.setPA(statLines.stream().map(StatLineResponse::getB3).reduce(0, Integer::sum));
-        statLineAccumulatedResponse.setPA(statLines.stream().map(StatLineResponse::getHR).reduce(0, Integer::sum));
-        statLineAccumulatedResponse.setPA(statLines.stream().map(StatLineResponse::getBB).reduce(0, Integer::sum));
-        statLineAccumulatedResponse.setPA(statLines.stream().map(StatLineResponse::getSO).reduce(0, Integer::sum));
-        statLineAccumulatedResponse.setPA(statLines.stream().map(StatLineResponse::getFO).reduce(0, Integer::sum));
-        statLineAccumulatedResponse.setPA(statLines.stream().map(StatLineResponse::getGIDP).reduce(0, Integer::sum));
-        statLineAccumulatedResponse.setPA(statLines.stream().map(StatLineResponse::getLOB).reduce(0, Integer::sum));
-        statLineAccumulatedResponse.setPA(statLines.stream().map(StatLineResponse::getAB).reduce(0, Integer::sum));
-        statLineAccumulatedResponse.setPA(statLines.stream().map(StatLineResponse::getH).reduce(0, Integer::sum));
-        statLineAccumulatedResponse.setPA(statLines.stream().map(StatLineResponse::getTB).reduce(0, Integer::sum));
+        statLineAccumulatedResponse.setR(statLines.stream().map(StatLineResponse::getR).reduce(0, Integer::sum));
+        statLineAccumulatedResponse.setB1(statLines.stream().map(StatLineResponse::getB1).reduce(0, Integer::sum));
+        statLineAccumulatedResponse.setB2(statLines.stream().map(StatLineResponse::getB2).reduce(0, Integer::sum));
+        statLineAccumulatedResponse.setB3(statLines.stream().map(StatLineResponse::getB3).reduce(0, Integer::sum));
+        statLineAccumulatedResponse.setHR(statLines.stream().map(StatLineResponse::getHR).reduce(0, Integer::sum));
+        statLineAccumulatedResponse.setBB(statLines.stream().map(StatLineResponse::getBB).reduce(0, Integer::sum));
+        statLineAccumulatedResponse.setSO(statLines.stream().map(StatLineResponse::getSO).reduce(0, Integer::sum));
+        statLineAccumulatedResponse.setFO(statLines.stream().map(StatLineResponse::getFO).reduce(0, Integer::sum));
+        statLineAccumulatedResponse.setGIDP(statLines.stream().map(StatLineResponse::getGIDP).reduce(0, Integer::sum));
+        statLineAccumulatedResponse.setLOB(statLines.stream().map(StatLineResponse::getLOB).reduce(0, Integer::sum));
+        statLineAccumulatedResponse.setAB(statLines.stream().map(StatLineResponse::getAB).reduce(0, Integer::sum));
+        statLineAccumulatedResponse.setH(statLines.stream().map(StatLineResponse::getH).reduce(0, Integer::sum));
+        statLineAccumulatedResponse.setTB(statLines.stream().map(StatLineResponse::getTB).reduce(0, Integer::sum));
 
         // Accumulate and fill the aggregate stats in-line.
         calculateAndFillAggregateStatsForStatLineResponse(statLineAccumulatedResponse);

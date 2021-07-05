@@ -2,6 +2,7 @@ package com.softballreference.softballreferenceapi.model.entity.response_dto;
 
 public class StatLineResponse {
     /* PROPERTIES */
+    private String playerName;
     private Integer bO;
     private Integer pA;
     // Calculated
@@ -33,6 +34,14 @@ public class StatLineResponse {
     private Float oPS;
 
     /* GETTERS AND SETTERS */
+    public String getPlayerName() {
+        return playerName;
+    }
+
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
+    }
+
     public Integer getBO() {
         return bO;
     }

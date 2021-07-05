@@ -1,9 +1,7 @@
 package com.softballreference.softballreferenceapi.controllers;
 
-import java.util.List;
-
 import com.softballreference.softballreferenceapi.exception.RecordNotFoundException;
-import com.softballreference.softballreferenceapi.model.dao.GameDao;
+import com.softballreference.softballreferenceapi.model.entity.Game;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.GameStatLineResponse;
 import com.softballreference.softballreferenceapi.service.RestService;
 
@@ -45,7 +43,7 @@ public class GameController {
      */
     @GetMapping("/{id}")
     public ResponseEntity<GameStatLineResponse> getGameById(@PathVariable("id") Long gameId) {
-        GameStatLineResponse entity = restService.getGameByIdForGameStatLine(gameId);
+        GameStatLineResponse entity = restService.getGameStatLineResponseByGameId(gameId);
 
         if (entity == null)
             throw new RecordNotFoundException("No game exists for given id", gameId);
