@@ -38,3 +38,9 @@ It successfully built but I am not running any "dynos" on my heroku app? Goodnes
 Maybe something like:
 
 `web: java -jar target/softball-reference-api-0.0.1-SNAPSHOT.war`
+
+Then once it's built I need to run something like: 
+
+`>> heroku ps:scale web=1`
+
+to give it some resources?
