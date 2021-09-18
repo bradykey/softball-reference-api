@@ -37,11 +37,19 @@ It successfully built but I am not running any "dynos" on my heroku app? Goodnes
 
 Maybe something like:
 
-`web: java -jar target/softball-reference-api-0.0.1-SNAPSHOT.war`
+`web: java -Dserver.port=$PORT -jar target/softball-reference-api-0.0.1-SNAPSHOT.war`
+
+>> NOTE: For awhile I was building without the `-Dserver.port=$PORT` argument in the procfile and was getting an error that said "Error R10 (Boot timeout) -> Web process failed to bind to $PORT within 90 seconds of launch". Once I added that, then I was golden.
 
 Then once it's built I need to run something like: 
 
 `>> heroku ps:scale web=1`
 
 to give it some resources? I think you only need to do that once.
+
+Like everything said in the https://devcenter.heroku.com/articles/connecting-to-relational-databases-on-heroku-with-java#using-the-spring_datasource_url-in-a-spring-boot-app articles, as long as your application has the proper JDBC driver defined as a dependency, the spring.datasource.* environment variables should be set automatically when the dyno starts up. The values of the variables will be identical to the values int he corresponding JDBC variables. You shouldn't have to have any more configuration needed to connect to your database.
+
+You can view some of the variables that get automatically set by Heroku by running `heroku run env`. You'll see the spring.datasource.* stuff there.
+
+BIG NOTE. You don't even need the variables defined in the application.properties file.
 
