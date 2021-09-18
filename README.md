@@ -43,4 +43,5 @@ Then once it's built I need to run something like:
 
 `>> heroku ps:scale web=1`
 
-to give it some resources?
+to give it some resources? I think you only need to do that once.
+
