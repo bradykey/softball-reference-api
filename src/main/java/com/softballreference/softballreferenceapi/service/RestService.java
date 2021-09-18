@@ -10,9 +10,9 @@ import com.softballreference.softballreferenceapi.model.entity.Game;
 import com.softballreference.softballreferenceapi.model.entity.TeamLeague;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.GameBindResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.GameStatLineResponse;
-import com.softballreference.softballreferenceapi.model.entity.response_dto.ResponseEntityBuilder;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.SummaryStatLineResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.TeamLeagueBindResponse;
+import com.softballreference.softballreferenceapi.utils.ResponseEntityBuilder;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;

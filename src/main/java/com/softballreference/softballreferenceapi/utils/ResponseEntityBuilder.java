@@ -1,4 +1,4 @@
-package com.softballreference.softballreferenceapi.model.entity.response_dto;
+package com.softballreference.softballreferenceapi.utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +8,13 @@ import com.softballreference.softballreferenceapi.model.entity.Game;
 import com.softballreference.softballreferenceapi.model.entity.StatLine;
 import com.softballreference.softballreferenceapi.model.entity.TeamLeague;
 import com.softballreference.softballreferenceapi.model.entity.TeamLeaguePlayer;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.AccumulatedResponse;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.GameBindResponse;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.GameStatLineResponse;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.PlayerResponse;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.StatLineResponse;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.SummaryStatLineResponse;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.TeamLeagueBindResponse;
 
 /**
  * A utility helper class that builds the response DTO objects (containing any
