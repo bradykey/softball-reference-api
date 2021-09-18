@@ -11,6 +11,7 @@ import com.softballreference.softballreferenceapi.model.entity.TeamLeaguePlayer;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.AccumulatedResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.GameBindResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.GameStatLineResponse;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.PlayerBindResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.PlayerResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.StatLineResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.SummaryStatLineResponse;
@@ -57,6 +58,23 @@ public class ResponseEntityBuilder {
 		gameResponse.setTeamLeagueId(game.getTeamLeague().getId());
 
 		return gameResponse;
+	}
+	
+	/**
+	 * Builds a basic {@link PlayerBindResponse} object. This is just for a dropdown
+	 * bind, and not a legit response view.
+	 * 
+	 * @param teamLeaguePlayer the {@link TeamLeaguePlayer} to wrap in a {@link PlayerBindResponse}s
+	 * @return the wrapped {@link PlayerBindResponse} object.
+	 */
+	public static PlayerBindResponse buildPlayerBindResponse(TeamLeaguePlayer teamLeaguePlayer) {
+		PlayerBindResponse playerResponse = new PlayerBindResponse();
+
+		playerResponse.setTeamLeaguePlayerId(teamLeaguePlayer.getId());
+		playerResponse.setName(teamLeaguePlayer.getPlayer().getName());
+		playerResponse.setTeamLeagueId(teamLeaguePlayer.getTeamLeague().getId());
+
+		return playerResponse;
 	}
 
 	/**

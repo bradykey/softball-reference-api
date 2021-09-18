@@ -2,13 +2,6 @@ package com.softballreference.softballreferenceapi.controllers;
 
 import java.util.List;
 
-import com.softballreference.softballreferenceapi.exception.RecordNotFoundException;
-import com.softballreference.softballreferenceapi.model.entity.TeamLeague;
-import com.softballreference.softballreferenceapi.model.entity.response_dto.GameBindResponse;
-import com.softballreference.softballreferenceapi.model.entity.response_dto.SummaryStatLineResponse;
-import com.softballreference.softballreferenceapi.model.entity.response_dto.TeamLeagueBindResponse;
-import com.softballreference.softballreferenceapi.service.RestService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -18,6 +11,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.softballreference.softballreferenceapi.exception.RecordNotFoundException;
+import com.softballreference.softballreferenceapi.model.dao.GameDao;
+import com.softballreference.softballreferenceapi.model.dao.TeamLeagueDao;
+import com.softballreference.softballreferenceapi.model.entity.TeamLeague;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.GameBindResponse;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.PlayerBindResponse;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.SummaryStatLineResponse;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.TeamLeagueBindResponse;
+import com.softballreference.softballreferenceapi.service.RestService;
 
 @CrossOrigin
 @RestController
@@ -103,6 +106,39 @@ public class TeamLeagueController {
             throw new RecordNotFoundException("No teamleague exists for given id", teamLeagueId);
 
         return new ResponseEntity<List<GameBindResponse>>(restService.getGamesOfTeamLeagueByIdForBinding(teamLeagueId),
+                new HttpHeaders(), HttpStatus.OK);
+    }
+    
+    /**
+     * Fetches the collection of {@link PlayerBindResponse}s associated with the
+     * {@code TeamLeagueId} that's passed in.
+     * 
+     * The @GetMapping annotation ties this method to the /teamleagues/{id}/players
+     * URI from a GET http request, while the @PathVariable annotation binds the
+     * template variable from the request URI mapping to the method parameter. If
+     * they have the same name then you don't need to qualify the annotation with
+     * the string name.
+     * 
+     * @param teamLeagueId
+     * @return a List of {@link PlayerBindReponse} objects with {@code TeamLeagueId}
+     *         matching what's in the {@link TeamLeaguePlayerDao} as part of an HttpStatus.OK
+     *         response.
+     * 
+     * @throws RecordNotFoundException The exception is thrown if no
+     *                                 {@link TeamLeague} is associated with the Id.
+     *                                 NOTE: This exception is of type
+     *                                 {@link RuntimeException} so this method does
+     *                                 not need to declare it as "throwable".
+     */
+    @GetMapping("/{id}/players")
+    public ResponseEntity<List<PlayerBindResponse>> getPlayersOfTeamLeagueByIdForBind(
+            @PathVariable("id") Long teamLeagueId) {
+
+        if (!restService.doesTeamLeagueExistById(teamLeagueId))
+            // there is not a TeamLeague associated with the passed in Id
+            throw new RecordNotFoundException("No teamleague exists for given id", teamLeagueId);
+
+        return new ResponseEntity<List<PlayerBindResponse>>(restService.getPlayersOfTeamLeagueByIdForBinding(teamLeagueId),
                 new HttpHeaders(), HttpStatus.OK);
     }
 }

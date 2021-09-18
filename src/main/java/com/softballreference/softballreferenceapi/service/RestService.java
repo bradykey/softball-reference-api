@@ -4,20 +4,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import com.softballreference.softballreferenceapi.model.dao.GameDao;
-import com.softballreference.softballreferenceapi.model.dao.TeamLeagueDao;
-import com.softballreference.softballreferenceapi.model.entity.Game;
-import com.softballreference.softballreferenceapi.model.entity.TeamLeague;
-import com.softballreference.softballreferenceapi.model.entity.response_dto.GameBindResponse;
-import com.softballreference.softballreferenceapi.model.entity.response_dto.GameStatLineResponse;
-import com.softballreference.softballreferenceapi.model.entity.response_dto.SummaryStatLineResponse;
-import com.softballreference.softballreferenceapi.model.entity.response_dto.TeamLeagueBindResponse;
-import com.softballreference.softballreferenceapi.utils.ResponseEntityBuilder;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.softballreference.softballreferenceapi.model.dao.GameDao;
+import com.softballreference.softballreferenceapi.model.dao.TeamLeagueDao;
+import com.softballreference.softballreferenceapi.model.dao.TeamLeaguePlayerDao;
+import com.softballreference.softballreferenceapi.model.entity.Game;
+import com.softballreference.softballreferenceapi.model.entity.Player;
+import com.softballreference.softballreferenceapi.model.entity.TeamLeague;
+import com.softballreference.softballreferenceapi.model.entity.TeamLeaguePlayer;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.GameBindResponse;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.GameStatLineResponse;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.PlayerBindResponse;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.SummaryStatLineResponse;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.TeamLeagueBindResponse;
+import com.softballreference.softballreferenceapi.utils.ResponseEntityBuilder;
 
 /**
  * This is the main Service class that will actually call the DAO @Repositories
@@ -38,6 +42,9 @@ public class RestService {
      */
     @Autowired
     GameDao gameDao;
+    
+    @Autowired
+    TeamLeaguePlayerDao teamLeaguePlayerDao;
 
     @Autowired
     TeamLeagueDao teamLeagueDao;
@@ -103,6 +110,33 @@ public class RestService {
         games.forEach(game -> gameResponses.add(ResponseEntityBuilder.buildGameBindResponse(game)));
 
         return gameResponses;
+    }
+    
+    /**
+     * Returns a List of all the {@link Player} objects of a {@link TeamLeague} that
+     * exist in the {@link TeamLeaguePlayerDao} in the form of a {@link PlayerBindResponse}
+     * wrapper. This should just be used to bind controls for what {@link Players}s
+     * exist on a {@link TeamLeague}. No relationships are populated in this
+     * response.
+     * 
+     * @return the {@link PlayerBindResponse} objects that are associated with the
+     *         {@link TeamLeague}s in the {@code TeamLeaguePlayer} table.
+     */
+    public List<PlayerBindResponse> getPlayersOfTeamLeagueByIdForBinding(Long teamLeagueId) {
+        /*
+         * Example will look for an exact match on all non-null properties. Therefore, I
+         * want to find those TeamLeaguePlayers that are associated with the passed in TeamLeagueId.
+         */
+        TeamLeaguePlayer probe = new TeamLeaguePlayer();
+        probe.setTeamLeague(new TeamLeague(teamLeagueId));
+
+        List<TeamLeaguePlayer> players = teamLeaguePlayerDao.findAll(Example.of(probe));
+
+        // convert from entities into responses
+        List<PlayerBindResponse> playerResponses = new ArrayList<PlayerBindResponse>();
+        players.forEach(player -> playerResponses.add(ResponseEntityBuilder.buildPlayerBindResponse(player)));
+
+        return playerResponses;
     }
 
     /*
