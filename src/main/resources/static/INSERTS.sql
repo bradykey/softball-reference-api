@@ -1,3 +1,7 @@
+-- +++++++++++++++++++++++
+-- THIS COVERS THE SEASONS
+-- +++++++++++++++++++++++
+
 -- TEAMS
 INSERT INTO public.team(
 	name
@@ -147,7 +151,218 @@ FROM public.team AS team, public.league AS league
 WHERE team.name LIKE 'Sandia Baggers' AND league.name LIKE 'Sandia' AND league.season LIKE 'Summer 2019';
 
 
+-- +++++++++++++++++++++++
+-- THIS COVERS THE PLAYERS
+-- +++++++++++++++++++++++
 
-INSERT INTO public.game(
-	date, field, opponent, opponent_score, score, team_league_id)
-	VALUES (NOW(), 'Vietnam Vets 1', 'RedTails', 5, 14, 1);
+-- GARDEN HOSERS
+INSERT INTO public.player(
+	name
+)
+VALUES('Pat Barnes');
+
+INSERT INTO public.player(
+	name
+)
+VALUES('Andrew Stuart');
+
+INSERT INTO public.player(
+	name
+)
+VALUES('Brady Key');
+
+INSERT INTO public.player(
+	name
+)
+VALUES('Jason Rogers');
+
+INSERT INTO public.player(
+	name
+)
+VALUES('Linn Reece');
+
+INSERT INTO public.player(
+	name
+)
+VALUES('Tim Tribou');
+
+INSERT INTO public.player(
+	name
+)
+VALUES('Alex Gibbs');
+
+INSERT INTO public.player(
+	name
+)
+VALUES('Jon Pinsonneault');
+
+INSERT INTO public.player(
+	name
+)
+VALUES('Mike Parrish');
+
+INSERT INTO public.player(
+	name
+)
+VALUES('Brett Reece');
+
+INSERT INTO public.player(
+	name
+)
+VALUES('Dave');
+
+INSERT INTO public.player(
+	name
+)
+VALUES('Blake Reece');
+
+INSERT INTO public.player(
+	name
+)
+VALUES('Jamie Dickey');
+
+-- ROSTER/SEASON LINKAGES
+
+-- Chups Summer 2021
+INSERT INTO public.team_league_player(
+	team_league_id, player_id
+)
+SELECT team_league.id, player.id 
+FROM public.team_league AS team_league, public.player AS player 
+WHERE team_league.id IN 
+	(SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+AND player.name LIKE 'Pat Barnes';
+
+INSERT INTO public.team_league_player(
+	team_league_id, player_id
+)
+SELECT team_league.id, player.id 
+FROM public.team_league AS team_league, public.player AS player 
+WHERE team_league.id IN 
+	(SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+AND player.name LIKE 'Andrew Stuart';
+
+INSERT INTO public.team_league_player(
+	team_league_id, player_id
+)
+SELECT team_league.id, player.id 
+FROM public.team_league AS team_league, public.player AS player 
+WHERE team_league.id IN 
+	(SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+AND player.name LIKE 'Brady Key';
+
+INSERT INTO public.team_league_player(
+	team_league_id, player_id
+)
+SELECT team_league.id, player.id 
+FROM public.team_league AS team_league, public.player AS player 
+WHERE team_league.id IN 
+	(SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+AND player.name LIKE 'Jason Rogers';
+
+INSERT INTO public.team_league_player(
+	team_league_id, player_id
+)
+SELECT team_league.id, player.id 
+FROM public.team_league AS team_league, public.player AS player 
+WHERE team_league.id IN 
+	(SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+AND player.name LIKE 'Linn Reece';
+
+INSERT INTO public.team_league_player(
+	team_league_id, player_id
+)
+SELECT team_league.id, player.id 
+FROM public.team_league AS team_league, public.player AS player 
+WHERE team_league.id IN 
+	(SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+AND player.name LIKE 'Tim Tribou';
+
+INSERT INTO public.team_league_player(
+	team_league_id, player_id
+)
+SELECT team_league.id, player.id 
+FROM public.team_league AS team_league, public.player AS player 
+WHERE team_league.id IN 
+	(SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+AND player.name LIKE 'Alex Gibbs';
+
+INSERT INTO public.team_league_player(
+	team_league_id, player_id
+)
+SELECT team_league.id, player.id 
+FROM public.team_league AS team_league, public.player AS player 
+WHERE team_league.id IN 
+	(SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+AND player.name LIKE 'Jon Pinsonneault';
+
+INSERT INTO public.team_league_player(
+	team_league_id, player_id
+)
+SELECT team_league.id, player.id 
+FROM public.team_league AS team_league, public.player AS player 
+WHERE team_league.id IN 
+	(SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+AND player.name LIKE 'Mike Parrish';
+
+INSERT INTO public.team_league_player(
+	team_league_id, player_id
+)
+SELECT team_league.id, player.id 
+FROM public.team_league AS team_league, public.player AS player 
+WHERE team_league.id IN 
+	(SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+AND player.name LIKE 'Brett Reece';
+
+INSERT INTO public.team_league_player(
+	team_league_id, player_id
+)
+SELECT team_league.id, player.id 
+FROM public.team_league AS team_league, public.player AS player 
+WHERE team_league.id IN 
+	(SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+AND player.name LIKE 'Dave';
+
+INSERT INTO public.team_league_player(
+	team_league_id, player_id
+)
+SELECT team_league.id, player.id 
+FROM public.team_league AS team_league, public.player AS player 
+WHERE team_league.id IN 
+	(SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+AND player.name LIKE 'Blake Reece';
+
+INSERT INTO public.team_league_player(
+	team_league_id, player_id
+)
+SELECT team_league.id, player.id 
+FROM public.team_league AS team_league, public.player AS player 
+WHERE team_league.id IN 
+	(SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+AND player.name LIKE 'Jamie Dickey';
