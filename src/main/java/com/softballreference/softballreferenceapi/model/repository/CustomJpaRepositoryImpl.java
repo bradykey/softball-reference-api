@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 
 import org.springframework.data.jpa.repository.support.JpaEntityInformation;
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Custom implementation of the {@link CustomJpaRepository} interface that
@@ -30,6 +31,8 @@ public class CustomJpaRepositoryImpl<T, ID extends Serializable> extends SimpleJ
 	 * Refreshes the {@literal T} entity from the database, overwriting any existing
 	 * changes.
 	 */
+	@Override
+	@Transactional
 	public void refresh(T t) {
 		entityManager.refresh(t);
 	}
