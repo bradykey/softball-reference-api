@@ -8,6 +8,7 @@ import com.softballreference.softballreferenceapi.model.entity.Game;
 import com.softballreference.softballreferenceapi.model.entity.StatLine;
 import com.softballreference.softballreferenceapi.model.entity.TeamLeague;
 import com.softballreference.softballreferenceapi.model.entity.TeamLeaguePlayer;
+import com.softballreference.softballreferenceapi.model.entity.request_dto.StatLineRequest;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.AccumulatedResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.GameBindResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.GameStatLineResponse;
@@ -19,9 +20,9 @@ import com.softballreference.softballreferenceapi.model.entity.response_dto.Team
 
 /**
  * A utility helper class that builds the response DTO objects (containing any
- * non-mapped properties) from their entity equivalents.
+ * non-mapped properties) from their entity equivalents, and vice versa.
  */
-public class ResponseEntityBuilder {
+public class ResponseAndEntityBuilder {
 
 	/**
 	 * Builds a basic {@link TeamLeagueBindResponse} object. This is just for a
@@ -59,12 +60,13 @@ public class ResponseEntityBuilder {
 
 		return gameResponse;
 	}
-	
+
 	/**
 	 * Builds a basic {@link PlayerBindResponse} object. This is just for a dropdown
 	 * bind, and not a legit response view.
 	 * 
-	 * @param teamLeaguePlayer the {@link TeamLeaguePlayer} to wrap in a {@link PlayerBindResponse}s
+	 * @param teamLeaguePlayer the {@link TeamLeaguePlayer} to wrap in a
+	 *                         {@link PlayerBindResponse}s
 	 * @return the wrapped {@link PlayerBindResponse} object.
 	 */
 	public static PlayerBindResponse buildPlayerBindResponse(TeamLeaguePlayer teamLeaguePlayer) {
@@ -311,5 +313,41 @@ public class ResponseEntityBuilder {
 		accumulatedResponse.setStatLine(statLineAccumulatedResponse);
 
 		return accumulatedResponse;
+	}
+
+	/*
+	 * REQUEST to ENTITY
+	 */
+
+	/**
+	 * Builds a basic {@link StatLine} object from the 
+	 * 
+	 * @param teamLeaguePlayer the {@link TeamLeaguePlayer} to wrap in a
+	 *                         {@link PlayerBindResponse}s
+	 * @return the wrapped {@link PlayerBindResponse} object.
+	 */
+	public static StatLine buildStatLine(StatLineRequest statLineRequest) {
+		StatLine statLine = new StatLine();
+
+		statLine.setBattingOrder(statLineRequest.getbO());
+		statLine.setPlateAppearances(statLineRequest.getpA());
+		statLine.setRuns(statLineRequest.getR());
+		statLine.setSingles(statLineRequest.getB1());
+		statLine.setDoubles(statLineRequest.getB2());
+		statLine.setTriples(statLineRequest.getB3());
+		statLine.setHomeRuns(statLineRequest.gethR());
+		statLine.setRunsBattedIn(statLineRequest.getrBI());
+		statLine.setBaseOnBalls(statLineRequest.getbB());
+		statLine.setStrikeouts(statLineRequest.getsO());
+		statLine.setSacrifices(statLineRequest.getsAC());
+		statLine.setHomeRunForOuts(statLineRequest.gethR4O());
+		statLine.setFoulOuts(statLineRequest.getfO());
+		statLine.setGroundedIntoDoublePlays(statLineRequest.getgIDP());
+		statLine.setLeftOnBase(statLineRequest.getlOB());
+		
+		statLine.setTeamLeaguePlayer(new TeamLeaguePlayer(statLineRequest.getTeamLeaguePlayerId()));
+		statLine.setGame(new Game(statLineRequest.getGameId()));
+		
+		return statLine;
 	}
 }

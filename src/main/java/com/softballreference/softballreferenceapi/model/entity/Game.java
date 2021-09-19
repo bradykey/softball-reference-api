@@ -19,124 +19,134 @@ import javax.validation.constraints.NotNull;
 @Table(name = "Game")
 public class Game implements java.io.Serializable {
 
-    /*
-     * Generated this with the following @
-     * ...\softball-reference-api\target\classes:
-     * 
-     * >> serialver -classpath "./"
-     * com.softballreference.softballreferenceapi.model.entity.Game
-     */
-    private static final long serialVersionUID = -8642709480466642814L;
+	/*
+	 * Generated this with the following @
+	 * ...\softball-reference-api\target\classes:
+	 * 
+	 * >> serialver -classpath "./"
+	 * com.softballreference.softballreferenceapi.model.entity.Game
+	 */
+	private static final long serialVersionUID = -8642709480466642814L;
 
-    /* PK */
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
-    private Long id;
+	/* PK */
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "Id")
+	private Long id;
 
-    /* PROPERTIES */
-    @Column(name = "Date")
-    private Date date;
+	/* PROPERTIES */
+	@Column(name = "Date")
+	private Date date;
 
-    @Column(name = "Opponent")
-    private String opponent;
+	@Column(name = "Opponent")
+	private String opponent;
 
-    @Column(name = "Score")
-    private Integer score;
+	@Column(name = "Score")
+	private Integer score;
 
-    @Column(name = "OpponentScore")
-    private Integer opponentScore;
+	@Column(name = "OpponentScore")
+	private Integer opponentScore;
 
-    @Column(name = "Field")
-    private String field;
+	@Column(name = "Field")
+	private String field;
 
-    @Column(name = "WasHome")
-    private Boolean wasHome;
+	@Column(name = "WasHome")
+	private Boolean wasHome;
 
-    /* RELATIONSHIPS */
+	public Game() {
+	}
 
-    // FK -- TeamLeague
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "TeamLeagueId")
-    private TeamLeague teamLeague;
+	/**
+	 * OVERLOADED CONSTRUCTOR
+	 */
+	public Game(Long id) {
 
-    // 1-to-Many
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "game")
-    private Set<StatLine> statLines;
+	}
 
-    /* GETTERS AND SETTERS */
+	/* RELATIONSHIPS */
 
-    public Long getId() {
-        return id;
-    }
+	// FK -- TeamLeague
+	@NotNull
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "TeamLeagueId")
+	private TeamLeague teamLeague;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	// 1-to-Many
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "game")
+	private Set<StatLine> statLines;
 
-    public Date getDate() {
-        return date;
-    }
+	/* GETTERS AND SETTERS */
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public String getOpponent() {
-        return opponent;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public void setOpponent(String opponent) {
-        this.opponent = opponent;
-    }
+	public Date getDate() {
+		return date;
+	}
 
-    public Integer getScore() {
-        return score;
-    }
+	public void setDate(Date date) {
+		this.date = date;
+	}
 
-    public void setScore(Integer score) {
-        this.score = score;
-    }
+	public String getOpponent() {
+		return opponent;
+	}
 
-    public Integer getOpponentScore() {
-        return opponentScore;
-    }
+	public void setOpponent(String opponent) {
+		this.opponent = opponent;
+	}
 
-    public void setOpponentScore(Integer opponentScore) {
-        this.opponentScore = opponentScore;
-    }
+	public Integer getScore() {
+		return score;
+	}
 
-    public String getField() {
-        return field;
-    }
+	public void setScore(Integer score) {
+		this.score = score;
+	}
 
-    public void setField(String field) {
-        this.field = field;
-    }
+	public Integer getOpponentScore() {
+		return opponentScore;
+	}
 
-    public Boolean getWasHome() {
-        return wasHome;
-    }
+	public void setOpponentScore(Integer opponentScore) {
+		this.opponentScore = opponentScore;
+	}
 
-    public void setWasHome(Boolean wasHome) {
-        this.wasHome = wasHome;
-    }
+	public String getField() {
+		return field;
+	}
 
-    public TeamLeague getTeamLeague() {
-        return teamLeague;
-    }
+	public void setField(String field) {
+		this.field = field;
+	}
 
-    public void setTeamLeague(TeamLeague teamLeague) {
-        this.teamLeague = teamLeague;
-    }
+	public Boolean getWasHome() {
+		return wasHome;
+	}
 
-    public Set<StatLine> getStatLines() {
-        return statLines;
-    }
+	public void setWasHome(Boolean wasHome) {
+		this.wasHome = wasHome;
+	}
 
-    public void setStatLines(Set<StatLine> statLines) {
-        this.statLines = statLines;
-    }
+	public TeamLeague getTeamLeague() {
+		return teamLeague;
+	}
+
+	public void setTeamLeague(TeamLeague teamLeague) {
+		this.teamLeague = teamLeague;
+	}
+
+	public Set<StatLine> getStatLines() {
+		return statLines;
+	}
+
+	public void setStatLines(Set<StatLine> statLines) {
+		this.statLines = statLines;
+	}
 
 }

@@ -2,11 +2,11 @@ package com.softballreference.softballreferenceapi.model.dao;
 
 import org.springframework.stereotype.Repository;
 
-import com.softballreference.softballreferenceapi.model.entity.TeamLeaguePlayer;
+import com.softballreference.softballreferenceapi.model.entity.StatLine;
 import com.softballreference.softballreferenceapi.model.repository.CustomJpaRepository;
 
 @Repository
-public interface TeamLeaguePlayerDao extends CustomJpaRepository<TeamLeaguePlayer, Long> {
+public interface StatLineDao extends CustomJpaRepository<StatLine, Long> {
 	/**
 	 * SimpleJpaRepository is the default implementation of the CrudRepository
 	 * interface (which is a super interface of JpaRepository). It will give us all
@@ -20,4 +20,5 @@ public interface TeamLeaguePlayerDao extends CustomJpaRepository<TeamLeaguePlaye
 	 * version of an entity from the database. I also extends JpaRepository which
 	 * gives us filter-by-example functionality and the Example interface.
 	 */
+
 }
