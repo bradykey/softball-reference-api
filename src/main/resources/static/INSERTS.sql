@@ -209,7 +209,7 @@ VALUES('Brett Reece');
 INSERT INTO public.player(
 	name
 )
-VALUES('Dave');
+VALUES('Dave Penasa');
 
 INSERT INTO public.player(
 	name
@@ -343,7 +343,7 @@ WHERE team_league.id IN
 	(SELECT team.id, league.id 
 	FROM public.team AS team, public.league AS league 
 	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-AND player.name LIKE 'Dave';
+AND player.name LIKE 'Dave Penasa';
 
 INSERT INTO public.team_league_player(
 	team_league_id, player_id

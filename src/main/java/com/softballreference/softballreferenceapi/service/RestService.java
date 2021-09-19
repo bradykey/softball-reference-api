@@ -19,8 +19,10 @@ import com.softballreference.softballreferenceapi.model.entity.Player;
 import com.softballreference.softballreferenceapi.model.entity.StatLine;
 import com.softballreference.softballreferenceapi.model.entity.TeamLeague;
 import com.softballreference.softballreferenceapi.model.entity.TeamLeaguePlayer;
+import com.softballreference.softballreferenceapi.model.entity.request_dto.GameRequest;
 import com.softballreference.softballreferenceapi.model.entity.request_dto.StatLineRequest;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.GameBindResponse;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.GameResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.GameStatLineResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.PlayerBindResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.StatLineResponse;
@@ -192,6 +194,37 @@ public class RestService {
 	/*
 	 * MAIN REQUEST METHODS
 	 */
+	
+	/**
+	 * Creates a new {@link Game} in the database from the information provided
+	 * by the {@link GameRequest} passed in. Returns a {@link GameResponse}
+	 * containing the newly created {@link Game} fields.
+	 * 
+	 * @param gameRequest the {@link GameRequest} to use to create the new
+	 *                        {@link Game}
+	 * @return the {@link GameResponse} wrapping the newly created
+	 *         {@link Game} info.
+	 * @throws DuplicateRecordException
+	 */
+	public GameResponse createGame(GameRequest gameRequest) throws DuplicateRecordException {
+		Game gameToCreate = ResponseAndEntityBuilder.buildGame(gameRequest);
+
+		/**
+		 * Note that any relationships need to be loaded from the db directly so that
+		 * they can be managed by JPA and be attached in the transaction.
+		 */
+		Optional<TeamLeague> teamleague = teamLeagueDao.findById(gameToCreate.getTeamLeague().getId());
+		if (teamleague.isPresent())
+			gameToCreate.setTeamLeague(teamleague.get());
+
+		/**
+		 * Need to call refresh to update the entity from the database so that
+		 * relationships are proxied and their fields are accessible
+		 */
+		gameDao.refresh(gameToCreate);
+		
+		return ResponseAndEntityBuilder.buildGameResponse(gameToCreate);
+	}
 
 	/**
 	 * Creates a new {@link StatLine} in the database from the information provided

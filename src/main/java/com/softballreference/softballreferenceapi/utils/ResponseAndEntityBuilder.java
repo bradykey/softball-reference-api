@@ -8,9 +8,11 @@ import com.softballreference.softballreferenceapi.model.entity.Game;
 import com.softballreference.softballreferenceapi.model.entity.StatLine;
 import com.softballreference.softballreferenceapi.model.entity.TeamLeague;
 import com.softballreference.softballreferenceapi.model.entity.TeamLeaguePlayer;
+import com.softballreference.softballreferenceapi.model.entity.request_dto.GameRequest;
 import com.softballreference.softballreferenceapi.model.entity.request_dto.StatLineRequest;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.AccumulatedResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.GameBindResponse;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.GameResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.GameStatLineResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.PlayerBindResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.PlayerResponse;
@@ -56,6 +58,27 @@ public class ResponseAndEntityBuilder {
 		gameResponse.setGameId(game.getId());
 		gameResponse.setDate(game.getDate());
 		gameResponse.setOpponent(game.getOpponent());
+		gameResponse.setTeamLeagueId(game.getTeamLeague().getId());
+
+		return gameResponse;
+	}
+
+	/**
+	 * Builds a {@link GameResponse} object. The entire thing can be built from a
+	 * lazy-loaded, attached, hibernate {@link Game} entity.
+	 * 
+	 * @param Game the {@link Game} to wrap in a {@link GameResponse}s
+	 * @return the wrapped {@link GameResponse} object.
+	 */
+	public static GameResponse buildGameResponse(Game game) {
+		GameResponse gameResponse = new GameResponse();
+
+		gameResponse.setGameId(game.getId());
+		gameResponse.setDate(game.getDate());
+		gameResponse.setOpponent(game.getOpponent());
+		gameResponse.setOpponentScore(game.getOpponentScore());
+		gameResponse.setField(game.getField());
+		gameResponse.setWasHome(game.getWasHome());
 		gameResponse.setTeamLeagueId(game.getTeamLeague().getId());
 
 		return gameResponse;
@@ -320,11 +343,33 @@ public class ResponseAndEntityBuilder {
 	 */
 
 	/**
-	 * Builds a basic {@link StatLine} object from the 
+	 * Builds a basic {@link Game} object from the
 	 * 
-	 * @param teamLeaguePlayer the {@link TeamLeaguePlayer} to wrap in a
-	 *                         {@link PlayerBindResponse}s
-	 * @return the wrapped {@link PlayerBindResponse} object.
+	 * @param gameRequest the {@link GameRequest} fields to create a
+	 *                        {@link Game} with
+	 * @return the {@link Game} object.
+	 */
+	public static Game buildGame(GameRequest gameRequest) {
+		Game game = new Game();
+
+		game.setDate(gameRequest.getDate());
+		game.setOpponent(gameRequest.getOpponent());
+		game.setScore(gameRequest.getScore());
+		game.setOpponentScore(gameRequest.getOpponentScore());
+		game.setField(gameRequest.getField());
+		game.setWasHome(gameRequest.getWasHome());
+		
+		game.setTeamLeague(new TeamLeague(gameRequest.getTeamLeagueId()));
+
+		return game;
+	}
+
+	/**
+	 * Builds a basic {@link StatLine} object from the
+	 * 
+	 * @param statLineRequest the {@link StatLineRequest} fields to create a
+	 *                        {@link StatLine} with
+	 * @return the {@link StatLine} object.
 	 */
 	public static StatLine buildStatLine(StatLineRequest statLineRequest) {
 		StatLine statLine = new StatLine();
@@ -344,10 +389,10 @@ public class ResponseAndEntityBuilder {
 		statLine.setFoulOuts(statLineRequest.getfO());
 		statLine.setGroundedIntoDoublePlays(statLineRequest.getgIDP());
 		statLine.setLeftOnBase(statLineRequest.getlOB());
-		
+
 		statLine.setTeamLeaguePlayer(new TeamLeaguePlayer(statLineRequest.getTeamLeaguePlayerId()));
 		statLine.setGame(new Game(statLineRequest.getGameId()));
-		
+
 		return statLine;
 	}
 }

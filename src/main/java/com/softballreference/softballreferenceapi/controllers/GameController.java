@@ -1,9 +1,6 @@
 package com.softballreference.softballreferenceapi.controllers;
 
-import com.softballreference.softballreferenceapi.exception.RecordNotFoundException;
-import com.softballreference.softballreferenceapi.model.entity.Game;
-import com.softballreference.softballreferenceapi.model.entity.response_dto.GameStatLineResponse;
-import com.softballreference.softballreferenceapi.service.RestService;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -12,8 +9,19 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
+
+import com.softballreference.softballreferenceapi.exception.DuplicateRecordException;
+import com.softballreference.softballreferenceapi.exception.RecordNotFoundException;
+import com.softballreference.softballreferenceapi.model.entity.Game;
+import com.softballreference.softballreferenceapi.model.entity.request_dto.GameRequest;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.GameResponse;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.GameStatLineResponse;
+import com.softballreference.softballreferenceapi.service.RestService;
 
 @CrossOrigin
 @RestController
@@ -50,4 +58,26 @@ public class GameController {
 
         return new ResponseEntity<GameStatLineResponse>(entity, new HttpHeaders(), HttpStatus.OK);
     }
+    
+    /**
+	 * Creates and returns a new {@link Game} from the {@link GameRequest}
+	 * param.
+	 * 
+	 * @param gameToCreate The {@link GameRequest} object to be saved to the database.
+	 * @return the {@link GameResponse} that was created and saved to the database.
+	 */
+	@PostMapping
+	public ResponseEntity<GameResponse> createGame(@Valid @RequestBody GameRequest gameToCreate) {
+		if (gameToCreate.getTeamLeagueId() == null) {
+			String errorMessage = "The teamleague ids must contain a non-null value.";
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, errorMessage);
+		}
+		
+		try {
+			return new ResponseEntity<GameResponse>(restService.createGame(gameToCreate), new HttpHeaders(), HttpStatus.OK);
+		}
+		catch (DuplicateRecordException ex) {
+			throw new ResponseStatusException(HttpStatus.CONFLICT, ex.getMessage());
+		}
+	}
 }
