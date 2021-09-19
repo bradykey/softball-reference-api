@@ -76,6 +76,7 @@ public class ResponseAndEntityBuilder {
 		gameResponse.setGameId(game.getId());
 		gameResponse.setDate(game.getDate());
 		gameResponse.setOpponent(game.getOpponent());
+		gameResponse.setScore(game.getScore());
 		gameResponse.setOpponentScore(game.getOpponentScore());
 		gameResponse.setField(game.getField());
 		gameResponse.setWasHome(game.getWasHome());
@@ -345,8 +346,8 @@ public class ResponseAndEntityBuilder {
 	/**
 	 * Builds a basic {@link Game} object from the
 	 * 
-	 * @param gameRequest the {@link GameRequest} fields to create a
-	 *                        {@link Game} with
+	 * @param gameRequest the {@link GameRequest} fields to create a {@link Game}
+	 *                    with
 	 * @return the {@link Game} object.
 	 */
 	public static Game buildGame(GameRequest gameRequest) {
@@ -358,7 +359,7 @@ public class ResponseAndEntityBuilder {
 		game.setOpponentScore(gameRequest.getOpponentScore());
 		game.setField(gameRequest.getField());
 		game.setWasHome(gameRequest.getWasHome());
-		
+
 		game.setTeamLeague(new TeamLeague(gameRequest.getTeamLeagueId()));
 
 		return game;
