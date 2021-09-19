@@ -336,8 +336,11 @@ public class ResponseAndEntityBuilder {
 		statLineAccumulatedResponse.setB2(statLines.stream().map(StatLineResponse::getB2).reduce(0, Integer::sum));
 		statLineAccumulatedResponse.setB3(statLines.stream().map(StatLineResponse::getB3).reduce(0, Integer::sum));
 		statLineAccumulatedResponse.setHR(statLines.stream().map(StatLineResponse::getHR).reduce(0, Integer::sum));
+		statLineAccumulatedResponse.setRBI(statLines.stream().map(StatLineResponse::getRBI).reduce(0, Integer::sum));
 		statLineAccumulatedResponse.setBB(statLines.stream().map(StatLineResponse::getBB).reduce(0, Integer::sum));
 		statLineAccumulatedResponse.setSO(statLines.stream().map(StatLineResponse::getSO).reduce(0, Integer::sum));
+		statLineAccumulatedResponse.setSAC(statLines.stream().map(StatLineResponse::getSAC).reduce(0, Integer::sum));
+		statLineAccumulatedResponse.setHR4O(statLines.stream().map(StatLineResponse::getHR4O).reduce(0, Integer::sum));
 		statLineAccumulatedResponse.setFO(statLines.stream().map(StatLineResponse::getFO).reduce(0, Integer::sum));
 		statLineAccumulatedResponse.setGIDP(statLines.stream().map(StatLineResponse::getGIDP).reduce(0, Integer::sum));
 		statLineAccumulatedResponse.setLOB(statLines.stream().map(StatLineResponse::getLOB).reduce(0, Integer::sum));
