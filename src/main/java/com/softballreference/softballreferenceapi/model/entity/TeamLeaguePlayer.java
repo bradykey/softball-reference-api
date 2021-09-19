@@ -64,7 +64,7 @@ public class TeamLeaguePlayer implements java.io.Serializable {
 	 * @param id
 	 */
 	public TeamLeaguePlayer(Long id) {
-
+		this.id = id;
 	}
 
 	/* GETTERS AND SETTERS */

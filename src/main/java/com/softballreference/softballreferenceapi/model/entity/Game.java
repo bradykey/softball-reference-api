@@ -60,7 +60,7 @@ public class Game implements java.io.Serializable {
 	 * OVERLOADED CONSTRUCTOR
 	 */
 	public Game(Long id) {
-
+		this.id = id;
 	}
 
 	/* RELATIONSHIPS */

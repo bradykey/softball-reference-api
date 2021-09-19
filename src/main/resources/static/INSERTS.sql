@@ -223,14 +223,18 @@ VALUES('Jamie Dickey');
 
 -- ROSTER/SEASON LINKAGES
 
--- Chups Summer 2021
+-- GH Summer 2021
 INSERT INTO public.team_league_player(
 	team_league_id, player_id
 )
 SELECT team_league.id, player.id 
 FROM public.team_league AS team_league, public.player AS player 
-WHERE team_league.id IN 
-	(SELECT team.id, league.id 
+WHERE team_league.team_id IN 
+	(SELECT team.id
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+AND team_league.league_id IN
+	(SELECT league.id
 	FROM public.team AS team, public.league AS league 
 	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
 AND player.name LIKE 'Pat Barnes';
@@ -240,8 +244,12 @@ INSERT INTO public.team_league_player(
 )
 SELECT team_league.id, player.id 
 FROM public.team_league AS team_league, public.player AS player 
-WHERE team_league.id IN 
-	(SELECT team.id, league.id 
+WHERE team_league.team_id IN 
+	(SELECT team.id
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+AND team_league.league_id IN
+	(SELECT league.id
 	FROM public.team AS team, public.league AS league 
 	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
 AND player.name LIKE 'Andrew Stuart';
@@ -251,8 +259,12 @@ INSERT INTO public.team_league_player(
 )
 SELECT team_league.id, player.id 
 FROM public.team_league AS team_league, public.player AS player 
-WHERE team_league.id IN 
-	(SELECT team.id, league.id 
+WHERE team_league.team_id IN 
+	(SELECT team.id
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+AND team_league.league_id IN
+	(SELECT league.id
 	FROM public.team AS team, public.league AS league 
 	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
 AND player.name LIKE 'Brady Key';
@@ -262,8 +274,12 @@ INSERT INTO public.team_league_player(
 )
 SELECT team_league.id, player.id 
 FROM public.team_league AS team_league, public.player AS player 
-WHERE team_league.id IN 
-	(SELECT team.id, league.id 
+WHERE team_league.team_id IN 
+	(SELECT team.id
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+AND team_league.league_id IN
+	(SELECT league.id
 	FROM public.team AS team, public.league AS league 
 	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
 AND player.name LIKE 'Jason Rogers';
@@ -273,8 +289,12 @@ INSERT INTO public.team_league_player(
 )
 SELECT team_league.id, player.id 
 FROM public.team_league AS team_league, public.player AS player 
-WHERE team_league.id IN 
-	(SELECT team.id, league.id 
+WHERE team_league.team_id IN 
+	(SELECT team.id
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+AND team_league.league_id IN
+	(SELECT league.id
 	FROM public.team AS team, public.league AS league 
 	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
 AND player.name LIKE 'Linn Reece';
@@ -284,8 +304,12 @@ INSERT INTO public.team_league_player(
 )
 SELECT team_league.id, player.id 
 FROM public.team_league AS team_league, public.player AS player 
-WHERE team_league.id IN 
-	(SELECT team.id, league.id 
+WHERE team_league.team_id IN 
+	(SELECT team.id
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+AND team_league.league_id IN
+	(SELECT league.id
 	FROM public.team AS team, public.league AS league 
 	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
 AND player.name LIKE 'Tim Tribou';
@@ -295,8 +319,12 @@ INSERT INTO public.team_league_player(
 )
 SELECT team_league.id, player.id 
 FROM public.team_league AS team_league, public.player AS player 
-WHERE team_league.id IN 
-	(SELECT team.id, league.id 
+WHERE team_league.team_id IN 
+	(SELECT team.id
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+AND team_league.league_id IN
+	(SELECT league.id
 	FROM public.team AS team, public.league AS league 
 	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
 AND player.name LIKE 'Alex Gibbs';
@@ -306,8 +334,12 @@ INSERT INTO public.team_league_player(
 )
 SELECT team_league.id, player.id 
 FROM public.team_league AS team_league, public.player AS player 
-WHERE team_league.id IN 
-	(SELECT team.id, league.id 
+WHERE team_league.team_id IN 
+	(SELECT team.id
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+AND team_league.league_id IN
+	(SELECT league.id
 	FROM public.team AS team, public.league AS league 
 	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
 AND player.name LIKE 'Jon Pinsonneault';
@@ -317,8 +349,12 @@ INSERT INTO public.team_league_player(
 )
 SELECT team_league.id, player.id 
 FROM public.team_league AS team_league, public.player AS player 
-WHERE team_league.id IN 
-	(SELECT team.id, league.id 
+WHERE team_league.team_id IN 
+	(SELECT team.id
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+AND team_league.league_id IN
+	(SELECT league.id
 	FROM public.team AS team, public.league AS league 
 	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
 AND player.name LIKE 'Mike Parrish';
@@ -328,8 +364,12 @@ INSERT INTO public.team_league_player(
 )
 SELECT team_league.id, player.id 
 FROM public.team_league AS team_league, public.player AS player 
-WHERE team_league.id IN 
-	(SELECT team.id, league.id 
+WHERE team_league.team_id IN 
+	(SELECT team.id
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+AND team_league.league_id IN
+	(SELECT league.id
 	FROM public.team AS team, public.league AS league 
 	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
 AND player.name LIKE 'Brett Reece';
@@ -339,8 +379,12 @@ INSERT INTO public.team_league_player(
 )
 SELECT team_league.id, player.id 
 FROM public.team_league AS team_league, public.player AS player 
-WHERE team_league.id IN 
-	(SELECT team.id, league.id 
+WHERE team_league.team_id IN 
+	(SELECT team.id
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+AND team_league.league_id IN
+	(SELECT league.id
 	FROM public.team AS team, public.league AS league 
 	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
 AND player.name LIKE 'Dave Penasa';
@@ -350,8 +394,12 @@ INSERT INTO public.team_league_player(
 )
 SELECT team_league.id, player.id 
 FROM public.team_league AS team_league, public.player AS player 
-WHERE team_league.id IN 
-	(SELECT team.id, league.id 
+WHERE team_league.team_id IN 
+	(SELECT team.id
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+AND team_league.league_id IN
+	(SELECT league.id
 	FROM public.team AS team, public.league AS league 
 	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
 AND player.name LIKE 'Blake Reece';
@@ -361,8 +409,12 @@ INSERT INTO public.team_league_player(
 )
 SELECT team_league.id, player.id 
 FROM public.team_league AS team_league, public.player AS player 
-WHERE team_league.id IN 
-	(SELECT team.id, league.id 
+WHERE team_league.team_id IN 
+	(SELECT team.id
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+AND team_league.league_id IN
+	(SELECT league.id
 	FROM public.team AS team, public.league AS league 
 	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
 AND player.name LIKE 'Jamie Dickey';
@@ -378,6 +430,217 @@ AND player.name LIKE 'Jamie Dickey';
     "wasHome": 1,
     "teamLeagueId": 9
 }
+	{
+		"gameId": 1,
+		"teamLeaguePlayerId": 1,
+		"bO": 1,
+		"pA": 4,
+		"r": 1,
+		"rBI": 2,
+		"b1": 4,
+		"b2": 0,
+		"b3": 0,
+		"hR": 0,
+		"bB": 0,
+		"sO": 0,
+		"sAC": 0,
+		"hR4O": 0,
+		"fO": 0,
+		"gIDP": 0,
+		"lOB": 0
+	}
+	{
+		"gameId": 1,
+		"teamLeaguePlayerId": 3,
+		"bO": 2,
+		"pA": 4,
+		"r": 0,
+		"rBI": 3,
+		"b1": 2,
+		"b2": 1,
+		"b3": 0,
+		"hR": 0,
+		"bB": 0,
+		"sO": 0,
+		"sAC": 0,
+		"hR4O": 0,
+		"fO": 0,
+		"gIDP": 0,
+		"lOB": 0
+	}
+	{
+		"gameId": 1,
+		"teamLeaguePlayerId": 13,
+		"bO": 3,
+		"pA": 3,
+		"r": 0,
+		"rBI": 0,
+		"b1": 0,
+		"b2": 0,
+		"b3": 0,
+		"hR": 0,
+		"bB": 0,
+		"sO": 0,
+		"sAC": 0,
+		"hR4O": 0,
+		"fO": 0,
+		"gIDP": 0,
+		"lOB": 0
+	}
+	{
+		"gameId": 1,
+		"teamLeaguePlayerId": 4,
+		"bO": 4,
+		"pA": 3,
+		"r": 0,
+		"rBI": 0,
+		"b1": 0,
+		"b2": 0,
+		"b3": 0,
+		"hR": 0,
+		"bB": 0,
+		"sO": 0,
+		"sAC": 0,
+		"hR4O": 0,
+		"fO": 0,
+		"gIDP": 0,
+		"lOB": 0
+	}
+	{
+		"gameId": 1,
+		"teamLeaguePlayerId": 12,
+		"bO": 5,
+		"pA": 3,
+		"r": 2,
+		"rBI": 0,
+		"b1": 2,
+		"b2": 0,
+		"b3": 0,
+		"hR": 0,
+		"bB": 0,
+		"sO": 0,
+		"sAC": 0,
+		"hR4O": 0,
+		"fO": 0,
+		"gIDP": 0,
+		"lOB": 0
+	}
+	{
+		"gameId": 1,
+		"teamLeaguePlayerId": 9,
+		"bO": 6,
+		"pA": 3,
+		"r": 1,
+		"rBI": 0,
+		"b1": 1,
+		"b2": 0,
+		"b3": 0,
+		"hR": 0,
+		"bB": 2,
+		"sO": 0,
+		"sAC": 0,
+		"hR4O": 0,
+		"fO": 0,
+		"gIDP": 0,
+		"lOB": 0
+	}
+	{
+		"gameId": 1,
+		"teamLeaguePlayerId": 5,
+		"bO": 7,
+		"pA": 3,
+		"r": 1,
+		"rBI": 2,
+		"b1": 0,
+		"b2": 1,
+		"b3": 1,
+		"hR": 0,
+		"bB": 0,
+		"sO": 0,
+		"sAC": 0,
+		"hR4O": 0,
+		"fO": 0,
+		"gIDP": 0,
+		"lOB": 0
+	}
+	{
+		"gameId": 1,
+		"teamLeaguePlayerId": 6,
+		"bO": 8,
+		"pA": 3,
+		"r": 1,
+		"rBI": 1,
+		"b1": 2,
+		"b2": 0,
+		"b3": 0,
+		"hR": 0,
+		"bB": 0,
+		"sO": 0,
+		"sAC": 0,
+		"hR4O": 0,
+		"fO": 0,
+		"gIDP": 0,
+		"lOB": 0
+	}
+	{
+		"gameId": 1,
+		"teamLeaguePlayerId": 10,
+		"bO": 9,
+		"pA": 3,
+		"r": 1,
+		"rBI": 0,
+		"b1": 1,
+		"b2": 0,
+		"b3": 0,
+		"hR": 0,
+		"bB": 0,
+		"sO": 0,
+		"sAC": 0,
+		"hR4O": 0,
+		"fO": 0,
+		"gIDP": 0,
+		"lOB": 0
+	}
+	{
+		"gameId": 1,
+		"teamLeaguePlayerId": 7,
+		"bO": 10,
+		"pA": 3,
+		"r": 2,
+		"rBI": 0,
+		"b1": 3,
+		"b2": 0,
+		"b3": 0,
+		"hR": 0,
+		"bB": 0,
+		"sO": 0,
+		"sAC": 0,
+		"hR4O": 0,
+		"fO": 0,
+		"gIDP": 0,
+		"lOB": 0
+	}
+	{
+		"gameId": 1,
+		"teamLeaguePlayerId": 11,
+		"bO": 11,
+		"pA": 3,
+		"r": 0,
+		"rBI": 0,
+		"b1": 1,
+		"b2": 0,
+		"b3": 0,
+		"hR": 0,
+		"bB": 0,
+		"sO": 0,
+		"sAC": 0,
+		"hR4O": 0,
+		"fO": 0,
+		"gIDP": 0,
+		"lOB": 0
+	}
+
+
 {
     "date": "2021-06-15 18:30:00" ,
     "opponent": "Los Ranchos",
@@ -434,18 +697,18 @@ AND player.name LIKE 'Jamie Dickey';
 }
 {
     "date": "2021-07-27 18:30:00" ,
-    "opponent": "?",
-    "score": 0,
-    "opponentScore": 1,
+    "opponent": "Donut Squad",
+    "score": 6,
+    "opponentScore": 5,
     "field": "Vietnam Vets #1",
     "wasHome": 1,
     "teamLeagueId": 9
 }
 {
     "date": "2021-08-03 19:30:00" ,
-    "opponent": "?",
+    "opponent": "ASM Crew",
     "score": 0,
-    "opponentScore": 1,
+    "opponentScore": 11,
     "field": "Vietnam Vets #1",
     "wasHome": 0,
     "teamLeagueId": 9
@@ -495,3 +758,196 @@ AND player.name LIKE 'Jamie Dickey';
     "wasHome": 0,
     "teamLeagueId": 9
 }
+
+
+--	STATLINE TEMPLATE
+	{
+		"gameId": ,
+		"teamLeaguePlayerId": ,
+		"bO": 2,
+		"pA": ,
+		"r": ,
+		"rBI": ,
+		"b1": ,
+		"b2": ,
+		"b3": ,
+		"hR": ,
+		"bB": ,
+		"sO": ,
+		"sAC": ,
+		"hR4O": ,
+		"fO": ,
+		"gIDP": ,
+		"lOB": 0
+	}
+	{
+		"gameId": ,
+		"teamLeaguePlayerId": ,
+		"bO": 2,
+		"pA": ,
+		"r": ,
+		"rBI": ,
+		"b1": ,
+		"b2": ,
+		"b3": ,
+		"hR": ,
+		"bB": ,
+		"sO": ,
+		"sAC": ,
+		"hR4O": ,
+		"fO": ,
+		"gIDP": ,
+		"lOB": 0
+	}
+	{
+		"gameId": ,
+		"teamLeaguePlayerId": ,
+		"bO": 3,
+		"pA": ,
+		"r": ,
+		"rBI": ,
+		"b1": ,
+		"b2": ,
+		"b3": ,
+		"hR": ,
+		"bB": ,
+		"sO": ,
+		"sAC": ,
+		"hR4O": ,
+		"fO": ,
+		"gIDP": ,
+		"lOB": 0
+	}
+	{
+		"gameId": ,
+		"teamLeaguePlayerId": ,
+		"bO": 4,
+		"pA": ,
+		"r": ,
+		"rBI": ,
+		"b1": ,
+		"b2": ,
+		"b3": ,
+		"hR": ,
+		"bB": ,
+		"sO": ,
+		"sAC": ,
+		"hR4O": ,
+		"fO": ,
+		"gIDP": ,
+		"lOB": 0
+	}
+	{
+		"gameId": ,
+		"teamLeaguePlayerId": ,
+		"bO": 5,
+		"pA": ,
+		"r": ,
+		"rBI": ,
+		"b1": ,
+		"b2": ,
+		"b3": ,
+		"hR": ,
+		"bB": ,
+		"sO": ,
+		"sAC": ,
+		"hR4O": ,
+		"fO": ,
+		"gIDP": ,
+		"lOB": 0
+	}
+	{
+		"gameId": ,
+		"teamLeaguePlayerId": ,
+		"bO": 6,
+		"pA": ,
+		"r": ,
+		"rBI": ,
+		"b1": ,
+		"b2": ,
+		"b3": ,
+		"hR": ,
+		"bB": ,
+		"sO": ,
+		"sAC": ,
+		"hR4O": ,
+		"fO": ,
+		"gIDP": ,
+		"lOB": 0
+	}
+	{
+		"gameId": ,
+		"teamLeaguePlayerId": ,
+		"bO": 7,
+		"pA": ,
+		"r": ,
+		"rBI": ,
+		"b1": ,
+		"b2": ,
+		"b3": ,
+		"hR": ,
+		"bB": ,
+		"sO": ,
+		"sAC": ,
+		"hR4O": ,
+		"fO": ,
+		"gIDP": ,
+		"lOB": 0
+	}
+	{
+		"gameId": ,
+		"teamLeaguePlayerId": ,
+		"bO": 8,
+		"pA": ,
+		"r": ,
+		"rBI": ,
+		"b1": ,
+		"b2": ,
+		"b3": ,
+		"hR": ,
+		"bB": ,
+		"sO": ,
+		"sAC": ,
+		"hR4O": ,
+		"fO": ,
+		"gIDP": ,
+		"lOB": 0
+	}
+	{
+		"gameId": ,
+		"teamLeaguePlayerId": ,
+		"bO": 9,
+		"pA": ,
+		"r": ,
+		"rBI": ,
+		"b1": ,
+		"b2": ,
+		"b3": ,
+		"hR": ,
+		"bB": ,
+		"sO": ,
+		"sAC": ,
+		"hR4O": ,
+		"fO": ,
+		"gIDP": ,
+		"lOB": 0
+	}
+	{
+		"gameId": ,
+		"teamLeaguePlayerId": ,
+		"bO": 10,
+		"pA": ,
+		"r": ,
+		"rBI": ,
+		"b1": ,
+		"b2": ,
+		"b3": ,
+		"hR": ,
+		"bB": ,
+		"sO": ,
+		"sAC": ,
+		"hR4O": ,
+		"fO": ,
+		"gIDP": ,
+		"lOB": 0
+	}
