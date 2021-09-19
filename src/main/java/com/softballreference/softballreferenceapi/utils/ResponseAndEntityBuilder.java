@@ -242,8 +242,11 @@ public class ResponseAndEntityBuilder {
 		statLineResponse.setB2(statLine.getDoubles());
 		statLineResponse.setB3(statLine.getTriples());
 		statLineResponse.setHR(statLine.getHomeRuns());
+		statLineResponse.setRBI(statLine.getRunsBattedIn());
 		statLineResponse.setBB(statLine.getBaseOnBalls());
 		statLineResponse.setSO(statLine.getStrikeouts());
+		statLineResponse.setSAC(statLine.getSacrifices());
+		statLineResponse.setHR4O(statLine.getHomeRunForOuts());
 		statLineResponse.setFO(statLine.getFoulOuts());
 		statLineResponse.setGIDP(statLine.getGroundedIntoDoublePlays());
 		statLineResponse.setLOB(statLine.getLeftOnBase());
