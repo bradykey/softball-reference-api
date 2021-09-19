@@ -216,6 +216,8 @@ public class RestService {
 		Optional<TeamLeague> teamleague = teamLeagueDao.findById(gameToCreate.getTeamLeague().getId());
 		if (teamleague.isPresent())
 			gameToCreate.setTeamLeague(teamleague.get());
+		
+		gameToCreate = gameDao.save(gameToCreate);
 
 		/**
 		 * Need to call refresh to update the entity from the database so that

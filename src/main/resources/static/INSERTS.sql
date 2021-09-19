@@ -377,3 +377,12 @@ AND player.name LIKE 'Jamie Dickey';
     "wasHome": 1,
     "teamLeagueId": 9
 }
+{
+    "date": "2021-06-15 18:30:00" ,
+    "opponent": "Los Ranchos",
+    "score": 4,
+    "opponentScore": 18,
+    "field": "Tingley #2",
+    "wasHome": 0,
+    "teamLeagueId": 9
+}

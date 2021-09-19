@@ -34,6 +34,6 @@ public class CustomJpaRepositoryImpl<T, ID extends Serializable> extends SimpleJ
 	@Override
 	@Transactional
 	public void refresh(T t) {
-		entityManager.refresh(entityManager.merge(t));
+		entityManager.refresh(t);
 	}
 }
