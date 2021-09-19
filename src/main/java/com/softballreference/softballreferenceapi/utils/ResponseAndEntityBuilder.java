@@ -117,6 +117,17 @@ public class ResponseAndEntityBuilder {
 		summaryStatLineResponse.setTeam(teamLeague.getTeam().getName());
 		summaryStatLineResponse
 				.setLeague(teamLeague.getLeague().getName() + " (" + teamLeague.getLeague().getSeason() + ")");
+		// Set the W/L record -- default to 0
+		summaryStatLineResponse.setWins(0);
+		summaryStatLineResponse.setLosses(0);
+		teamLeague.getGames().forEach(g -> {
+			if (g.getScore() > g.getOpponentScore())
+				// this is a win
+				summaryStatLineResponse.setWins(summaryStatLineResponse.getWins() + 1);
+			else
+				// this is a loss
+				summaryStatLineResponse.setLosses(summaryStatLineResponse.getLosses() + 1);
+		});
 		List<PlayerResponse> playerResponses = new ArrayList<PlayerResponse>();
 		teamLeague.getTeamLeaguePlayers().forEach(tLP -> playerResponses.add(buildPlayerResponse(tLP)));
 		summaryStatLineResponse.setPlayers(playerResponses);

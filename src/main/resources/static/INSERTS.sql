@@ -368,6 +368,7 @@ WHERE team_league.id IN
 AND player.name LIKE 'Jamie Dickey';
 
 -- GAMES (JSON)
+-- GH Summer 2021
 {
     "date": "2021-06-08 18:30:00" ,
     "opponent": "Mean Machine",
@@ -383,6 +384,114 @@ AND player.name LIKE 'Jamie Dickey';
     "score": 4,
     "opponentScore": 18,
     "field": "Tingley #2",
+    "wasHome": 0,
+    "teamLeagueId": 9
+}
+{
+    "date": "2021-06-22 20:00:00" ,
+    "opponent": "Misfits",
+    "score": 25,
+    "opponentScore": 5,
+    "field": "Vietnam Vets #1",
+    "wasHome": 0,
+    "teamLeagueId": 9
+}
+{
+    "date": "2021-06-29 18:30:00" ,
+    "opponent": "Bad News Bears",
+    "score": 15,
+    "opponentScore": 14,
+    "field": "Tingley #1",
+    "wasHome": 1,
+    "teamLeagueId": 9
+}
+{
+    "date": "2021-07-06 20:00:00" ,
+    "opponent": "Lizards",
+    "score": 5,
+    "opponentScore": 9,
+    "field": "Vietnam Vets #1",
+    "wasHome": 0,
+    "teamLeagueId": 9
+}
+{
+    "date": "2021-07-13 18:30:00" ,
+    "opponent": "The Legends",
+    "score": 0,
+    "opponentScore": 12,
+    "field": "Vietnam Vets #2",
+    "wasHome": 1,
+    "teamLeagueId": 9
+}
+{
+    "date": "2021-07-20 19:30:00" ,
+    "opponent": "Duke City Hooligans",
+    "score": 10,
+    "opponentScore": 19,
+    "field": "Tingley #1",
+    "wasHome": 1,
+    "teamLeagueId": 9
+}
+{
+    "date": "2021-07-27 18:30:00" ,
+    "opponent": "?",
+    "score": 0,
+    "opponentScore": 1,
+    "field": "Vietnam Vets #1",
+    "wasHome": 1,
+    "teamLeagueId": 9
+}
+{
+    "date": "2021-08-03 19:30:00" ,
+    "opponent": "?",
+    "score": 0,
+    "opponentScore": 1,
+    "field": "Vietnam Vets #1",
+    "wasHome": 0,
+    "teamLeagueId": 9
+}
+{
+    "date": "2021-08-10 18:30:00" ,
+    "opponent": "Mean Machine",
+    "score": 7,
+    "opponentScore": 17,
+    "field": "Tingley #2",
+    "wasHome": 0,
+    "teamLeagueId": 9
+}
+{
+    "date": "2021-08-17 18:30:00" ,
+    "opponent": "Los Ranchos",
+    "score": 1,
+    "opponentScore": 13,
+    "field": "Tingley #2",
+    "wasHome": 1,
+    "teamLeagueId": 9
+}
+{
+    "date": "2021-08-31 18:30:00" ,
+    "opponent": "Bad News Bears",
+    "score": 19,
+    "opponentScore": 3,
+    "field": "Tingley #1",
+    "wasHome": 0,
+    "teamLeagueId": 9
+}
+{
+    "date": "2021-09-07 19:30:00" ,
+    "opponent": "Lizards",
+    "score": 18,
+    "opponentScore": 17,
+    "field": "Vietnam Vets #1",
+    "wasHome": 1,
+    "teamLeagueId": 9
+}
+{
+    "date": "2021-09-14 18:30:00" ,
+    "opponent": "The Legends",
+    "score": 18,
+    "opponentScore": 8,
+    "field": "Vietnam Vets #2",
     "wasHome": 0,
     "teamLeagueId": 9
 }

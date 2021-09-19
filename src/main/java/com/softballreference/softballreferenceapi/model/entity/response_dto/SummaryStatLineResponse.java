@@ -9,6 +9,8 @@ public class SummaryStatLineResponse {
     /* PROPERTIES */
     private String team;
     private String league;
+    private Integer wins;
+	private Integer losses;
 
     /* RELATIONSHIPS */
     private AccumulatedResponse accumulated;
@@ -38,6 +40,22 @@ public class SummaryStatLineResponse {
     public void setLeague(String league) {
         this.league = league;
     }
+    
+    public Integer getWins() {
+		return wins;
+	}
+
+	public void setWins(Integer wins) {
+		this.wins = wins;
+	}
+
+	public Integer getLosses() {
+		return losses;
+	}
+
+	public void setLosses(Integer losses) {
+		this.losses = losses;
+	}
 
     public AccumulatedResponse getAccumulated() {
         return accumulated;
