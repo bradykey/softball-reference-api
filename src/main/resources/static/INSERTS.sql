@@ -366,3 +366,14 @@ WHERE team_league.id IN
 	FROM public.team AS team, public.league AS league 
 	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
 AND player.name LIKE 'Jamie Dickey';
+
+-- GAMES (JSON)
+{
+    "date": "2021-06-08 18:30:00" ,
+    "opponent": "Mean Machine",
+    "score": 8,
+    "opponentScore": 5,
+    "field": "Tingley #2",
+    "wasHome": 1,
+    "teamLeagueId": 9
+}
