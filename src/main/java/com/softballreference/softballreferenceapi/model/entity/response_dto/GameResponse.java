@@ -9,7 +9,7 @@ public class GameResponse {
     private Long gameId;
 
     /* PROPERTIES */
-    @JsonFormat(pattern = "yyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date date;
     private String opponent;
     private Integer score;
