@@ -53,3 +53,27 @@ You can view some of the variables that get automatically set by Heroku by runni
 
 BIG NOTE. You don't even need the variables defined in the application.properties file.
 
+### Building Vue.js to Heroku
+I'm following this: https://cli.vuejs.org/guide/deployment.html#heroku
+
+Since I had already created my heroku app, I need to create the new git remote in my local git repository that points to my heroku git. Again, this is done with `>> heroku git:remote -a softball-reference`
+
+```bash
+>> heroku buildpacks:add heroku/nodejs
+Buildpack added. Next release on softball-reference will use heroku/nodejs.
+Run git push heroku main to create a new release using this buildpack.
+
+>> heroku buildpacks:add https://github.com/heroku/heroku-buildpack-static
+Buildpack added. Next release on softball-reference will use:
+  1. heroku/nodejs
+  2. https://github.com/heroku/heroku-buildpack-static
+Run git push heroku main to create a new release using these buildpacks.
+```
+
+Now just push with
+
+```bash
+>> git push heroku masters
+```
+
+Insane how simple that is...
