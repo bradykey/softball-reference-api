@@ -77,3 +77,25 @@ Now just push with
 ```
 
 Insane how simple that is...
+
+### Hooking up my custom domain
+
+Big thing here is just to make sure the Heroku account is verified (i.e. has a cc on file). Once that's done, run the following in softball-reference-ui:
+
+```bash
+>> heroku domains:add www.softball-reference.com
+```
+
+Then run the following to see the DNS Target you need to add in the domains.google.com site:
+
+```bash
+>> heroku domains
+=== softball-reference Heroku Domain
+softball-reference.herokuapp.com
+
+=== softball-reference Custom Domains
+Domain Name                DNS Record Type DNS Target                                             SNI Endpoint 
+www.softball-reference.com CNAME           functional-rook-iozdh4e1eacyxm36l45aylwr.herokudns.com undefined 
+```
+
+Take that DNS target and go to domains.google.com, click on the softball-reference.com domain, click DNS in the sidebar and add a custom record. The host should be "www" since that just goes on top of softball-reference.com, the type is CNAME, and the data is the DNS target from above. It should work right away, I guess? Crazy, now I can hit softball-reference.com. NOTE: It must be non-secure (i.e. http not https). I bet I can fix that...
