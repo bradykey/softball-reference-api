@@ -73,7 +73,7 @@ Run git push heroku main to create a new release using these buildpacks.
 Now just push with
 
 ```bash
->> git push heroku masters
+>> git push heroku master
 ```
 
 Insane how simple that is...
