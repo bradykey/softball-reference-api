@@ -15,7 +15,7 @@ import com.softballreference.softballreferenceapi.model.entity.response_dto.Game
 import com.softballreference.softballreferenceapi.model.entity.response_dto.GamePostResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.GameStatLineResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.PlayerBindResponse;
-import com.softballreference.softballreferenceapi.model.entity.response_dto.PlayerResponse;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.PlayerSummaryResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.StatLineResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.SummaryStatLineResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.TeamLeagueBindResponse;
@@ -141,7 +141,7 @@ public class ResponseAndEntityBuilder {
 				// this is a loss
 				summaryStatLineResponse.setLosses(summaryStatLineResponse.getLosses() + 1);
 		});
-		List<PlayerResponse> playerResponses = new ArrayList<PlayerResponse>();
+		List<PlayerSummaryResponse> playerResponses = new ArrayList<PlayerSummaryResponse>();
 		teamLeague.getTeamLeaguePlayers().forEach(tLP -> playerResponses.add(buildPlayerResponse(tLP)));
 		summaryStatLineResponse.setPlayers(playerResponses);
 		/*
@@ -150,8 +150,9 @@ public class ResponseAndEntityBuilder {
 		 * the players accumulated calculation first, and then build and accumulated on
 		 * THOSE accumulated.statLines.
 		 */
-		summaryStatLineResponse.setAccumulated(buildAccumulatedResponse(summaryStatLineResponse.getPlayers().stream()
-				.map(PlayerResponse::getAccumulated).map(AccumulatedResponse::getStatLine).collect(Collectors.toList())));
+		summaryStatLineResponse.setAccumulated(buildAccumulatedResponse(
+				summaryStatLineResponse.getPlayers().stream().map(PlayerSummaryResponse::getAccumulated)
+						.map(AccumulatedResponse::getStatLine).collect(Collectors.toList())));
 
 		/*
 		 * Loop back around and fill the ...Plus stats for each player.
@@ -163,7 +164,7 @@ public class ResponseAndEntityBuilder {
 
 	/**
 	 * Calculates the OBP+, SLG+, and OPS+ properties of each
-	 * {@link AccumulatedResponse} on the {@link PlayerResponse}s of the
+	 * {@link AccumulatedResponse} on the {@link PlayerSummaryResponse}s of the
 	 * {@link SummaryStatLineResponse}. These values are calculated by dividing the
 	 * player's accumulated obp, slg, and ops values by the team's accumulated obp,
 	 * slg, and ops values, and then multiplying by 100. This gives the ratio for
@@ -213,30 +214,29 @@ public class ResponseAndEntityBuilder {
 	}
 
 	/**
-	 * Builds a {@link PlayerResponse} object. The entire thing can be built from a
-	 * lazy-loaded, attached, hibernate {@link TeamLeaguePlayer} entity.
+	 * Builds a {@link PlayerSummaryResponse} object. The entire thing can be built
+	 * from a lazy-loaded, attached, hibernate {@link TeamLeaguePlayer} entity.
 	 *
 	 * @param teamLeaguePlayer the {@link TeamLeaguePlayer} entity to build the
 	 *                         response from
-	 * @return the filled in {@link PlayerResponse}
+	 * @return the filled in {@link PlayerSummaryResponse}
 	 */
-	public static PlayerResponse buildPlayerResponse(TeamLeaguePlayer teamLeaguePlayer) {
-		PlayerResponse playerResponse = new PlayerResponse();
+	public static PlayerSummaryResponse buildPlayerResponse(TeamLeaguePlayer teamLeaguePlayer) {
+		PlayerSummaryResponse playerResponse = new PlayerSummaryResponse();
 
 		playerResponse.setTeamLeaguePlayerId(teamLeaguePlayer.getId());
-		playerResponse.setPlayerName(teamLeaguePlayer.getPlayer().getName());
 		// must convert to StatLineResponses first
 		List<StatLineResponse> statLineResponses = new ArrayList<StatLineResponse>();
 		teamLeaguePlayer.getStatLines().forEach(sL -> statLineResponses.add(buildStatLineResponse(sL)));
 		playerResponse.setAccumulated(buildAccumulatedResponse(statLineResponses));
 		/**
-		 * Fill the player's name in the accumulated response for consistency.
+		 * Fill the player's name in the accumulated response.
 		 * 
 		 * Normally, our AccumulatedResponse object is just a summary of multiple
-		 * players StatLines, but in this case, it's the accumulated for a single
-		 * player.
+		 * players StatLines, but in this case, it's the accumulated for a single player
+		 * and this is where we capture the name.
 		 */
-		playerResponse.getAccumulated().getStatLine().setPlayerName(playerResponse.getPlayerName());
+		playerResponse.getAccumulated().getStatLine().setPlayerName(teamLeaguePlayer.getPlayer().getName());
 
 		return playerResponse;
 	}

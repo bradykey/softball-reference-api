@@ -10,11 +10,11 @@ public class SummaryStatLineResponse {
     private String team;
     private String league;
     private Integer wins;
-	private Integer losses;
+    private Integer losses;
 
     /* RELATIONSHIPS */
     private AccumulatedResponse accumulated;
-    private List<PlayerResponse> players;
+    private List<PlayerSummaryResponse> players;
 
     /* GETTERS AND SETTERS */
     public Long getTeamLeagueId() {
@@ -40,22 +40,22 @@ public class SummaryStatLineResponse {
     public void setLeague(String league) {
         this.league = league;
     }
-    
+
     public Integer getWins() {
-		return wins;
-	}
+        return wins;
+    }
 
-	public void setWins(Integer wins) {
-		this.wins = wins;
-	}
+    public void setWins(Integer wins) {
+        this.wins = wins;
+    }
 
-	public Integer getLosses() {
-		return losses;
-	}
+    public Integer getLosses() {
+        return losses;
+    }
 
-	public void setLosses(Integer losses) {
-		this.losses = losses;
-	}
+    public void setLosses(Integer losses) {
+        this.losses = losses;
+    }
 
     public AccumulatedResponse getAccumulated() {
         return accumulated;
@@ -65,11 +65,11 @@ public class SummaryStatLineResponse {
         this.accumulated = accumulated;
     }
 
-    public List<PlayerResponse> getPlayers() {
+    public List<PlayerSummaryResponse> getPlayers() {
         return players;
     }
 
-    public void setPlayers(List<PlayerResponse> players) {
+    public void setPlayers(List<PlayerSummaryResponse> players) {
         this.players = players;
     }
 }

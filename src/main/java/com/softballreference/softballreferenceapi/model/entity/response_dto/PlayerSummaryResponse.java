@@ -1,11 +1,8 @@
 package com.softballreference.softballreferenceapi.model.entity.response_dto;
 
-public class PlayerResponse {
+public class PlayerSummaryResponse {
     /* PK */
     private Long teamLeaguePlayerId;
-
-    /* PROPERTIES */
-    private String playerName;
 
     /* RELATIONSHIPS */
     private AccumulatedResponse accumulated;
@@ -17,14 +14,6 @@ public class PlayerResponse {
 
     public void setTeamLeaguePlayerId(Long teamLeaguePlayerId) {
         this.teamLeaguePlayerId = teamLeaguePlayerId;
-    }
-
-    public String getPlayerName() {
-        return playerName;
-    }
-
-    public void setPlayerName(String playerName) {
-        this.playerName = playerName;
     }
 
     public AccumulatedResponse getAccumulated() {
