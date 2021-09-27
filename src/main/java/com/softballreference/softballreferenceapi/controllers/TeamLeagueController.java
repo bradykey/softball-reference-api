@@ -16,7 +16,7 @@ import com.softballreference.softballreferenceapi.exception.RecordNotFoundExcept
 import com.softballreference.softballreferenceapi.model.dao.GameDao;
 import com.softballreference.softballreferenceapi.model.dao.TeamLeagueDao;
 import com.softballreference.softballreferenceapi.model.entity.TeamLeague;
-import com.softballreference.softballreferenceapi.model.entity.response_dto.GameBindResponse;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.GameSummaryResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.PlayerBindResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.SummaryStatLineResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.TeamLeagueBindResponse;
@@ -77,7 +77,7 @@ public class TeamLeagueController {
     }
 
     /**
-     * Fetches the collection of {@link GameBindResponse}s associated with the
+     * Fetches the collection of {@link GameSummaryResponse}s associated with the
      * {@code TeamLeagueId} that's passed in.
      * 
      * The @GetMapping annotation ties this method to the /teamleagues/{id}/games
@@ -87,9 +87,9 @@ public class TeamLeagueController {
      * the string name.
      * 
      * @param teamLeagueId
-     * @return a List of {@link GameBindReponse} objects with {@code TeamLeagueId}
-     *         matching what's in the {@link GameDao} as part of an HttpStatus.OK
-     *         response.
+     * @return a List of {@link GameSummaryResponse} objects with
+     *         {@code TeamLeagueId} matching what's in the {@link GameDao} as part
+     *         of an HttpStatus.OK response.
      * 
      * @throws RecordNotFoundException The exception is thrown if no
      *                                 {@link TeamLeague} is associated with the Id.
@@ -98,17 +98,17 @@ public class TeamLeagueController {
      *                                 not need to declare it as "throwable".
      */
     @GetMapping("/{id}/games")
-    public ResponseEntity<List<GameBindResponse>> getGamesOfTeamLeagueByIdForBind(
+    public ResponseEntity<List<GameSummaryResponse>> getGameSummariesOfTeamLeagueById(
             @PathVariable("id") Long teamLeagueId) {
 
         if (!restService.doesTeamLeagueExistById(teamLeagueId))
             // there is not a TeamLeague associated with the passed in Id
             throw new RecordNotFoundException("No teamleague exists for given id", teamLeagueId);
 
-        return new ResponseEntity<List<GameBindResponse>>(restService.getGamesOfTeamLeagueByIdForBinding(teamLeagueId),
-                new HttpHeaders(), HttpStatus.OK);
+        return new ResponseEntity<List<GameSummaryResponse>>(
+                restService.getGamesOfTeamLeagueByIdForBinding(teamLeagueId), new HttpHeaders(), HttpStatus.OK);
     }
-    
+
     /**
      * Fetches the collection of {@link PlayerBindResponse}s associated with the
      * {@code TeamLeagueId} that's passed in.
@@ -121,8 +121,8 @@ public class TeamLeagueController {
      * 
      * @param teamLeagueId
      * @return a List of {@link PlayerBindReponse} objects with {@code TeamLeagueId}
-     *         matching what's in the {@link TeamLeaguePlayerDao} as part of an HttpStatus.OK
-     *         response.
+     *         matching what's in the {@link TeamLeaguePlayerDao} as part of an
+     *         HttpStatus.OK response.
      * 
      * @throws RecordNotFoundException The exception is thrown if no
      *                                 {@link TeamLeague} is associated with the Id.
@@ -138,7 +138,7 @@ public class TeamLeagueController {
             // there is not a TeamLeague associated with the passed in Id
             throw new RecordNotFoundException("No teamleague exists for given id", teamLeagueId);
 
-        return new ResponseEntity<List<PlayerBindResponse>>(restService.getPlayersOfTeamLeagueByIdForBinding(teamLeagueId),
-                new HttpHeaders(), HttpStatus.OK);
+        return new ResponseEntity<List<PlayerBindResponse>>(
+                restService.getPlayersOfTeamLeagueByIdForBinding(teamLeagueId), new HttpHeaders(), HttpStatus.OK);
     }
 }

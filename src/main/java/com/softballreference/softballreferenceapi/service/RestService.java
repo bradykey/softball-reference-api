@@ -21,8 +21,8 @@ import com.softballreference.softballreferenceapi.model.entity.TeamLeague;
 import com.softballreference.softballreferenceapi.model.entity.TeamLeaguePlayer;
 import com.softballreference.softballreferenceapi.model.entity.request_dto.GameRequest;
 import com.softballreference.softballreferenceapi.model.entity.request_dto.StatLineRequest;
-import com.softballreference.softballreferenceapi.model.entity.response_dto.GameBindResponse;
-import com.softballreference.softballreferenceapi.model.entity.response_dto.GameResponse;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.GameSummaryResponse;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.GamePostResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.GameStatLineResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.PlayerBindResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.StatLineResponse;
@@ -97,15 +97,15 @@ public class RestService {
 
 	/**
 	 * Returns a List of all the {@link Game} objects of a {@link TeamLeague} that
-	 * exist in the {@link GameDao} in the form of a {@link GameBindResponse}
+	 * exist in the {@link GameDao} in the form of a {@link GameSummaryResponse}
 	 * wrapper. This should just be used to bind controls for what {@link Game}s
 	 * exist on a {@link TeamLeague}. No relationships are populated in this
 	 * response.
 	 * 
-	 * @return the {@link GameBindResponse} objects that are associated with the
+	 * @return the {@link GameSummaryResponse} objects that are associated with the
 	 *         {@link TeamLeague}s in the {@code Game} table.
 	 */
-	public List<GameBindResponse> getGamesOfTeamLeagueByIdForBinding(Long teamLeagueId) {
+	public List<GameSummaryResponse> getGamesOfTeamLeagueByIdForBinding(Long teamLeagueId) {
 		/*
 		 * Example will look for an exact match on all non-null properties. Therefore, I
 		 * want to find those Games that are associated with the passed in TeamLeagueId.
@@ -116,10 +116,10 @@ public class RestService {
 		List<Game> games = gameDao.findAll(Example.of(probe));
 
 		// convert from entities into responses
-		List<GameBindResponse> gameResponses = new ArrayList<GameBindResponse>();
-		games.forEach(game -> gameResponses.add(ResponseAndEntityBuilder.buildGameBindResponse(game)));
+		List<GameSummaryResponse> gameSummaryResponses = new ArrayList<GameSummaryResponse>();
+		games.forEach(game -> gameSummaryResponses.add(ResponseAndEntityBuilder.buildGameSummaryResponse(game)));
 
-		return gameResponses;
+		return gameSummaryResponses;
 	}
 
 	/**
@@ -194,19 +194,19 @@ public class RestService {
 	/*
 	 * MAIN REQUEST METHODS
 	 */
-	
+
 	/**
-	 * Creates a new {@link Game} in the database from the information provided
-	 * by the {@link GameRequest} passed in. Returns a {@link GameResponse}
+	 * Creates a new {@link Game} in the database from the information provided by
+	 * the {@link GameRequest} passed in. Returns a {@link GamePostResponse}
 	 * containing the newly created {@link Game} fields.
 	 * 
 	 * @param gameRequest the {@link GameRequest} to use to create the new
-	 *                        {@link Game}
-	 * @return the {@link GameResponse} wrapping the newly created
-	 *         {@link Game} info.
+	 *                    {@link Game}
+	 * @return the {@link GamePostResponse} wrapping the newly created {@link Game}
+	 *         info.
 	 * @throws DuplicateRecordException
 	 */
-	public GameResponse createGame(GameRequest gameRequest) throws DuplicateRecordException {
+	public GamePostResponse createGame(GameRequest gameRequest) throws DuplicateRecordException {
 		Game gameToCreate = ResponseAndEntityBuilder.buildGame(gameRequest);
 
 		/**
@@ -216,7 +216,7 @@ public class RestService {
 		Optional<TeamLeague> teamleague = teamLeagueDao.findById(gameToCreate.getTeamLeague().getId());
 		if (teamleague.isPresent())
 			gameToCreate.setTeamLeague(teamleague.get());
-		
+
 		gameToCreate = gameDao.save(gameToCreate);
 
 		/**
@@ -224,8 +224,8 @@ public class RestService {
 		 * relationships are proxied and their fields are accessible
 		 */
 		gameDao.refresh(gameToCreate);
-		
-		return ResponseAndEntityBuilder.buildGameResponse(gameToCreate);
+
+		return ResponseAndEntityBuilder.buildGamePostResponse(gameToCreate);
 	}
 
 	/**
@@ -262,7 +262,7 @@ public class RestService {
 		 * relationships are proxied and their fields are accessible
 		 */
 		statLineDao.refresh(statLineToCreate);
-		
+
 		return ResponseAndEntityBuilder.buildStatLineResponse(statLineToCreate);
 	}
 }

@@ -11,8 +11,8 @@ import com.softballreference.softballreferenceapi.model.entity.TeamLeaguePlayer;
 import com.softballreference.softballreferenceapi.model.entity.request_dto.GameRequest;
 import com.softballreference.softballreferenceapi.model.entity.request_dto.StatLineRequest;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.AccumulatedResponse;
-import com.softballreference.softballreferenceapi.model.entity.response_dto.GameBindResponse;
-import com.softballreference.softballreferenceapi.model.entity.response_dto.GameResponse;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.GameSummaryResponse;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.GamePostResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.GameStatLineResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.PlayerBindResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.PlayerResponse;
@@ -39,50 +39,63 @@ public class ResponseAndEntityBuilder {
 
 		teamLeagueResponse.setTeamLeagueId(teamLeague.getId());
 		teamLeagueResponse.setTeam(teamLeague.getTeam().getName());
-		teamLeagueResponse
-				.setLeague(teamLeague.getLeague().getName() + " (" + teamLeague.getLeague().getSeason() + ")");
+		teamLeagueResponse.setLeague(teamLeague.getLeague().getName() + " (" + teamLeague.getLeague().getSeason() + ")");
 
 		return teamLeagueResponse;
 	}
 
 	/**
-	 * Builds a basic {@link GameBindResponse} object. This is just for a dropdown
-	 * bind, and not a legit response view.
+	 * Builds a basic {@link GameSummaryResponse} object. This is for all the
+	 * summaries of a game WITHOUT the statlines of the players.
 	 * 
-	 * @param Game the {@link Game} to wrap in a {@link GameBindResponse}s
-	 * @return the wrapped {@link GameBindResponse} object.
+	 * @param Game the {@link Game} to wrap in a {@link GameSummaryResponse}s
+	 * @return the wrapped {@link GameSummaryResponse} object.
 	 */
-	public static GameBindResponse buildGameBindResponse(Game game) {
-		GameBindResponse gameResponse = new GameBindResponse();
+	public static GameSummaryResponse buildGameSummaryResponse(Game game) {
+		GameSummaryResponse gameResponse = new GameSummaryResponse();
 
 		gameResponse.setGameId(game.getId());
-		gameResponse.setDate(game.getDate());
-		gameResponse.setOpponent(game.getOpponent());
-		gameResponse.setTeamLeagueId(game.getTeamLeague().getId());
-
-		return gameResponse;
-	}
-
-	/**
-	 * Builds a {@link GameResponse} object. The entire thing can be built from a
-	 * lazy-loaded, attached, hibernate {@link Game} entity.
-	 * 
-	 * @param Game the {@link Game} to wrap in a {@link GameResponse}s
-	 * @return the wrapped {@link GameResponse} object.
-	 */
-	public static GameResponse buildGameResponse(Game game) {
-		GameResponse gameResponse = new GameResponse();
-
-		gameResponse.setGameId(game.getId());
+		gameResponse.setTeam(game.getTeamLeague().getTeam().getName());
+		gameResponse.setLeague(game.getTeamLeague().getLeague().getName());
 		gameResponse.setDate(game.getDate());
 		gameResponse.setOpponent(game.getOpponent());
 		gameResponse.setScore(game.getScore());
 		gameResponse.setOpponentScore(game.getOpponentScore());
 		gameResponse.setField(game.getField());
-		gameResponse.setWasHome(game.getWasHome());
-		gameResponse.setTeamLeagueId(game.getTeamLeague().getId());
+		/*
+		 * Must convert to StatLineResponses first, before accumulating, even though
+		 * we're specifically not returning the statlines... we're not saving
+		 * calculation time from the buildGameStatLineResponses, but we are only sending
+		 * JSON objects with the smallest amount of information needed. i.e. we're being
+		 * hyper specific about RESPONSE objects.
+		 */
+		List<StatLineResponse> statLineResponses = new ArrayList<StatLineResponse>();
+		game.getStatLines().forEach(sL -> statLineResponses.add(buildStatLineResponse(sL)));
+		gameResponse.setAccumulated(buildAccumulatedResponse(statLineResponses));
 
 		return gameResponse;
+	}
+
+	/**
+	 * Builds a {@link GamePostResponse} object. The entire thing can be built from
+	 * a lazy-loaded, attached, hibernate {@link Game} entity.
+	 * 
+	 * @param Game the {@link Game} to wrap in a {@link GamePostResponse}s
+	 * @return the wrapped {@link GamePostResponse} object.
+	 */
+	public static GamePostResponse buildGamePostResponse(Game game) {
+		GamePostResponse gamePostResponse = new GamePostResponse();
+
+		gamePostResponse.setGameId(game.getId());
+		gamePostResponse.setDate(game.getDate());
+		gamePostResponse.setOpponent(game.getOpponent());
+		gamePostResponse.setScore(game.getScore());
+		gamePostResponse.setOpponentScore(game.getOpponentScore());
+		gamePostResponse.setField(game.getField());
+		gamePostResponse.setWasHome(game.getWasHome());
+		gamePostResponse.setTeamLeagueId(game.getTeamLeague().getId());
+
+		return gamePostResponse;
 	}
 
 	/**
@@ -137,9 +150,8 @@ public class ResponseAndEntityBuilder {
 		 * the players accumulated calculation first, and then build and accumulated on
 		 * THOSE accumulated.statLines.
 		 */
-		summaryStatLineResponse.setAccumulated(buildAccumulatedResponse(
-				summaryStatLineResponse.getPlayers().stream().map(PlayerResponse::getAccumulated)
-						.map(AccumulatedResponse::getStatLine).collect(Collectors.toList())));
+		summaryStatLineResponse.setAccumulated(buildAccumulatedResponse(summaryStatLineResponse.getPlayers().stream()
+				.map(PlayerResponse::getAccumulated).map(AccumulatedResponse::getStatLine).collect(Collectors.toList())));
 
 		/*
 		 * Loop back around and fill the ...Plus stats for each player.
@@ -162,15 +174,15 @@ public class ResponseAndEntityBuilder {
 	 *                                totals and all the player totals.
 	 */
 	public static void calculateAndFillPlayerPlusStats(SummaryStatLineResponse summaryStatLineResponse) {
-		summaryStatLineResponse.getPlayers()
-				.forEach(p -> p.getAccumulated().setOBPPlus(Math.round((p.getAccumulated().getStatLine().getOBP()
-						/ summaryStatLineResponse.getAccumulated().getStatLine().getOBP()) * 100)));
-		summaryStatLineResponse.getPlayers()
-				.forEach(p -> p.getAccumulated().setSLGPlus(Math.round((p.getAccumulated().getStatLine().getSLG()
-						/ summaryStatLineResponse.getAccumulated().getStatLine().getSLG()) * 100)));
-		summaryStatLineResponse.getPlayers()
-				.forEach(p -> p.getAccumulated().setOPSPlus(Math.round((p.getAccumulated().getStatLine().getOPS()
-						/ summaryStatLineResponse.getAccumulated().getStatLine().getOPS()) * 100)));
+		summaryStatLineResponse.getPlayers().forEach(p -> p.getAccumulated().setOBPPlus(Math.round(
+				(p.getAccumulated().getStatLine().getOBP() / summaryStatLineResponse.getAccumulated().getStatLine().getOBP())
+						* 100)));
+		summaryStatLineResponse.getPlayers().forEach(p -> p.getAccumulated().setSLGPlus(Math.round(
+				(p.getAccumulated().getStatLine().getSLG() / summaryStatLineResponse.getAccumulated().getStatLine().getSLG())
+						* 100)));
+		summaryStatLineResponse.getPlayers().forEach(p -> p.getAccumulated().setOPSPlus(Math.round(
+				(p.getAccumulated().getStatLine().getOPS() / summaryStatLineResponse.getAccumulated().getStatLine().getOPS())
+						* 100)));
 	}
 
 	/**
