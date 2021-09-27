@@ -229,6 +229,14 @@ public class ResponseAndEntityBuilder {
 		List<StatLineResponse> statLineResponses = new ArrayList<StatLineResponse>();
 		teamLeaguePlayer.getStatLines().forEach(sL -> statLineResponses.add(buildStatLineResponse(sL)));
 		playerResponse.setAccumulated(buildAccumulatedResponse(statLineResponses));
+		/**
+		 * Fill the player's name in the accumulated response for consistency.
+		 * 
+		 * Normally, our AccumulatedResponse object is just a summary of multiple
+		 * players StatLines, but in this case, it's the accumulated for a single
+		 * player.
+		 */
+		playerResponse.getAccumulated().getStatLine().setPlayerName(playerResponse.getPlayerName());
 
 		return playerResponse;
 	}
