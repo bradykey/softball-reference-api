@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,6 +18,7 @@ import com.softballreference.softballreferenceapi.model.dao.TeamLeaguePlayerDao;
 import com.softballreference.softballreferenceapi.model.entity.Game;
 import com.softballreference.softballreferenceapi.model.entity.Player;
 import com.softballreference.softballreferenceapi.model.entity.StatLine;
+import com.softballreference.softballreferenceapi.model.entity.Team;
 import com.softballreference.softballreferenceapi.model.entity.TeamLeague;
 import com.softballreference.softballreferenceapi.model.entity.TeamLeaguePlayer;
 import com.softballreference.softballreferenceapi.model.entity.request_dto.GameRequest;
@@ -82,11 +84,26 @@ public class RestService {
 	 * wrapper. This should just be used to bind controls for what
 	 * {@link TeamLeague}s exist. No relationships are populated in this response.
 	 * 
+	 * @param team an {@code Optional} query param for the {@code team} of the
+	 *             {@link TeamLeagueBindResponse} to match
 	 * @return the {@link TeamLeagueBindResponse} objects that are associated with
 	 *         the {@link TeamLeague}s in the {@code TeamLeague} table.
 	 */
-	public List<TeamLeagueBindResponse> getAllTeamLeaguesForBinding() {
-		List<TeamLeague> teamLeagues = teamLeagueDao.findAll();
+	public List<TeamLeagueBindResponse> getAllTeamLeaguesForBinding(Optional<String> team) {
+		/*
+		 * Example will look for an exaxt match on all non-null properties. Since a
+		 * TeamLeague is actually an AT record, we'll have to create a Team object with
+		 * the name passed in for it to match. You don't need the ID, just the name
+		 * matching is good enough, surprisingly.
+		 */
+		TeamLeague probe = new TeamLeague();
+
+		if (team.isPresent())
+			probe.setTeam(new Team(team.get()));
+
+		// Since we want the team.name to e case-insensitive on the match...
+		List<TeamLeague> teamLeagues = teamLeagueDao
+				.findAll(Example.of(probe, ExampleMatcher.matchingAll().withIgnoreCase()));
 
 		List<TeamLeagueBindResponse> teamLeagueResponses = new ArrayList<TeamLeagueBindResponse>();
 

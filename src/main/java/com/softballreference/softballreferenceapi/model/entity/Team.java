@@ -43,6 +43,19 @@ public class Team implements java.io.Serializable {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "team")
     private Set<TeamLeague> teamLeagues;
 
+    public Team() {
+
+    }
+
+    /**
+     * Overloaded Constructor
+     * 
+     * @param name the {@code String} to use as the name
+     */
+    public Team(String name) {
+        this.name = name;
+    }
+
     /* GETTERS AND SETTERS */
 
     public Long getId() {
