@@ -140,15 +140,16 @@ public class ResponseAndEntityBuilder {
 		summaryStatLineResponse.setAwayWins(0);
 		summaryStatLineResponse.setAwayLosses(0);
 		/*
-		 * Sort the games in descending order by date.
+		 * Sort the games in descending order by date so we can calculate the streaks.
 		 * 
 		 * NOTE: You must do convert this to a list in order to sort, since Sets don't
 		 * guarantee sort order.
 		 */
 		List<Game> gamesListSortedDescending = new ArrayList<Game>(teamLeague.getGames()).stream()
 				.sorted((a, b) -> b.getDate().compareTo(a.getDate())).collect(Collectors.toList());
-		// default winstreak to 0
+		// default win and loss streak to 0
 		summaryStatLineResponse.setWinStreak(0);
+		summaryStatLineResponse.setLossStreak(0);
 		// default runs and runsAllowed to 0 (for run differential)
 		summaryStatLineResponse.setRuns(0);
 		summaryStatLineResponse.setRunsAllowed(0);
@@ -178,6 +179,11 @@ public class ResponseAndEntityBuilder {
 				else
 					// ...that was on the road
 					summaryStatLineResponse.setAwayLosses(summaryStatLineResponse.getAwayLosses() + 1);
+
+				if (summaryStatLineResponse.getWins() == 0) {
+					// this is a loss streak since no wins yet as we count backwards...
+					summaryStatLineResponse.setLossStreak(summaryStatLineResponse.getLossStreak() + 1);
+				}
 			}
 
 			// accumulate the runs and runsAllowed

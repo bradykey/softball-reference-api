@@ -16,6 +16,7 @@ public class SummaryStatLineResponse {
     private Integer awayWins;
     private Integer awayLosses;
     private Integer winStreak;
+    private Integer lossStreak;
     private Integer runs;
     private Integer runsAllowed;
 
@@ -102,6 +103,14 @@ public class SummaryStatLineResponse {
 
     public void setWinStreak(Integer winStreak) {
         this.winStreak = winStreak;
+    }
+
+    public Integer getLossStreak() {
+        return lossStreak;
+    }
+
+    public void setLossStreak(Integer lossStreak) {
+        this.lossStreak = lossStreak;
     }
 
     public Integer getRuns() {
