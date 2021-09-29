@@ -18,6 +18,7 @@ public class GameStatLineResponse {
     private Integer score;
     private Integer opponentScore;
     private String field;
+    private Boolean wasHome;
 
     /* RELATIONSHIPS */
     private AccumulatedResponse accumulated;
@@ -86,6 +87,14 @@ public class GameStatLineResponse {
 
     public void setField(String field) {
         this.field = field;
+    }
+
+    public Boolean getWasHome() {
+        return wasHome;
+    }
+
+    public void setWasHome(Boolean wasHome) {
+        this.wasHome = wasHome;
     }
 
     public AccumulatedResponse getAccumulated() {

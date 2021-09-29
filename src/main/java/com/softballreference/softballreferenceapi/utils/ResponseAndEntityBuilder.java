@@ -62,6 +62,7 @@ public class ResponseAndEntityBuilder {
 		gameResponse.setScore(game.getScore());
 		gameResponse.setOpponentScore(game.getOpponentScore());
 		gameResponse.setField(game.getField());
+		gameResponse.setWasHome(game.getWasHome());
 		/*
 		 * Must convert to StatLineResponses first, before accumulating, even though
 		 * we're specifically not returning the statlines... we're not saving
@@ -204,6 +205,7 @@ public class ResponseAndEntityBuilder {
 		gameStatLineResponse.setScore(game.getScore());
 		gameStatLineResponse.setOpponentScore(game.getOpponentScore());
 		gameStatLineResponse.setField(game.getField());
+		gameStatLineResponse.setWasHome(game.getWasHome());
 		// must convert to StatLineResponses first, before accumulating
 		List<StatLineResponse> statLineResponses = new ArrayList<StatLineResponse>();
 		game.getStatLines().forEach(sL -> statLineResponses.add(buildStatLineResponse(sL)));
