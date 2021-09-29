@@ -11,6 +11,7 @@ public class SummaryStatLineResponse {
     private String league;
     private Integer wins;
     private Integer losses;
+    private Integer winStreak;
 
     /* RELATIONSHIPS */
     private AccumulatedResponse accumulated;
@@ -55,6 +56,14 @@ public class SummaryStatLineResponse {
 
     public void setLosses(Integer losses) {
         this.losses = losses;
+    }
+
+    public Integer getWinStreak() {
+        return winStreak;
+    }
+
+    public void setWinStreak(Integer winStreak) {
+        this.winStreak = winStreak;
     }
 
     public AccumulatedResponse getAccumulated() {

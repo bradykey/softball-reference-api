@@ -131,17 +131,34 @@ public class ResponseAndEntityBuilder {
 		summaryStatLineResponse.setTeam(teamLeague.getTeam().getName());
 		summaryStatLineResponse
 				.setLeague(teamLeague.getLeague().getName() + " (" + teamLeague.getLeague().getSeason() + ")");
+
 		// Set the W/L record -- default to 0
 		summaryStatLineResponse.setWins(0);
 		summaryStatLineResponse.setLosses(0);
-		teamLeague.getGames().forEach(g -> {
-			if (g.getScore() > g.getOpponentScore())
+		/*
+		 * Sort the games in descending order by date.
+		 * 
+		 * NOTE: You must do convert this to a list in order to sort, since Sets don't
+		 * guarantee sort order.
+		 */
+		List<Game> gamesListSortedDescending = new ArrayList<Game>(teamLeague.getGames()).stream()
+				.sorted((a, b) -> b.getDate().compareTo(a.getDate())).collect(Collectors.toList());
+		// default winstreak to 0
+		summaryStatLineResponse.setWinStreak(0);
+		gamesListSortedDescending.forEach(g -> {
+			if (g.getScore() > g.getOpponentScore()) {
 				// this is a win
 				summaryStatLineResponse.setWins(summaryStatLineResponse.getWins() + 1);
-			else
+
+				if (summaryStatLineResponse.getLosses() == 0) {
+					// this is a win streak since no losses yet as we count backwards...
+					summaryStatLineResponse.setWinStreak(summaryStatLineResponse.getWinStreak() + 1);
+				}
+			} else
 				// this is a loss
 				summaryStatLineResponse.setLosses(summaryStatLineResponse.getLosses() + 1);
 		});
+
 		List<PlayerSummaryResponse> playerResponses = new ArrayList<PlayerSummaryResponse>();
 		teamLeague.getTeamLeaguePlayers().forEach(tLP -> playerResponses.add(buildPlayerResponse(tLP)));
 		summaryStatLineResponse.setPlayers(playerResponses);
