@@ -11,6 +11,10 @@ public class SummaryStatLineResponse {
     private String league;
     private Integer wins;
     private Integer losses;
+    private Integer homeWins;
+    private Integer homeLosses;
+    private Integer awayWins;
+    private Integer awayLosses;
     private Integer winStreak;
 
     /* RELATIONSHIPS */
@@ -56,6 +60,38 @@ public class SummaryStatLineResponse {
 
     public void setLosses(Integer losses) {
         this.losses = losses;
+    }
+
+    public Integer getHomeWins() {
+        return homeWins;
+    }
+
+    public void setHomeWins(Integer homeWins) {
+        this.homeWins = homeWins;
+    }
+
+    public Integer getHomeLosses() {
+        return homeLosses;
+    }
+
+    public void setHomeLosses(Integer homeLosses) {
+        this.homeLosses = homeLosses;
+    }
+
+    public Integer getAwayWins() {
+        return awayWins;
+    }
+
+    public void setAwayWins(Integer awayWins) {
+        this.awayWins = awayWins;
+    }
+
+    public Integer getAwayLosses() {
+        return awayLosses;
+    }
+
+    public void setAwayLosses(Integer awayLosses) {
+        this.awayLosses = awayLosses;
     }
 
     public Integer getWinStreak() {

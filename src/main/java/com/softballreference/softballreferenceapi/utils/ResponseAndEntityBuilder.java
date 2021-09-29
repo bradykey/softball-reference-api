@@ -135,6 +135,10 @@ public class ResponseAndEntityBuilder {
 		// Set the W/L record -- default to 0
 		summaryStatLineResponse.setWins(0);
 		summaryStatLineResponse.setLosses(0);
+		summaryStatLineResponse.setHomeWins(0);
+		summaryStatLineResponse.setHomeLosses(0);
+		summaryStatLineResponse.setAwayWins(0);
+		summaryStatLineResponse.setAwayLosses(0);
 		/*
 		 * Sort the games in descending order by date.
 		 * 
@@ -150,13 +154,28 @@ public class ResponseAndEntityBuilder {
 				// this is a win
 				summaryStatLineResponse.setWins(summaryStatLineResponse.getWins() + 1);
 
+				if (g.getWasHome())
+					// ...that was at home
+					summaryStatLineResponse.setHomeWins(summaryStatLineResponse.getHomeWins() + 1);
+				else
+					// ...that was on the road
+					summaryStatLineResponse.setAwayWins(summaryStatLineResponse.getAwayWins() + 1);
+
 				if (summaryStatLineResponse.getLosses() == 0) {
 					// this is a win streak since no losses yet as we count backwards...
 					summaryStatLineResponse.setWinStreak(summaryStatLineResponse.getWinStreak() + 1);
 				}
-			} else
+			} else {
 				// this is a loss
 				summaryStatLineResponse.setLosses(summaryStatLineResponse.getLosses() + 1);
+
+				if (g.getWasHome())
+					// ...that was at home
+					summaryStatLineResponse.setHomeLosses(summaryStatLineResponse.getHomeLosses() + 1);
+				else
+					// ...that was on the road
+					summaryStatLineResponse.setAwayLosses(summaryStatLineResponse.getAwayLosses() + 1);
+			}
 		});
 
 		List<PlayerSummaryResponse> playerResponses = new ArrayList<PlayerSummaryResponse>();
