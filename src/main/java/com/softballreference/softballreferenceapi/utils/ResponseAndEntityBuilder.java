@@ -149,6 +149,9 @@ public class ResponseAndEntityBuilder {
 				.sorted((a, b) -> b.getDate().compareTo(a.getDate())).collect(Collectors.toList());
 		// default winstreak to 0
 		summaryStatLineResponse.setWinStreak(0);
+		// default runs and runsAllowed to 0 (for run differential)
+		summaryStatLineResponse.setRuns(0);
+		summaryStatLineResponse.setRunsAllowed(0);
 		gamesListSortedDescending.forEach(g -> {
 			if (g.getScore() > g.getOpponentScore()) {
 				// this is a win
@@ -176,6 +179,10 @@ public class ResponseAndEntityBuilder {
 					// ...that was on the road
 					summaryStatLineResponse.setAwayLosses(summaryStatLineResponse.getAwayLosses() + 1);
 			}
+
+			// accumulate the runs and runsAllowed
+			summaryStatLineResponse.setRuns(summaryStatLineResponse.getRuns() + g.getScore());
+			summaryStatLineResponse.setRunsAllowed(summaryStatLineResponse.getRunsAllowed() + g.getOpponentScore());
 		});
 
 		List<PlayerSummaryResponse> playerResponses = new ArrayList<PlayerSummaryResponse>();

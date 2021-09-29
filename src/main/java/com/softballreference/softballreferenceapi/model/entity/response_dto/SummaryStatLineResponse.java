@@ -16,6 +16,8 @@ public class SummaryStatLineResponse {
     private Integer awayWins;
     private Integer awayLosses;
     private Integer winStreak;
+    private Integer runs;
+    private Integer runsAllowed;
 
     /* RELATIONSHIPS */
     private AccumulatedResponse accumulated;
@@ -100,6 +102,22 @@ public class SummaryStatLineResponse {
 
     public void setWinStreak(Integer winStreak) {
         this.winStreak = winStreak;
+    }
+
+    public Integer getRuns() {
+        return runs;
+    }
+
+    public void setRuns(Integer runs) {
+        this.runs = runs;
+    }
+
+    public Integer getRunsAllowed() {
+        return runsAllowed;
+    }
+
+    public void setRunsAllowed(Integer runsAllowed) {
+        this.runsAllowed = runsAllowed;
     }
 
     public AccumulatedResponse getAccumulated() {
