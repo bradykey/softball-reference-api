@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.softballreference.softballreferenceapi.exception.DuplicateRecordException;
 import com.softballreference.softballreferenceapi.model.dao.GameDao;
 import com.softballreference.softballreferenceapi.model.dao.StatLineDao;
+import com.softballreference.softballreferenceapi.model.dao.TeamDao;
 import com.softballreference.softballreferenceapi.model.dao.TeamLeagueDao;
 import com.softballreference.softballreferenceapi.model.dao.TeamLeaguePlayerDao;
 import com.softballreference.softballreferenceapi.model.entity.Game;
@@ -23,12 +24,13 @@ import com.softballreference.softballreferenceapi.model.entity.TeamLeague;
 import com.softballreference.softballreferenceapi.model.entity.TeamLeaguePlayer;
 import com.softballreference.softballreferenceapi.model.entity.request_dto.GameRequest;
 import com.softballreference.softballreferenceapi.model.entity.request_dto.StatLineRequest;
-import com.softballreference.softballreferenceapi.model.entity.response_dto.GameSummaryResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.GamePostResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.GameStatLineResponse;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.GameSummaryResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.PlayerBindResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.StatLineResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.SummaryStatLineResponse;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.TeamBindResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.TeamLeagueBindResponse;
 import com.softballreference.softballreferenceapi.utils.ResponseAndEntityBuilder;
 
@@ -49,6 +51,10 @@ public class RestService {
 	 * Each one of these autowired repositories/dao give access to each of the
 	 * Hibernate tables.
 	 */
+	
+	@Autowired
+	TeamDao teamDao;
+	
 	@Autowired
 	GameDao gameDao;
 
@@ -64,6 +70,26 @@ public class RestService {
 	/*
 	 * One-off dropdown populaters
 	 */
+	
+	/**
+	 * Returns a List of all the {@link Team} objects that exist in the
+	 * {@link TeamDao} in the form of a {@link TeamBindResponse}
+	 * wrapper. This should just be used to bind controls for what
+	 * {@link Team}s exist. No relationships are populated in this response.
+	 * 
+	 * @return the {@link TeamBindResponse} objects that are associated with
+	 *         the {@link Team}s in the {@code TeamLeague} table.
+	 */
+	public List<TeamBindResponse> getAllTeamsForBinding() {
+
+		List<Team> teams = teamDao.findAll();
+
+		List<TeamBindResponse> teamResponses = new ArrayList<TeamBindResponse>();
+
+		teams.forEach(t -> teamResponses.add(ResponseAndEntityBuilder.buildTeamBindResponse(t)));
+
+		return teamResponses;
+	}
 
 	/**
 	 * Returns a boolean as to whether the {@link TeamLeague} exists by the passed

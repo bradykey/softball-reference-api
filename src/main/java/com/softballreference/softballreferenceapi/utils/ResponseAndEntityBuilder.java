@@ -6,18 +6,20 @@ import java.util.stream.Collectors;
 
 import com.softballreference.softballreferenceapi.model.entity.Game;
 import com.softballreference.softballreferenceapi.model.entity.StatLine;
+import com.softballreference.softballreferenceapi.model.entity.Team;
 import com.softballreference.softballreferenceapi.model.entity.TeamLeague;
 import com.softballreference.softballreferenceapi.model.entity.TeamLeaguePlayer;
 import com.softballreference.softballreferenceapi.model.entity.request_dto.GameRequest;
 import com.softballreference.softballreferenceapi.model.entity.request_dto.StatLineRequest;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.AccumulatedResponse;
-import com.softballreference.softballreferenceapi.model.entity.response_dto.GameSummaryResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.GamePostResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.GameStatLineResponse;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.GameSummaryResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.PlayerBindResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.PlayerSummaryResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.StatLineResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.SummaryStatLineResponse;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.TeamBindResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.TeamLeagueBindResponse;
 
 /**
@@ -25,6 +27,23 @@ import com.softballreference.softballreferenceapi.model.entity.response_dto.Team
  * non-mapped properties) from their entity equivalents, and vice versa.
  */
 public class ResponseAndEntityBuilder {
+	
+	/**
+	 * Builds a basic {@link TeamBindResponse} object. This is just for a
+	 * dropdown bind, and not a legit response view.
+	 * 
+	 * @param team the {@link Team} to wrap in a
+	 *                   {@link TeamBindResponse}s
+	 * @return the wrapped {@link TeamBindResponse} object.
+	 */
+	public static TeamBindResponse buildTeamBindResponse(Team team) {
+		TeamBindResponse teamResponse = new TeamBindResponse();
+
+		teamResponse.setTeamId(team.getId());
+		teamResponse.setName(team.getName());
+
+		return teamResponse;
+	}
 
 	/**
 	 * Builds a basic {@link TeamLeagueBindResponse} object. This is just for a
