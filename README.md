@@ -82,6 +82,8 @@ Also need to add a `static.json` file into the root of the vue project so that h
 }
 ```
 
+This also handles the history mode issue with Vue.js.
+
 Now just push with
 
 ```bash
