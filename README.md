@@ -70,6 +70,18 @@ Buildpack added. Next release on softball-reference will use:
 Run git push heroku main to create a new release using these buildpacks.
 ```
 
+Also need to add a `static.json` file into the root of the vue project so that heroku can figure out what type it is. The contents can be as simple as this:
+
+```json
+{
+  "root": "dist",
+  "clean_urls": true,
+  "routes": {
+    "/**": "index.html"
+  }
+}
+```
+
 Now just push with
 
 ```bash
