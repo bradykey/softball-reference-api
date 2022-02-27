@@ -127,7 +127,7 @@ public class RestService {
 		if (team.isPresent())
 			probe.setTeam(new Team(team.get()));
 
-		// Since we want the team.name to e case-insensitive on the match...
+		// Since we want the team.name to be case-insensitive on the match...
 		List<TeamLeague> teamLeagues = teamLeagueDao
 				.findAll(Example.of(probe, ExampleMatcher.matchingAll().withIgnoreCase()));
 
