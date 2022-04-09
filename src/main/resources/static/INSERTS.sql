@@ -353,6 +353,11 @@ WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND le
 	)
 	VALUES('Drew Macphee');
 
+	INSERT INTO public.player(
+		name
+	)
+	VALUES('Steve Turos');
+
 -- ROSTER/SEASON LINKAGES
 
 -- GH Summer 2021
@@ -1288,6 +1293,21 @@ WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND le
 		FROM public.team AS team, public.league AS league 
 		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
 	AND player.name LIKE 'Brady Key';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+	AND player.name LIKE 'Steve Turos';
 
 -- GAMES (JSON)
 -- GH Summer 2021
