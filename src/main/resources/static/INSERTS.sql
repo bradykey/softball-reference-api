@@ -9143,7 +9143,7 @@ WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND le
 	    "date": "2022-04-12 20:30:00" ,
 	    "opponent": "505 Renegades",
 	    "score": 38,
-	    "opponentScore": 70,
+	    "opponentScore": 7,
 	    "field": "Bullhead #3",
 	    "wasHome": 0,
 	    "teamLeagueId": 13
