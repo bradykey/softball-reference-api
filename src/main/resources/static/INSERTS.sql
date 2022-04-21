@@ -70,6 +70,11 @@ INSERT INTO public.league(
 )
 VALUES('City', 'Spring 2022');
 
+INSERT INTO public.league(
+	name, season
+)
+VALUES('City', 'Summer 2022');
+
 -- TEAMLEAGUE ASSOCIATIONS
 
 -- Chups Fall 2018 City
@@ -176,6 +181,14 @@ SELECT team.id, league.id
 FROM public.team AS team, public.league AS league 
 WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022';
 
+-- Softball-Reference.com Summer 2022 City
+INSERT INTO public.team_league(
+	team_id, league_id
+)
+SELECT team.id, league.id 
+FROM public.team AS team, public.league AS league 
+WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022';
+
 
 -- +++++++++++++++++++++++
 -- THIS COVERS THE PLAYERS
@@ -251,6 +264,11 @@ WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND le
 		name
 	)
 	VALUES('Rob Delgado');
+
+	INSERT INTO public.player(
+		name
+	)
+	VALUES('Dan Watkins');
 
 -- Chupacabras
 	INSERT INTO public.player(
@@ -1308,6 +1326,172 @@ WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND le
 		FROM public.team AS team, public.league AS league 
 		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
 	AND player.name LIKE 'Steve Turos';
+
+	-- Sb-Ref.com Summer 2022
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+	AND player.name LIKE 'Brady Key';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+	AND player.name LIKE 'Jason Rogers';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+	AND player.name LIKE 'Linn Reece';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+	AND player.name LIKE 'Tim Tribou';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+	AND player.name LIKE 'Alex Gibbs';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+	AND player.name LIKE 'Jon Pinsonneault';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+	AND player.name LIKE 'Brett Reece';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+	AND player.name LIKE 'Dave Penasa';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+	AND player.name LIKE 'Blake Reece';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+	AND player.name LIKE 'Jamie Dickey';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+	AND player.name LIKE 'Dan Watkins';
 
 -- GAMES (JSON)
 -- GH Summer 2021
