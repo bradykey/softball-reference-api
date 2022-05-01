@@ -1493,6 +1493,36 @@ WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND le
 		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
 	AND player.name LIKE 'Dan Watkins';
 
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+	AND player.name LIKE 'Andrew Stuart';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+	AND player.name LIKE 'Mike Parrish';
+
 -- GAMES (JSON)
 -- GH Summer 2021
 	{
@@ -11327,7 +11357,7 @@ WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND le
 			"lOB": 0
 		}
 
--- SBRef.com Spring 2022
+-- SBRef.com Summer 2022
 	{
 	    "date": "2022-04-19 19:30:00" ,
 	    "opponent": "Slush Puppies",
@@ -11540,6 +11570,224 @@ WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND le
 			"hR": 0,
 			"bB": 0,
 			"sO": 1,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2022-04-26 20:30:00" ,
+	    "opponent": "ABQ Guns",
+	    "score": 6,
+	    "opponentScore": 11,
+	    "field": "Barelas #1",
+	    "wasHome": 0,
+	    "teamLeagueId": 14
+	}
+		{
+			"gameId": 50,
+			"teamLeaguePlayerId": 68,
+			"bO": 1,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 50,
+			"teamLeaguePlayerId": 77,
+			"bO": 2,
+			"pA": 3,
+			"r": 2,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 50,
+			"teamLeaguePlayerId": 71,
+			"bO": 3,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 0,
+			"b2": 0,
+			"b3": 1,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 50,
+			"teamLeaguePlayerId": 66,
+			"bO": 4,
+			"pA": 3,
+			"r": 1,
+			"rBI": 2,
+			"b1": 2,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 50,
+			"teamLeaguePlayerId": 75,
+			"bO": 5,
+			"pA": 3,
+			"r": 0,
+			"rBI": 2,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 50,
+			"teamLeaguePlayerId": 74,
+			"bO": 6,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 50,
+			"teamLeaguePlayerId": 78,
+			"bO": 7,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 50,
+			"teamLeaguePlayerId": 72,
+			"bO": 8,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 50,
+			"teamLeaguePlayerId": 73,
+			"bO": 9,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 50,
+			"teamLeaguePlayerId": 69,
+			"bO": 10,
+			"pA": 3,
+			"r": 0,
+			"rBI": 1,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 1,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 50,
+			"teamLeaguePlayerId": 76,
+			"bO": 11,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
 			"sAC": 0,
 			"hR4O": 0,
 			"fO": 0,
