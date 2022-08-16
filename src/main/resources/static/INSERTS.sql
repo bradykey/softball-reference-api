@@ -2,6 +2,7 @@
 -- THIS COVERS THE SEASONS
 -- +++++++++++++++++++++++
 
+
 -- TEAMS
 INSERT INTO public.team(
 	name
