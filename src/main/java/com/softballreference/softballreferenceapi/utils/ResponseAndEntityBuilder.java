@@ -27,13 +27,13 @@ import com.softballreference.softballreferenceapi.model.entity.response_dto.Team
  * non-mapped properties) from their entity equivalents, and vice versa.
  */
 public class ResponseAndEntityBuilder {
-	
+
 	/**
 	 * Builds a basic {@link TeamBindResponse} object. This is just for a
 	 * dropdown bind, and not a legit response view.
 	 * 
 	 * @param team the {@link Team} to wrap in a
-	 *                   {@link TeamBindResponse}s
+	 *             {@link TeamBindResponse}s
 	 * @return the wrapped {@link TeamBindResponse} object.
 	 */
 	public static TeamBindResponse buildTeamBindResponse(Team team) {
