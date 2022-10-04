@@ -10,7 +10,7 @@ public class GameRequest {
     private Date date;
     private String opponent;
     private Integer score;
-	private Integer opponentScore;
+    private Integer opponentScore;
     private String field;
     private Boolean wasHome;
 
@@ -33,38 +33,38 @@ public class GameRequest {
     public void setOpponent(String opponent) {
         this.opponent = opponent;
     }
-    
+
     public Integer getScore() {
-		return score;
-	}
+        return score;
+    }
 
-	public void setScore(Integer score) {
-		this.score = score;
-	}
+    public void setScore(Integer score) {
+        this.score = score;
+    }
 
-	public Integer getOpponentScore() {
-		return opponentScore;
-	}
+    public Integer getOpponentScore() {
+        return opponentScore;
+    }
 
-	public void setOpponentScore(Integer opponentScore) {
-		this.opponentScore = opponentScore;
-	}
+    public void setOpponentScore(Integer opponentScore) {
+        this.opponentScore = opponentScore;
+    }
 
-	public String getField() {
-		return field;
-	}
+    public String getField() {
+        return field;
+    }
 
-	public void setField(String field) {
-		this.field = field;
-	}
+    public void setField(String field) {
+        this.field = field;
+    }
 
-	public Boolean getWasHome() {
-		return wasHome;
-	}
+    public Boolean getWasHome() {
+        return wasHome;
+    }
 
-	public void setWasHome(Boolean wasHome) {
-		this.wasHome = wasHome;
-	}
+    public void setWasHome(Boolean wasHome) {
+        this.wasHome = wasHome;
+    }
 
     public Long getTeamLeagueId() {
         return teamLeagueId;

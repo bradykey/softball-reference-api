@@ -31,8 +31,10 @@ public class StatLineController {
 	 * Creates and returns a new {@link StatLine} from the {@link StatLineRequest}
 	 * param.
 	 * 
-	 * @param statLineToCreate The {@link StatLineRequest} object to be saved to the database.
-	 * @return the {@link StatLineResponse} that was created and saved to the database.
+	 * @param statLineToCreate The {@link StatLineRequest} object to be saved to the
+	 *                         database.
+	 * @return the {@link StatLineResponse} that was created and saved to the
+	 *         database.
 	 */
 	@PostMapping
 	public ResponseEntity<StatLineResponse> createStatLine(@Valid @RequestBody StatLineRequest statLineToCreate) {
@@ -40,11 +42,11 @@ public class StatLineController {
 			String errorMessage = "The game and teamleagueplayer ids must contain a non-null value.";
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, errorMessage);
 		}
-		
+
 		try {
-			return new ResponseEntity<StatLineResponse>(restService.createStatLine(statLineToCreate), new HttpHeaders(), HttpStatus.OK);
-		}
-		catch (DuplicateRecordException ex) {
+			return new ResponseEntity<StatLineResponse>(restService.createStatLine(statLineToCreate), new HttpHeaders(),
+					HttpStatus.OK);
+		} catch (DuplicateRecordException ex) {
 			throw new ResponseStatusException(HttpStatus.CONFLICT, ex.getMessage());
 		}
 	}

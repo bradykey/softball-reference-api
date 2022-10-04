@@ -51,10 +51,10 @@ public class RestService {
 	 * Each one of these autowired repositories/dao give access to each of the
 	 * Hibernate tables.
 	 */
-	
+
 	@Autowired
 	TeamDao teamDao;
-	
+
 	@Autowired
 	GameDao gameDao;
 
@@ -70,7 +70,7 @@ public class RestService {
 	/*
 	 * One-off dropdown populaters
 	 */
-	
+
 	/**
 	 * Returns a List of all the {@link Team} objects that exist in the
 	 * {@link TeamDao} in the form of a {@link TeamBindResponse}
