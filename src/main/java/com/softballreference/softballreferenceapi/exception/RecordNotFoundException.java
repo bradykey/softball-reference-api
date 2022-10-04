@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class RecordNotFoundException extends ApiException {
 
 	private static final long serialVersionUID = -7451618369191616594L;
-	
+
 	public RecordNotFoundException(String exceptionMessage, Long id) {
 		super(exceptionMessage, id);
 	}
