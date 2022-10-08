@@ -119,3 +119,47 @@ I noticed that the "naked" domain, or root, which is softball-reference.com wasn
 https://social.dnsmadeeasy.com/blog/registrar-or-dns-hosting-the-difference-explained/
 
 https://help.heroku.com/NH44MODG/my-root-domain-isn-t-working-what-s-wrong
+
+
+
+### Running Locally
+
+If you want to run the SpringBoot API locally, you can just run:
+
+>> mvn spring-boot:run
+
+This will build everything for you. However, you can also create a `.launch.json` file in the .vscode folder with the following content:
+
+```
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Launch Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+    },
+    {
+      "type": "java",
+      "name": "Launch SoftballReferenceApiApplication",
+      "request": "launch",
+      "mainClass": "com.softballreference.softballreferenceapi.SoftballReferenceApiApplication",
+      "projectName": "softball-reference-api"
+    }
+  ]
+}
+```
+
+and then run it using the debugging view in VS Code. BUT -- if you do this, you must do a `mvn compile` (or `mvn install`, which compiles, builds, and installs the project files) before debugging so that there is some compiled code for it to run. Otherwise, you get this:
+
+```
+bradyk@bradys-mbp softball-reference-api %  /usr/bin/env /Library/Java/JavaVirtualMachines/jdk-11.0.15.jdk/Contents/Home/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:54820 @/var/folders/dz/vwm1zlcs5zq0
+bnkptzgs94fc0000gn/T/cp_14zkykugqfdgxpkvgrrgex0pk.argfile com.softballreference.softballreferenceapi.SoftballReferenceApiApplication 
+Error: Could not find or load main class com.softballreference.softballreferenceapi.SoftballReferenceApiApplication
+Caused by: java.lang.ClassNotFoundException: com.softballreference.softballreferenceapi.SoftballReferenceApiApplication
+```
+
