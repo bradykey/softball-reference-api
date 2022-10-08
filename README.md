@@ -31,7 +31,11 @@ origin  https://github.com/bradykey/softball-reference-api.git (fetch)
 origin  https://github.com/bradykey/softball-reference-api.git (push)
 ```
 
-Now I guess I can just deploy my code with >> git push heroku master ...? Seriously?
+Now I guess I can just deploy my code with 
+
+`>> git push heroku master`
+
+...? Seriously?
 
 It successfully built but I am not running any "dynos" on my heroku app? Goodness the learning curve here... Looks like I need to have a Procfile in my root of the spring boot app. This file should not have an extension and should contain something that defines what heroku needs to do when this is spun up. 
 
