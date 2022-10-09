@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import com.softballreference.softballreferenceapi.model.entity.Game;
+import com.softballreference.softballreferenceapi.model.entity.League;
 import com.softballreference.softballreferenceapi.model.entity.StatLine;
 import com.softballreference.softballreferenceapi.model.entity.Team;
 import com.softballreference.softballreferenceapi.model.entity.TeamLeague;
@@ -15,6 +16,7 @@ import com.softballreference.softballreferenceapi.model.entity.response_dto.Accu
 import com.softballreference.softballreferenceapi.model.entity.response_dto.GamePostResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.GameStatLineResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.GameSummaryResponse;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.LeagueBindResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.PlayerBindResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.PlayerSummaryResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.StatLineResponse;
@@ -43,6 +45,24 @@ public class ResponseAndEntityBuilder {
 		teamResponse.setName(team.getName());
 
 		return teamResponse;
+	}
+
+	/**
+	 * Builds a basic {@link LeagueBindResponse} object. This is just for a
+	 * dropdown bind, and not a legit response view.
+	 * 
+	 * @param league the {@link League} to wrap in a
+	 *               {@link LeagueBindResponse}s
+	 * @return the wrapped {@link LeagueBindResponse} object.
+	 */
+	public static LeagueBindResponse buildLeagueBindResponse(League league) {
+		LeagueBindResponse leagueResponse = new LeagueBindResponse();
+
+		leagueResponse.setLeagueId(league.getId());
+		leagueResponse.setName(league.getName());
+		leagueResponse.setSeason(league.getSeason());
+
+		return leagueResponse;
 	}
 
 	/**

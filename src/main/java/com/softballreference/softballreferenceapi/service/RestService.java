@@ -12,11 +12,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.softballreference.softballreferenceapi.exception.DuplicateRecordException;
 import com.softballreference.softballreferenceapi.model.dao.GameDao;
+import com.softballreference.softballreferenceapi.model.dao.LeagueDao;
 import com.softballreference.softballreferenceapi.model.dao.StatLineDao;
 import com.softballreference.softballreferenceapi.model.dao.TeamDao;
 import com.softballreference.softballreferenceapi.model.dao.TeamLeagueDao;
 import com.softballreference.softballreferenceapi.model.dao.TeamLeaguePlayerDao;
 import com.softballreference.softballreferenceapi.model.entity.Game;
+import com.softballreference.softballreferenceapi.model.entity.League;
 import com.softballreference.softballreferenceapi.model.entity.Player;
 import com.softballreference.softballreferenceapi.model.entity.StatLine;
 import com.softballreference.softballreferenceapi.model.entity.Team;
@@ -27,6 +29,7 @@ import com.softballreference.softballreferenceapi.model.entity.request_dto.StatL
 import com.softballreference.softballreferenceapi.model.entity.response_dto.GamePostResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.GameStatLineResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.GameSummaryResponse;
+import com.softballreference.softballreferenceapi.model.entity.response_dto.LeagueBindResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.PlayerBindResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.StatLineResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.SummaryStatLineResponse;
@@ -56,6 +59,9 @@ public class RestService {
 	TeamDao teamDao;
 
 	@Autowired
+	LeagueDao leagueDao;
+
+	@Autowired
 	GameDao gameDao;
 
 	@Autowired
@@ -78,7 +84,7 @@ public class RestService {
 	 * {@link Team}s exist. No relationships are populated in this response.
 	 * 
 	 * @return the {@link TeamBindResponse} objects that are associated with
-	 *         the {@link Team}s in the {@code TeamLeague} table.
+	 *         the {@link Team}s in the {@code Team} table.
 	 */
 	public List<TeamBindResponse> getAllTeamsForBinding() {
 
@@ -89,6 +95,26 @@ public class RestService {
 		teams.forEach(t -> teamResponses.add(ResponseAndEntityBuilder.buildTeamBindResponse(t)));
 
 		return teamResponses;
+	}
+
+	/**
+	 * Returns a List of all the {@link League} objects that exist in the
+	 * {@link LeagueDao} in the form of a {@link LeagueBindResponse}
+	 * wrapper. This should just be used to bind controls for what
+	 * {@link League}s exist. No relationships are populated in this response.
+	 * 
+	 * @return the {@link LeagueBindResponse} objects that are associated with
+	 *         the {@link League}s in the {@code League} table.
+	 */
+	public List<LeagueBindResponse> getAllLeaguesForBinding() {
+
+		List<League> leagues = leagueDao.findAll();
+
+		List<LeagueBindResponse> leagueResponses = new ArrayList<LeagueBindResponse>();
+
+		leagues.forEach(l -> leagueResponses.add(ResponseAndEntityBuilder.buildLeagueBindResponse(l)));
+
+		return leagueResponses;
 	}
 
 	/**
