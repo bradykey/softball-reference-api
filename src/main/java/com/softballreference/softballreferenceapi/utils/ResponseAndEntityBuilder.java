@@ -407,16 +407,19 @@ public class ResponseAndEntityBuilder {
 			throw new IllegalArgumentException(
 					"Either H, AB, BB, PA or TB are null and the aggregate stats cannot be calculated.");
 
+		// NOTE: It's possible that AB are 0 (i.e. All BB or SACs), so we must protect.
 		// AVG -- H/AB
 		statLineResponseToFill
-				.setAVG(statLineResponseToFill.getH().floatValue() / statLineResponseToFill.getAB().floatValue());
+				.setAVG(statLineResponseToFill.getAB() == 0 ? 0f
+						: (statLineResponseToFill.getH().floatValue() / statLineResponseToFill.getAB().floatValue()));
 		// OBP -- (H + BB) / PA
 		statLineResponseToFill
 				.setOBP((statLineResponseToFill.getH().floatValue() + statLineResponseToFill.getBB().floatValue())
 						/ statLineResponseToFill.getPA().floatValue());
 		// SLG -- TB/AB
 		statLineResponseToFill
-				.setSLG(statLineResponseToFill.getTB().floatValue() / statLineResponseToFill.getAB().floatValue());
+				.setSLG(statLineResponseToFill.getAB() == 0 ? 0f
+						: (statLineResponseToFill.getTB().floatValue() / statLineResponseToFill.getAB().floatValue()));
 		// OPS -- OBP + SLG
 		statLineResponseToFill.setOPS(statLineResponseToFill.getOBP() + statLineResponseToFill.getSLG());
 	}
