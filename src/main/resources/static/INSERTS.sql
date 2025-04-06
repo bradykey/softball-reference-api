@@ -4,238 +4,276 @@
 
 
 -- TEAMS
-INSERT INTO public.team(
-	name
-)
-VALUES('Chupacabras');
+	INSERT INTO public.team(
+		name
+	)
+	VALUES('Chupacabras');
 
-INSERT INTO public.team(
-	name
-)
-VALUES('Garden Hosers');
+	INSERT INTO public.team(
+		name
+	)
+	VALUES('Garden Hosers');
 
-INSERT INTO public.team(
-	name
-)
-VALUES('Sandia Baggers');
+	INSERT INTO public.team(
+		name
+	)
+	VALUES('Sandia Baggers');
 
-INSERT INTO public.team(
-	name
-)
-VALUES('Softball-Reference.com');
+	INSERT INTO public.team(
+		name
+	)
+	VALUES('Softball-Reference.com');
 
 -- LEAGUES
 
-INSERT INTO public.league(
-	name, season
-)
-VALUES('City', 'Spring 2018');
+	INSERT INTO public.league(
+		name, season
+	)
+	VALUES('City', 'Spring 2018');
 
-INSERT INTO public.league(
-	name, season
-)
-VALUES('Sandia', 'Summer 2018');
+	INSERT INTO public.league(
+		name, season
+	)
+	VALUES('Sandia', 'Summer 2018');
 
-INSERT INTO public.league(
-	name, season
-)
-VALUES('City', 'Fall 2018');
+	INSERT INTO public.league(
+		name, season
+	)
+	VALUES('City', 'Fall 2018');
 
-INSERT INTO public.league(
-	name, season
-)
-VALUES('City', 'Spring 2019');
+	INSERT INTO public.league(
+		name, season
+	)
+	VALUES('City', 'Spring 2019');
 
-INSERT INTO public.league(
-	name, season
-)
-VALUES('Sandia', 'Summer 2019');
+	INSERT INTO public.league(
+		name, season
+	)
+	VALUES('Sandia', 'Summer 2019');
 
-INSERT INTO public.league(
-	name, season
-)
-VALUES('City', 'Summer 2019');
+	INSERT INTO public.league(
+		name, season
+	)
+	VALUES('City', 'Summer 2019');
 
-INSERT INTO public.league(
-	name, season
-)
-VALUES('City', 'Fall 2019');
+	INSERT INTO public.league(
+		name, season
+	)
+	VALUES('City', 'Fall 2019');
 
-INSERT INTO public.league(
-	name, season
-)
-VALUES('City', 'Summer 2021');
+	INSERT INTO public.league(
+		name, season
+	)
+	VALUES('City', 'Summer 2021');
 
-INSERT INTO public.league(
-	name, season
-)
-VALUES('City', 'Spring 2022');
+	INSERT INTO public.league(
+		name, season
+	)
+	VALUES('City', 'Spring 2022');
 
-INSERT INTO public.league(
-	name, season
-)
-VALUES('City', 'Summer 2022');
+	INSERT INTO public.league(
+		name, season
+	)
+	VALUES('City', 'Summer 2022');
 
-INSERT INTO public.league(
-	name, season
-)
-VALUES('City', 'Fall 2022');
+	INSERT INTO public.league(
+		name, season
+	)
+	VALUES('City', 'Fall 2022');
 
-INSERT INTO public.league(
-	name, season
-)
-VALUES('City', 'Spring 2023');
+	INSERT INTO public.league(
+		name, season
+	)
+	VALUES('City', 'Spring 2023');
 
-INSERT INTO public.league(
-	name, season
-)
-VALUES('City', 'Summer 2023');
+	INSERT INTO public.league(
+		name, season
+	)
+	VALUES('City', 'Summer 2023');
+
+	INSERT INTO public.league(
+		name, season
+	)
+	VALUES('City', 'Spring 2024');
+
+	INSERT INTO public.league(
+		name, season
+	)
+	VALUES('City', 'Summer 2024');
+
+	INSERT INTO public.league(
+		name, season
+	)
+	VALUES('City', 'Spring 2025');
 
 -- TEAMLEAGUE ASSOCIATIONS
+	-- Chups Fall 2018 City
+	INSERT INTO public.team_league(
+		team_id, league_id
+	)
+	SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2018';
 
--- Chups Fall 2018 City
-INSERT INTO public.team_league(
-	team_id, league_id
-)
-SELECT team.id, league.id 
-FROM public.team AS team, public.league AS league 
-WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2018';
+	-- Chups Spring 2019 City
+	INSERT INTO public.team_league(
+		team_id, league_id
+	)
+	SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2019';
 
--- Chups Spring 2019 City
-INSERT INTO public.team_league(
-	team_id, league_id
-)
-SELECT team.id, league.id 
-FROM public.team AS team, public.league AS league 
-WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2019';
+	-- Chups Summer 2019 City
+	INSERT INTO public.team_league(
+		team_id, league_id
+	)
+	SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2019';
 
--- Chups Summer 2019 City
-INSERT INTO public.team_league(
-	team_id, league_id
-)
-SELECT team.id, league.id 
-FROM public.team AS team, public.league AS league 
-WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2019';
+	-- Chups Fall 2019 City
+	INSERT INTO public.team_league(
+		team_id, league_id
+	)
+	SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2019';
 
--- Chups Fall 2019 City
-INSERT INTO public.team_league(
-	team_id, league_id
-)
-SELECT team.id, league.id 
-FROM public.team AS team, public.league AS league 
-WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2019';
+	-- Chups Summer 2021 City
+	INSERT INTO public.team_league(
+		team_id, league_id
+	)
+	SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021';
 
--- Chups Summer 2021 City
-INSERT INTO public.team_league(
-	team_id, league_id
-)
-SELECT team.id, league.id 
-FROM public.team AS team, public.league AS league 
-WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021';
+	-- Chups Spring 2022 City
+	INSERT INTO public.team_league(
+		team_id, league_id
+	)
+	SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022';
 
--- Chups Spring 2022 City
-INSERT INTO public.team_league(
-	team_id, league_id
-)
-SELECT team.id, league.id 
-FROM public.team AS team, public.league AS league 
-WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022';
+	-- Chups Summer 2022 City
+	INSERT INTO public.team_league(
+		team_id, league_id
+	)
+	SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022';
 
--- Chups Summer 2022 City
-INSERT INTO public.team_league(
-	team_id, league_id
-)
-SELECT team.id, league.id 
-FROM public.team AS team, public.league AS league 
-WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022';
+	-- Garden Hosers Spring 2018 City
+	INSERT INTO public.team_league(
+		team_id, league_id
+	)
+	SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2018';
 
--- Garden Hosers Spring 2018 City
-INSERT INTO public.team_league(
-	team_id, league_id
-)
-SELECT team.id, league.id 
-FROM public.team AS team, public.league AS league 
-WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2018';
+	-- Garden Hosers Fall 2018 City
+	INSERT INTO public.team_league(
+		team_id, league_id
+	)
+	SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2018';
 
--- Garden Hosers Fall 2018 City
-INSERT INTO public.team_league(
-	team_id, league_id
-)
-SELECT team.id, league.id 
-FROM public.team AS team, public.league AS league 
-WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2018';
+	-- Garden Hosers Fall 2019 City
+	INSERT INTO public.team_league(
+		team_id, league_id
+	)
+	SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2019';
 
--- Garden Hosers Fall 2019 City
-INSERT INTO public.team_league(
-	team_id, league_id
-)
-SELECT team.id, league.id 
-FROM public.team AS team, public.league AS league 
-WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2019';
+	-- Garden Hosers Summer 2021 City
+	INSERT INTO public.team_league(
+		team_id, league_id
+	)
+	SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021';
 
--- Garden Hosers Summer 2021 City
-INSERT INTO public.team_league(
-	team_id, league_id
-)
-SELECT team.id, league.id 
-FROM public.team AS team, public.league AS league 
-WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021';
+	-- Sandia Baggers Summer 2018 City
+	INSERT INTO public.team_league(
+		team_id, league_id
+	)
+	SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Sandia Baggers' AND league.name LIKE 'Sandia' AND league.season LIKE 'Summer 2018';
 
--- Sandia Baggers Summer 2018 City
-INSERT INTO public.team_league(
-	team_id, league_id
-)
-SELECT team.id, league.id 
-FROM public.team AS team, public.league AS league 
-WHERE team.name LIKE 'Sandia Baggers' AND league.name LIKE 'Sandia' AND league.season LIKE 'Summer 2018';
+	-- Sandia Baggers Summer 2018 City
+	INSERT INTO public.team_league(
+		team_id, league_id
+	)
+	SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Sandia Baggers' AND league.name LIKE 'Sandia' AND league.season LIKE 'Summer 2019';
 
--- Sandia Baggers Summer 2018 City
-INSERT INTO public.team_league(
-	team_id, league_id
-)
-SELECT team.id, league.id 
-FROM public.team AS team, public.league AS league 
-WHERE team.name LIKE 'Sandia Baggers' AND league.name LIKE 'Sandia' AND league.season LIKE 'Summer 2019';
+	-- Softball-Reference.com Spring 2022 City
+	INSERT INTO public.team_league(
+		team_id, league_id
+	)
+	SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022';
 
--- Softball-Reference.com Spring 2022 City
-INSERT INTO public.team_league(
-	team_id, league_id
-)
-SELECT team.id, league.id 
-FROM public.team AS team, public.league AS league 
-WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022';
+	-- Softball-Reference.com Summer 2022 City
+	INSERT INTO public.team_league(
+		team_id, league_id
+	)
+	SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022';
 
--- Softball-Reference.com Summer 2022 City
-INSERT INTO public.team_league(
-	team_id, league_id
-)
-SELECT team.id, league.id 
-FROM public.team AS team, public.league AS league 
-WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022';
+	-- Softball-Reference.com Fall 2022 City
+	INSERT INTO public.team_league(
+		team_id, league_id
+	)
+	SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022';
 
--- Softball-Reference.com Fall 2022 City
-INSERT INTO public.team_league(
-	team_id, league_id
-)
-SELECT team.id, league.id 
-FROM public.team AS team, public.league AS league 
-WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022';
+	-- Softball-Reference.com Spring 2023 City
+	INSERT INTO public.team_league(
+		team_id, league_id
+	)
+	SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023';
 
--- Softball-Reference.com Spring 2023 City
-INSERT INTO public.team_league(
-	team_id, league_id
-)
-SELECT team.id, league.id 
-FROM public.team AS team, public.league AS league 
-WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023';
+	-- Softball-Reference.com Summer 2023 City
+	INSERT INTO public.team_league(
+		team_id, league_id
+	)
+	SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023';
 
--- Softball-Reference.com Summer 2023 City
-INSERT INTO public.team_league(
-	team_id, league_id
-)
-SELECT team.id, league.id 
-FROM public.team AS team, public.league AS league 
-WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023';
+	-- Softball-Reference.com Spring 2024 City
+	INSERT INTO public.team_league(
+		team_id, league_id
+	)
+	SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024';
+
+	-- Softball-Reference.com Summer 2024 City
+	INSERT INTO public.team_league(
+		team_id, league_id
+	)
+	SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2024';
+	
+	-- Softball-Reference.com Spring 2025 City
+	INSERT INTO public.team_league(
+		team_id, league_id
+	)
+	SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025';
 
 -- +++++++++++++++++++++++
 -- THIS COVERS THE PLAYERS
@@ -335,7 +373,7 @@ WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND le
 	INSERT INTO public.player(
 		name
 	)
-	VALUES('Josh')
+	VALUES('Josh Bien')
 
 -- Chupacabras
 	INSERT INTO public.player(
@@ -2552,7 +2590,460 @@ WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND le
 		(SELECT league.id
 		FROM public.team AS team, public.league AS league 
 		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND player.name LIKE 'Josh';
+	AND player.name LIKE 'Josh Bien';
+
+-- Sb-Ref.com Spring 2024
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+	AND player.name LIKE 'Brady Key';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+	AND player.name LIKE 'Jason Rogers';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+	AND player.name LIKE 'Linn Reece';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+	AND player.name LIKE 'Tim Tribou';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+	AND player.name LIKE 'Alex Gibbs';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+	AND player.name LIKE 'Jon Pinsonneault';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+	AND player.name LIKE 'Brett Reece';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+	AND player.name LIKE 'Dave Penasa';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+	AND player.name LIKE 'Blake Reece';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+	AND player.name LIKE 'Jamie Dickey';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+	AND player.name LIKE 'Dan Watkins';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+	AND player.name LIKE 'Andrew Stuart';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+	AND player.name LIKE 'Mike Parrish';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+	AND player.name LIKE 'Sean Babiniec';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+	AND player.name LIKE 'Tyler Cheshire';
+
+-- Sb-Ref.com Spring 2025
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+	AND player.name LIKE 'Brady Key';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+	AND player.name LIKE 'Jason Rogers';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+	AND player.name LIKE 'Linn Reece';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+	AND player.name LIKE 'Tim Tribou';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+	AND player.name LIKE 'Alex Gibbs';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+	AND player.name LIKE 'Jon Pinsonneault';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+	AND player.name LIKE 'Brett Reece';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+	AND player.name LIKE 'Dave Penasa';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+	AND player.name LIKE 'Blake Reece';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+	AND player.name LIKE 'Jamie Dickey';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+	AND player.name LIKE 'Dan Watkins';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+	AND player.name LIKE 'Andrew Stuart';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+	AND player.name LIKE 'Mike Parrish';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+	AND player.name LIKE 'Sean Babiniec';
+
+	INSERT INTO public.team_league_player(
+		team_league_id, player_id
+	)
+	SELECT team_league.id, player.id 
+	FROM public.team_league AS team_league, public.player AS player 
+	WHERE team_league.team_id IN 
+		(SELECT team.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+	AND team_league.league_id IN
+		(SELECT league.id
+		FROM public.team AS team, public.league AS league 
+		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+	AND player.name LIKE 'Tyler Cheshire';
+
 
 -- GAMES (JSON)
 -- GH Summer 2021
@@ -22517,6 +23008,6845 @@ WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND le
 			"pA": 4,
 			"r": 2,
 			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2023-07-11 18:30:00" ,
+	    "opponent": "Stormrage",
+	    "score": 2,
+	    "opponentScore": 7,
+	    "field": "Vietnam Vets #2",
+	    "wasHome": 0,
+	    "teamLeagueId": 18
+	}
+		{
+			"gameId": 96,
+			"teamLeaguePlayerId": 130,
+			"bO": 1,
+			"pA": 4,
+			"r": 1,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 96,
+			"teamLeaguePlayerId": 128,
+			"bO": 2,
+			"pA": 4,
+			"r": 1,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 96,
+			"teamLeaguePlayerId": 126,
+			"bO": 3,
+			"pA": 4,
+			"r": 0,
+			"rBI": 0,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 96,
+			"teamLeaguePlayerId": 134,
+			"bO": 4,
+			"pA": 4,
+			"r": 0,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 96,
+			"teamLeaguePlayerId": 131,
+			"bO": 5,
+			"pA": 4,
+			"r": 0,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 96,
+			"teamLeaguePlayerId": 139,
+			"bO": 6,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 96,
+			"teamLeaguePlayerId": 128,
+			"bO": 7,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 1,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 96,
+			"teamLeaguePlayerId": 132,
+			"bO": 8,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 96,
+			"teamLeaguePlayerId": 138,
+			"bO": 9,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 96,
+			"teamLeaguePlayerId": 136,
+			"bO": 10,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 1,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2023-07-18 19:30:00" ,
+	    "opponent": "Icemen",
+	    "score": 5,
+	    "opponentScore": 20,
+	    "field": "Tingley #1",
+	    "wasHome": 1,
+	    "teamLeagueId": 18
+	}
+		{
+			"gameId": 97,
+			"teamLeaguePlayerId": 130,
+			"bO": 1,
+			"pA": 3,
+			"r": 2,
+			"rBI": 0,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 97,
+			"teamLeaguePlayerId": 128,
+			"bO": 2,
+			"pA": 3,
+			"r": 0,
+			"rBI": 2,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 97,
+			"teamLeaguePlayerId": 126,
+			"bO": 3,
+			"pA": 3,
+			"r": 1,
+			"rBI": 2,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 97,
+			"teamLeaguePlayerId": 139,
+			"bO": 4,
+			"pA": 3,
+			"r": 0,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 97,
+			"teamLeaguePlayerId": 134,
+			"bO": 5,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 97,
+			"teamLeaguePlayerId": 131,
+			"bO": 6,
+			"pA": 2,
+			"r": 0,
+			"rBI": 1,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 97,
+			"teamLeaguePlayerId": 142,
+			"bO": 7,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 97,
+			"teamLeaguePlayerId": 129,
+			"bO": 8,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 97,
+			"teamLeaguePlayerId": 132,
+			"bO": 9,
+			"pA": 2,
+			"r": 0,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 97,
+			"teamLeaguePlayerId": 133,
+			"bO": 10,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 97,
+			"teamLeaguePlayerId": 138,
+			"bO": 11,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 97,
+			"teamLeaguePlayerId": 136,
+			"bO": 12,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2023-07-25 19:30:00" ,
+	    "opponent": "Duke City Hooligans",
+	    "score": 1,
+	    "opponentScore": 13,
+	    "field": "Tingley #1",
+	    "wasHome": 0,
+	    "teamLeagueId": 18
+	}
+		{
+			"gameId": 98,
+			"teamLeaguePlayerId": 130,
+			"bO": 1,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 98,
+			"teamLeaguePlayerId": 128,
+			"bO": 2,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 98,
+			"teamLeaguePlayerId": 131,
+			"bO": 3,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 98,
+			"teamLeaguePlayerId": 134,
+			"bO": 4,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 98,
+			"teamLeaguePlayerId": 141,
+			"bO": 5,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 98,
+			"teamLeaguePlayerId": 142,
+			"bO": 6,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 98,
+			"teamLeaguePlayerId": 133,
+			"bO": 7,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 98,
+			"teamLeaguePlayerId": 138,
+			"bO": 8,
+			"pA": 2,
+			"r": 0,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 98,
+			"teamLeaguePlayerId": 136,
+			"bO": 9,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2023-08-01 18:30:00" ,
+	    "opponent": "Borrachos",
+	    "score": 10,
+	    "opponentScore": 23,
+	    "field": "Vietnam Vets #2",
+	    "wasHome": 1,
+	    "teamLeagueId": 18
+	}
+		{
+			"gameId": 99,
+			"teamLeaguePlayerId": 130,
+			"bO": 1,
+			"pA": 4,
+			"r": 1,
+			"rBI": 0,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 99,
+			"teamLeaguePlayerId": 128,
+			"bO": 2,
+			"pA": 4,
+			"r": 1,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 99,
+			"teamLeaguePlayerId": 131,
+			"bO": 3,
+			"pA": 4,
+			"r": 2,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 99,
+			"teamLeaguePlayerId": 134,
+			"bO": 4,
+			"pA": 4,
+			"r": 2,
+			"rBI": 0,
+			"b1": 4,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 99,
+			"teamLeaguePlayerId": 142,
+			"bO": 5,
+			"pA": 4,
+			"r": 0,
+			"rBI": 1,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 99,
+			"teamLeaguePlayerId": 129,
+			"bO": 6,
+			"pA": 4,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 1,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 99,
+			"teamLeaguePlayerId": 133,
+			"bO": 7,
+			"pA": 4,
+			"r": 2,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 1,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 99,
+			"teamLeaguePlayerId": 132,
+			"bO": 8,
+			"pA": 4,
+			"r": 1,
+			"rBI": 2,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 99,
+			"teamLeaguePlayerId": 138,
+			"bO": 9,
+			"pA": 4,
+			"r": 0,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 99,
+			"teamLeaguePlayerId": 136,
+			"bO": 10,
+			"pA": 3,
+			"r": 0,
+			"rBI": 3,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2023-08-15 20:30:00" ,
+	    "opponent": "ASM Crew",
+	    "score": 4,
+	    "opponentScore": 23,
+	    "field": "Tingley #1",
+	    "wasHome": 0,
+	    "teamLeagueId": 18
+	}
+		{
+			"gameId": 100,
+			"teamLeaguePlayerId": 130,
+			"bO": 1,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 100,
+			"teamLeaguePlayerId": 128,
+			"bO": 2,
+			"pA": 3,
+			"r": 0,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 100,
+			"teamLeaguePlayerId": 126,
+			"bO": 3,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 100,
+			"teamLeaguePlayerId": 139,
+			"bO": 4,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 100,
+			"teamLeaguePlayerId": 142,
+			"bO": 5,
+			"pA": 3,
+			"r": 2,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 1,
+			"b3": 1,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 100,
+			"teamLeaguePlayerId": 129,
+			"bO": 6,
+			"pA": 2,
+			"r": 1,
+			"rBI": 2,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 100,
+			"teamLeaguePlayerId": 132,
+			"bO": 7,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 100,
+			"teamLeaguePlayerId": 133,
+			"bO": 8,
+			"pA": 2,
+			"r": 0,
+			"rBI": 1,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 100,
+			"teamLeaguePlayerId": 138,
+			"bO": 9,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 100,
+			"teamLeaguePlayerId": 136,
+			"bO": 10,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+
+-- SBRef.com Spring 2024
+	{
+	    "date": "2023-03-12 18:30:00" ,
+	    "opponent": "ASM Crew",
+	    "score": 4,
+	    "opponentScore": 16,
+	    "field": "Bullhead #1",
+	    "wasHome": 0,
+	    "teamLeagueId": 19
+	}
+		{
+			"gameId": 101,
+			"teamLeaguePlayerId": 154,
+			"bO": 1,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 101,
+			"teamLeaguePlayerId": 145,
+			"bO": 2,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 101,
+			"teamLeaguePlayerId": 143,
+			"bO": 3,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 101,
+			"teamLeaguePlayerId": 144,
+			"bO": 4,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 1,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 101,
+			"teamLeaguePlayerId": 151,
+			"bO": 5,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 101,
+			"teamLeaguePlayerId": 157,
+			"bO": 6,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 101,
+			"teamLeaguePlayerId": 152,
+			"bO": 7,
+			"pA": 2,
+			"r": 1,
+			"rBI": 2,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 1,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 101,
+			"teamLeaguePlayerId": 147,
+			"bO": 8,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 101,
+			"teamLeaguePlayerId": 148,
+			"bO": 9,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 101,
+			"teamLeaguePlayerId": 146,
+			"bO": 10,
+			"pA": 2,
+			"r": 0,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 101,
+			"teamLeaguePlayerId": 155,
+			"bO": 11,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 101,
+			"teamLeaguePlayerId": 149,
+			"bO": 12,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 101,
+			"teamLeaguePlayerId": 153,
+			"bO": 13,
+			"pA": 2,
+			"r": 0,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2023-03-12 20:30:00" ,
+	    "opponent": "Gideon's Army",
+	    "score": 8,
+	    "opponentScore": 17,
+	    "field": "Bullhead #3",
+	    "wasHome": 1,
+	    "teamLeagueId": 19
+	}
+		{
+			"gameId": 102,
+			"teamLeaguePlayerId": 154,
+			"bO": 1,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 102,
+			"teamLeaguePlayerId": 145,
+			"bO": 2,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 102,
+			"teamLeaguePlayerId": 143,
+			"bO": 3,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 102,
+			"teamLeaguePlayerId": 144,
+			"bO": 4,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 102,
+			"teamLeaguePlayerId": 151,
+			"bO": 5,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 102,
+			"teamLeaguePlayerId": 157,
+			"bO": 6,
+			"pA": 3,
+			"r": 0,
+			"rBI": 1,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 102,
+			"teamLeaguePlayerId": 152,
+			"bO": 7,
+			"pA": 2,
+			"r": 0,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 102,
+			"teamLeaguePlayerId": 147,
+			"bO": 8,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 1,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 102,
+			"teamLeaguePlayerId": 148,
+			"bO": 9,
+			"pA": 2,
+			"r": 0,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 102,
+			"teamLeaguePlayerId": 146,
+			"bO": 10,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 1,
+			"lOB": 0
+		}
+		{
+			"gameId": 102,
+			"teamLeaguePlayerId": 155,
+			"bO": 11,
+			"pA": 2,
+			"r": 2,
+			"rBI": 1,
+			"b1": 0,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 102,
+			"teamLeaguePlayerId": 149,
+			"bO": 12,
+			"pA": 2,
+			"r": 0,
+			"rBI": 2,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 102,
+			"teamLeaguePlayerId": 153,
+			"bO": 13,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2023-03-19 18:30:00" ,
+	    "opponent": "Lizards",
+	    "score": 26,
+	    "opponentScore": 11,
+	    "field": "Bullhead #2",
+	    "wasHome": 0,
+	    "teamLeagueId": 19
+	}
+		{
+			"gameId": 103,
+			"teamLeaguePlayerId": 157,
+			"bO": 1,
+			"pA": 4,
+			"r": 3,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 103,
+			"teamLeaguePlayerId": 147,
+			"bO": 2,
+			"pA": 4,
+			"r": 3,
+			"rBI": 2,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 103,
+			"teamLeaguePlayerId": 143,
+			"bO": 3,
+			"pA": 4,
+			"r": 2,
+			"rBI": 1,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 103,
+			"teamLeaguePlayerId": 156,
+			"bO": 4,
+			"pA": 4,
+			"r": 4,
+			"rBI": 5,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 1,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 103,
+			"teamLeaguePlayerId": 144,
+			"bO": 5,
+			"pA": 4,
+			"r": 2,
+			"rBI": 4,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 1,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 103,
+			"teamLeaguePlayerId": 154,
+			"bO": 6,
+			"pA": 4,
+			"r": 2,
+			"rBI": 2,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 103,
+			"teamLeaguePlayerId": 145,
+			"bO": 7,
+			"pA": 4,
+			"r": 1,
+			"rBI": 2,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 103,
+			"teamLeaguePlayerId": 148,
+			"bO": 8,
+			"pA": 4,
+			"r": 2,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 103,
+			"teamLeaguePlayerId": 155,
+			"bO": 9,
+			"pA": 4,
+			"r": 2,
+			"rBI": 5,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 1,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 103,
+			"teamLeaguePlayerId": 150,
+			"bO": 10,
+			"pA": 4,
+			"r": 2,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 103,
+			"teamLeaguePlayerId": 149,
+			"bO": 11,
+			"pA": 4,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 1,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 103,
+			"teamLeaguePlayerId": 152,
+			"bO": 12,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2023-03-19 19:30:00" ,
+	    "opponent": "Icemen",
+	    "score": 24,
+	    "opponentScore": 20,
+	    "field": "Bullhead #3",
+	    "wasHome": 1,
+	    "teamLeagueId": 19
+	}
+		{
+			"gameId": 104,
+			"teamLeaguePlayerId": 157,
+			"bO": 1,
+			"pA": 4,
+			"r": 1,
+			"rBI": 1,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 104,
+			"teamLeaguePlayerId": 147,
+			"bO": 2,
+			"pA": 4,
+			"r": 3,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 104,
+			"teamLeaguePlayerId": 143,
+			"bO": 3,
+			"pA": 4,
+			"r": 4,
+			"rBI": 3,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 1,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 104,
+			"teamLeaguePlayerId": 156,
+			"bO": 4,
+			"pA": 4,
+			"r": 4,
+			"rBI": 7,
+			"b1": 0,
+			"b2": 1,
+			"b3": 1,
+			"hR": 2,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 104,
+			"teamLeaguePlayerId": 144,
+			"bO": 5,
+			"pA": 4,
+			"r": 3,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 2,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 104,
+			"teamLeaguePlayerId": 154,
+			"bO": 6,
+			"pA": 4,
+			"r": 2,
+			"rBI": 2,
+			"b1": 1,
+			"b2": 2,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 104,
+			"teamLeaguePlayerId": 145,
+			"bO": 7,
+			"pA": 4,
+			"r": 0,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 104,
+			"teamLeaguePlayerId": 148,
+			"bO": 8,
+			"pA": 4,
+			"r": 1,
+			"rBI": 1,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 104,
+			"teamLeaguePlayerId": 155,
+			"bO": 9,
+			"pA": 3,
+			"r": 2,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 104,
+			"teamLeaguePlayerId": 150,
+			"bO": 10,
+			"pA": 3,
+			"r": 2,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 104,
+			"teamLeaguePlayerId": 149,
+			"bO": 11,
+			"pA": 3,
+			"r": 1,
+			"rBI": 3,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 104,
+			"teamLeaguePlayerId": 152,
+			"bO": 12,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 1,
+			"lOB": 0
+		}
+	{
+	    "date": "2024-03-26 18:30:00" ,
+	    "opponent": "Showtime",
+	    "score": 4,
+	    "opponentScore": 29,
+	    "field": "Bullhead #2",
+	    "wasHome": 1,
+	    "teamLeagueId": 19
+	}
+		{
+			"gameId": 105,
+			"teamLeaguePlayerId": 154,
+			"bO": 1,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 105,
+			"teamLeaguePlayerId": 147,
+			"bO": 2,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 105,
+			"teamLeaguePlayerId": 143,
+			"bO": 3,
+			"pA": 2,
+			"r": 2,
+			"rBI": 2,
+			"b1": 0,
+			"b2": 2,
+			"b3": 0,
+			"hR": 1,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 105,
+			"teamLeaguePlayerId": 156,
+			"bO": 4,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 105,
+			"teamLeaguePlayerId": 144,
+			"bO": 5,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 105,
+			"teamLeaguePlayerId": 151,
+			"bO": 6,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 105,
+			"teamLeaguePlayerId": 157,
+			"bO": 7,
+			"pA": 2,
+			"r": 0,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 105,
+			"teamLeaguePlayerId": 155,
+			"bO": 8,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 1,
+			"lOB": 0
+		}
+		{
+			"gameId": 105,
+			"teamLeaguePlayerId": 146,
+			"bO": 9,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 105,
+			"teamLeaguePlayerId": 150,
+			"bO": 10,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 105,
+			"teamLeaguePlayerId": 149,
+			"bO": 11,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 105,
+			"teamLeaguePlayerId": 153,
+			"bO": 12,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2024-03-26 19:30:00" ,
+	    "opponent": "Ballz Deep",
+	    "score": 9,
+	    "opponentScore": 31,
+	    "field": "Bullhead #1",
+	    "wasHome": 0,
+	    "teamLeagueId": 19
+	}
+		{
+			"gameId": 106,
+			"teamLeaguePlayerId": 154,
+			"bO": 1,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 106,
+			"teamLeaguePlayerId": 147,
+			"bO": 2,
+			"pA": 3,
+			"r": 1,
+			"rBI": 4,
+			"b1": 0,
+			"b2": 0,
+			"b3": 1,
+			"hR": 1,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 106,
+			"teamLeaguePlayerId": 143,
+			"bO": 3,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 1,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 106,
+			"teamLeaguePlayerId": 156,
+			"bO": 4,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 1,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 106,
+			"teamLeaguePlayerId": 144,
+			"bO": 5,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 1,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 1,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 106,
+			"teamLeaguePlayerId": 151,
+			"bO": 6,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 1,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 106,
+			"teamLeaguePlayerId": 157,
+			"bO": 7,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 106,
+			"teamLeaguePlayerId": 155,
+			"bO": 8,
+			"pA": 2,
+			"r": 1,
+			"rBI": 3,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 1,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 106,
+			"teamLeaguePlayerId": 146,
+			"bO": 9,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 106,
+			"teamLeaguePlayerId": 150,
+			"bO": 10,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 106,
+			"teamLeaguePlayerId": 149,
+			"bO": 11,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 106,
+			"teamLeaguePlayerId": 153,
+			"bO": 12,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2024-04-02 18:30:00" ,
+	    "opponent": "ASM Crew",
+	    "score": 11,
+	    "opponentScore": 41,
+	    "field": "Bullhead #2",
+	    "wasHome": 1,
+	    "teamLeagueId": 19
+	}
+		{
+			"gameId": 107,
+			"teamLeaguePlayerId": 154,
+			"bO": 1,
+			"pA": 3,
+			"r": 2,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 107,
+			"teamLeaguePlayerId": 147,
+			"bO": 2,
+			"pA": 3,
+			"r": 3,
+			"rBI": 0,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 107,
+			"teamLeaguePlayerId": 143,
+			"bO": 3,
+			"pA": 3,
+			"r": 2,
+			"rBI": 4,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 1,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 107,
+			"teamLeaguePlayerId": 144,
+			"bO": 4,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 107,
+			"teamLeaguePlayerId": 151,
+			"bO": 5,
+			"pA": 3,
+			"r": 2,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 1,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 107,
+			"teamLeaguePlayerId": 157,
+			"bO": 6,
+			"pA": 3,
+			"r": 0,
+			"rBI": 2,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 107,
+			"teamLeaguePlayerId": 152,
+			"bO": 7,
+			"pA": 3,
+			"r": 0,
+			"rBI": 2,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 107,
+			"teamLeaguePlayerId": 155,
+			"bO": 8,
+			"pA": 3,
+			"r": 0,
+			"rBI": 2,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 2,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 107,
+			"teamLeaguePlayerId": 148,
+			"bO": 9,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 107,
+			"teamLeaguePlayerId": 150,
+			"bO": 10,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 107,
+			"teamLeaguePlayerId": 149,
+			"bO": 11,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 107,
+			"teamLeaguePlayerId": 153,
+			"bO": 12,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2024-04-02 19:30:00" ,
+	    "opponent": "Gideon's Army",
+	    "score": 16,
+	    "opponentScore": 27,
+	    "field": "Bullhead #2",
+	    "wasHome": 0,
+	    "teamLeagueId": 19
+	}
+		{
+			"gameId": 108,
+			"teamLeaguePlayerId": 148,
+			"bO": 1,
+			"pA": 4,
+			"r": 1,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 108,
+			"teamLeaguePlayerId": 150,
+			"bO": 2,
+			"pA": 4,
+			"r": 1,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 108,
+			"teamLeaguePlayerId": 149,
+			"bO": 3,
+			"pA": 3,
+			"r": 2,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 108,
+			"teamLeaguePlayerId": 153,
+			"bO": 4,
+			"pA": 3,
+			"r": 2,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 1,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 108,
+			"teamLeaguePlayerId": 154,
+			"bO": 5,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 108,
+			"teamLeaguePlayerId": 147,
+			"bO": 6,
+			"pA": 3,
+			"r": 3,
+			"rBI": 2,
+			"b1": 2,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 108,
+			"teamLeaguePlayerId": 143,
+			"bO": 7,
+			"pA": 3,
+			"r": 2,
+			"rBI": 5,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 108,
+			"teamLeaguePlayerId": 144,
+			"bO": 8,
+			"pA": 3,
+			"r": 0,
+			"rBI": 5,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 2,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 108,
+			"teamLeaguePlayerId": 157,
+			"bO": 9,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 108,
+			"teamLeaguePlayerId": 152,
+			"bO": 10,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 108,
+			"teamLeaguePlayerId": 155,
+			"bO": 11,
+			"pA": 3,
+			"r": 0,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 108,
+			"teamLeaguePlayerId": 151,
+			"bO": 12,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+
+-- SBRef.com Summer 2024
+	{
+	    "date": "2024-04-16 18:30:00" ,
+	    "opponent": "ASM Crew",
+	    "score": 8,
+	    "opponentScore": 19,
+	    "field": "Tingley #2",
+	    "wasHome": 0,
+	    "teamLeagueId": 20
+	}
+		{
+			"gameId": 109,
+			"teamLeaguePlayerId": 169,
+			"bO": 1,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 109,
+			"teamLeaguePlayerId": 162,
+			"bO": 2,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 109,
+			"teamLeaguePlayerId": 158,
+			"bO": 3,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 109,
+			"teamLeaguePlayerId": 159,
+			"bO": 4,
+			"pA": 2,
+			"r": 0,
+			"rBI": 2,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 109,
+			"teamLeaguePlayerId": 172,
+			"bO": 5,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 109,
+			"teamLeaguePlayerId": 167,
+			"bO": 6,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 109,
+			"teamLeaguePlayerId": 160,
+			"bO": 7,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 109,
+			"teamLeaguePlayerId": 170,
+			"bO": 8,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 109,
+			"teamLeaguePlayerId": 161,
+			"bO": 9,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 109,
+			"teamLeaguePlayerId": 173,
+			"bO": 10,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 109,
+			"teamLeaguePlayerId": 168,
+			"bO": 11,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 109,
+			"teamLeaguePlayerId": 164,
+			"bO": 12,
+			"pA": 2,
+			"r": 0,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2024-04-23 18:30:00" ,
+	    "opponent": "Los Diablos",
+	    "score": 21,
+	    "opponentScore": 1,
+	    "field": "Vietnam Vets #2",
+	    "wasHome": 0,
+	    "teamLeagueId": 20
+	}
+		{
+			"gameId": 110,
+			"teamLeaguePlayerId": 169,
+			"bO": 1,
+			"pA": 4,
+			"r": 2,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 1,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 110,
+			"teamLeaguePlayerId": 162,
+			"bO": 2,
+			"pA": 4,
+			"r": 4,
+			"rBI": 2,
+			"b1": 1,
+			"b2": 2,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 1,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 110,
+			"teamLeaguePlayerId": 158,
+			"bO": 3,
+			"pA": 4,
+			"r": 3,
+			"rBI": 5,
+			"b1": 2,
+			"b2": 1,
+			"b3": 1,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 110,
+			"teamLeaguePlayerId": 159,
+			"bO": 4,
+			"pA": 4,
+			"r": 2,
+			"rBI": 2,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 110,
+			"teamLeaguePlayerId": 172,
+			"bO": 5,
+			"pA": 4,
+			"r": 3,
+			"rBI": 1,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 110,
+			"teamLeaguePlayerId": 160,
+			"bO": 6,
+			"pA": 4,
+			"r": 2,
+			"rBI": 3,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 110,
+			"teamLeaguePlayerId": 170,
+			"bO": 7,
+			"pA": 4,
+			"r": 0,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 110,
+			"teamLeaguePlayerId": 163,
+			"bO": 8,
+			"pA": 4,
+			"r": 2,
+			"rBI": 1,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 110,
+			"teamLeaguePlayerId": 161,
+			"bO": 9,
+			"pA": 4,
+			"r": 1,
+			"rBI": 3,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 1,
+			"lOB": 0
+		}
+		{
+			"gameId": 110,
+			"teamLeaguePlayerId": 168,
+			"bO": 10,
+			"pA": 4,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 110,
+			"teamLeaguePlayerId": 164,
+			"bO": 11,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2024-04-30 19:30:00" ,
+	    "opponent": "Lazer Show",
+	    "score": 15,
+	    "opponentScore": 14,
+	    "field": "Tingley #2",
+	    "wasHome": 1,
+	    "teamLeagueId": 20
+	}
+		{
+			"gameId": 111,
+			"teamLeaguePlayerId": 169,
+			"bO": 1,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 111,
+			"teamLeaguePlayerId": 162,
+			"bO": 2,
+			"pA": 3,
+			"r": 3,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 111,
+			"teamLeaguePlayerId": 158,
+			"bO": 3,
+			"pA": 3,
+			"r": 2,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 111,
+			"teamLeaguePlayerId": 159,
+			"bO": 4,
+			"pA": 3,
+			"r": 3,
+			"rBI": 5,
+			"b1": 1,
+			"b2": 0,
+			"b3": 1,
+			"hR": 1,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 111,
+			"teamLeaguePlayerId": 166,
+			"bO": 5,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 111,
+			"teamLeaguePlayerId": 172,
+			"bO": 6,
+			"pA": 3,
+			"r": 2,
+			"rBI": 2,
+			"b1": 2,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 111,
+			"teamLeaguePlayerId": 167,
+			"bO": 7,
+			"pA": 2,
+			"r": 2,
+			"rBI": 3,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 111,
+			"teamLeaguePlayerId": 160,
+			"bO": 8,
+			"pA": 2,
+			"r": 2,
+			"rBI": 1,
+			"b1": 0,
+			"b2": 0,
+			"b3": 1,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 111,
+			"teamLeaguePlayerId": 163,
+			"bO": 9,
+			"pA": 2,
+			"r": 0,
+			"rBI": 3,
+			"b1": 0,
+			"b2": 1,
+			"b3": 1,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 111,
+			"teamLeaguePlayerId": 170,
+			"bO": 10,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 111,
+			"teamLeaguePlayerId": 161,
+			"bO": 11,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 111,
+			"teamLeaguePlayerId": 165,
+			"bO": 12,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 111,
+			"teamLeaguePlayerId": 173,
+			"bO": 13,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 111,
+			"teamLeaguePlayerId": 164,
+			"bO": 14,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2024-05-07 18:30:00" ,
+	    "opponent": "McGlovin",
+	    "score": 16,
+	    "opponentScore": 4,
+	    "field": "Vietnam Vets #1",
+	    "wasHome": 0,
+	    "teamLeagueId": 20
+	}
+		{
+			"gameId": 112,
+			"teamLeaguePlayerId": 169,
+			"bO": 1,
+			"pA": 4,
+			"r": 1,
+			"rBI": 3,
+			"b1": 1,
+			"b2": 1,
+			"b3": 1,
+			"hR": 0,
+			"bB": 0,
+			"sO": 1,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 112,
+			"teamLeaguePlayerId": 172,
+			"bO": 2,
+			"pA": 4,
+			"r": 2,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 112,
+			"teamLeaguePlayerId": 158,
+			"bO": 3,
+			"pA": 3,
+			"r": 3,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 112,
+			"teamLeaguePlayerId": 159,
+			"bO": 4,
+			"pA": 3,
+			"r": 2,
+			"rBI": 4,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 1,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 112,
+			"teamLeaguePlayerId": 160,
+			"bO": 5,
+			"pA": 3,
+			"r": 2,
+			"rBI": 2,
+			"b1": 0,
+			"b2": 0,
+			"b3": 2,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 112,
+			"teamLeaguePlayerId": 163,
+			"bO": 6,
+			"pA": 3,
+			"r": 0,
+			"rBI": 2,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 1,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 112,
+			"teamLeaguePlayerId": 161,
+			"bO": 7,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 1,
+			"lOB": 0
+		}
+		{
+			"gameId": 112,
+			"teamLeaguePlayerId": 165,
+			"bO": 8,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 112,
+			"teamLeaguePlayerId": 168,
+			"bO": 9,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 112,
+			"teamLeaguePlayerId": 170,
+			"bO": 10,
+			"pA": 3,
+			"r": 3,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 112,
+			"teamLeaguePlayerId": 166,
+			"bO": 11,
+			"pA": 3,
+			"r": 2,
+			"rBI": 0,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2024-05-14 20:30:00" ,
+	    "opponent": "Guns",
+	    "score": 21,
+	    "opponentScore": 28,
+	    "field": "Tingley #1",
+	    "wasHome": 1,
+	    "teamLeagueId": 20
+	}
+		{
+			"gameId": 113,
+			"teamLeaguePlayerId": 169,
+			"bO": 1,
+			"pA": 3,
+			"r": 2,
+			"rBI": 1,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 113,
+			"teamLeaguePlayerId": 162,
+			"bO": 2,
+			"pA": 3,
+			"r": 1,
+			"rBI": 2,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 113,
+			"teamLeaguePlayerId": 158,
+			"bO": 3,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 1,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 113,
+			"teamLeaguePlayerId": 159,
+			"bO": 4,
+			"pA": 3,
+			"r": 2,
+			"rBI": 4,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 113,
+			"teamLeaguePlayerId": 166,
+			"bO": 5,
+			"pA": 3,
+			"r": 2,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 1,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 113,
+			"teamLeaguePlayerId": 172,
+			"bO": 6,
+			"pA": 3,
+			"r": 3,
+			"rBI": 2,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 113,
+			"teamLeaguePlayerId": 167,
+			"bO": 7,
+			"pA": 3,
+			"r": 2,
+			"rBI": 2,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 113,
+			"teamLeaguePlayerId": 160,
+			"bO": 8,
+			"pA": 3,
+			"r": 2,
+			"rBI": 2,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 113,
+			"teamLeaguePlayerId": 163,
+			"bO": 9,
+			"pA": 3,
+			"r": 2,
+			"rBI": 3,
+			"b1": 2,
+			"b2": 0,
+			"b3": 1,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 113,
+			"teamLeaguePlayerId": 165,
+			"bO": 10,
+			"pA": 3,
+			"r": 1,
+			"rBI": 2,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 113,
+			"teamLeaguePlayerId": 173,
+			"bO": 11,
+			"pA": 3,
+			"r": 0,
+			"rBI": 1,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 113,
+			"teamLeaguePlayerId": 168,
+			"bO": 12,
+			"pA": 3,
+			"r": 0,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 113,
+			"teamLeaguePlayerId": 164,
+			"bO": 13,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2024-05-21 20:30:00" ,
+	    "opponent": "Duke City Hooligans",
+	    "score": 2,
+	    "opponentScore": 30,
+	    "field": "Vietnam Vets #2",
+	    "wasHome": 0,
+	    "teamLeagueId": 20
+	}
+		{
+			"gameId": 114,
+			"teamLeaguePlayerId": 169,
+			"bO": 1,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 114,
+			"teamLeaguePlayerId": 162,
+			"bO": 2,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 114,
+			"teamLeaguePlayerId": 158,
+			"bO": 3,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 114,
+			"teamLeaguePlayerId": 159,
+			"bO": 4,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 114,
+			"teamLeaguePlayerId": 171,
+			"bO": 5,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 114,
+			"teamLeaguePlayerId": 172,
+			"bO": 6,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 1,
+			"lOB": 0
+		}
+		{
+			"gameId": 114,
+			"teamLeaguePlayerId": 167,
+			"bO": 7,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 114,
+			"teamLeaguePlayerId": 160,
+			"bO": 8,
+			"pA": 2,
+			"r": 0,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 114,
+			"teamLeaguePlayerId": 163,
+			"bO": 9,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 1,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 114,
+			"teamLeaguePlayerId": 170,
+			"bO": 10,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 114,
+			"teamLeaguePlayerId": 161,
+			"bO": 11,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 114,
+			"teamLeaguePlayerId": 165,
+			"bO": 12,
+			"pA": 1,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 114,
+			"teamLeaguePlayerId": 168,
+			"bO": 13,
+			"pA": 1,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2024-05-28 20:30:00" ,
+	    "opponent": "Them Other Truckers",
+	    "score": 11,
+	    "opponentScore": 20,
+	    "field": "Tingley #2",
+	    "wasHome": 0,
+	    "teamLeagueId": 20
+	}
+		{
+			"gameId": 115,
+			"teamLeaguePlayerId": 165,
+			"bO": 1,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 115,
+			"teamLeaguePlayerId": 168,
+			"bO": 2,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 2,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 115,
+			"teamLeaguePlayerId": 169,
+			"bO": 3,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 1,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 115,
+			"teamLeaguePlayerId": 173,
+			"bO": 4,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 115,
+			"teamLeaguePlayerId": 162,
+			"bO": 5,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 115,
+			"teamLeaguePlayerId": 158,
+			"bO": 6,
+			"pA": 3,
+			"r": 1,
+			"rBI": 2,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 115,
+			"teamLeaguePlayerId": 159,
+			"bO": 7,
+			"pA": 3,
+			"r": 2,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 1,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 115,
+			"teamLeaguePlayerId": 161,
+			"bO": 8,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 115,
+			"teamLeaguePlayerId": 167,
+			"bO": 9,
+			"pA": 3,
+			"r": 1,
+			"rBI": 2,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 115,
+			"teamLeaguePlayerId": 172,
+			"bO": 10,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 115,
+			"teamLeaguePlayerId": 160,
+			"bO": 11,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 115,
+			"teamLeaguePlayerId": 170,
+			"bO": 12,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 1,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 115,
+			"teamLeaguePlayerId": 171,
+			"bO": 13,
+			"pA": 2,
+			"r": 0,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 1,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 115,
+			"teamLeaguePlayerId": 164,
+			"bO": 14,
+			"pA": 2,
+			"r": 0,
+			"rBI": 1,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2024-06-12 19:30:00" ,
+	    "opponent": "Icemen",
+	    "score": 11,
+	    "opponentScore": 14,
+	    "field": "Tingley #2",
+	    "wasHome": 0,
+	    "teamLeagueId": 20
+	}
+		{
+			"gameId": 116,
+			"teamLeaguePlayerId": 169,
+			"bO": 1,
+			"pA": 4,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 116,
+			"teamLeaguePlayerId": 162,
+			"bO": 2,
+			"pA": 4,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 116,
+			"teamLeaguePlayerId": 158,
+			"bO": 3,
+			"pA": 4,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 1,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 116,
+			"teamLeaguePlayerId": 159,
+			"bO": 4,
+			"pA": 4,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 116,
+			"teamLeaguePlayerId": 171,
+			"bO": 5,
+			"pA": 4,
+			"r": 3,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 1,
+			"b3": 1,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 116,
+			"teamLeaguePlayerId": 172,
+			"bO": 6,
+			"pA": 4,
+			"r": 3,
+			"rBI": 3,
+			"b1": 3,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 116,
+			"teamLeaguePlayerId": 167,
+			"bO": 7,
+			"pA": 4,
+			"r": 3,
+			"rBI": 1,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 116,
+			"teamLeaguePlayerId": 170,
+			"bO": 8,
+			"pA": 3,
+			"r": 0,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 116,
+			"teamLeaguePlayerId": 163,
+			"bO": 9,
+			"pA": 3,
+			"r": 0,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 116,
+			"teamLeaguePlayerId": 165,
+			"bO": 10,
+			"pA": 3,
+			"r": 0,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 116,
+			"teamLeaguePlayerId": 168,
+			"bO": 11,
+			"pA": 3,
+			"r": 0,
+			"rBI": 2,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 116,
+			"teamLeaguePlayerId": 161,
+			"bO": 12,
+			"pA": 3,
+			"r": 0,
+			"rBI": 1,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 116,
+			"teamLeaguePlayerId": 173,
+			"bO": 13,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2024-06-18 19:30:00" ,
+	    "opponent": "Unique Trucking",
+	    "score": 16,
+	    "opponentScore": 17,
+	    "field": "Vietnam Vets #2",
+	    "wasHome": 1,
+	    "teamLeagueId": 20
+	}
+		{
+			"gameId": 117,
+			"teamLeaguePlayerId": 169,
+			"bO": 1,
+			"pA": 4,
+			"r": 2,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 1,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 117,
+			"teamLeaguePlayerId": 159,
+			"bO": 2,
+			"pA": 4,
+			"r": 2,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 117,
+			"teamLeaguePlayerId": 158,
+			"bO": 3,
+			"pA": 4,
+			"r": 2,
+			"rBI": 2,
+			"b1": 4,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 117,
+			"teamLeaguePlayerId": 162,
+			"bO": 4,
+			"pA": 4,
+			"r": 1,
+			"rBI": 1,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 117,
+			"teamLeaguePlayerId": 172,
+			"bO": 5,
+			"pA": 4,
+			"r": 1,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 117,
+			"teamLeaguePlayerId": 167,
+			"bO": 6,
+			"pA": 4,
+			"r": 1,
+			"rBI": 2,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 117,
+			"teamLeaguePlayerId": 170,
+			"bO": 7,
+			"pA": 4,
+			"r": 1,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 117,
+			"teamLeaguePlayerId": 163,
+			"bO": 8,
+			"pA": 4,
+			"r": 1,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 117,
+			"teamLeaguePlayerId": 165,
+			"bO": 9,
+			"pA": 4,
+			"r": 0,
+			"rBI": 1,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 117,
+			"teamLeaguePlayerId": 168,
+			"bO": 10,
+			"pA": 4,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 117,
+			"teamLeaguePlayerId": 173,
+			"bO": 11,
+			"pA": 4,
+			"r": 1,
+			"rBI": 2,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 117,
+			"teamLeaguePlayerId": 166,
+			"bO": 12,
+			"pA": 3,
+			"r": 2,
+			"rBI": 0,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2024-06-25 18:30:00" ,
+	    "opponent": "Lizards",
+	    "score": 2,
+	    "opponentScore": 19,
+	    "field": "Tingley #2",
+	    "wasHome": 1,
+	    "teamLeagueId": 20
+	}
+		{
+			"gameId": 118,
+			"teamLeaguePlayerId": 169,
+			"bO": 1,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 118,
+			"teamLeaguePlayerId": 162,
+			"bO": 2,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 118,
+			"teamLeaguePlayerId": 158,
+			"bO": 3,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 118,
+			"teamLeaguePlayerId": 166,
+			"bO": 4,
+			"pA": 2,
+			"r": 0,
+			"rBI": 1,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 118,
+			"teamLeaguePlayerId": 172,
+			"bO": 5,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 118,
+			"teamLeaguePlayerId": 167,
+			"bO": 6,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 118,
+			"teamLeaguePlayerId": 163,
+			"bO": 7,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 118,
+			"teamLeaguePlayerId": 160,
+			"bO": 8,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 118,
+			"teamLeaguePlayerId": 170,
+			"bO": 9,
+			"pA": 2,
+			"r": 0,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 118,
+			"teamLeaguePlayerId": 165,
+			"bO": 10,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 118,
+			"teamLeaguePlayerId": 161,
+			"bO": 11,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 118,
+			"teamLeaguePlayerId": 168,
+			"bO": 12,
+			"pA": 1,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 118,
+			"teamLeaguePlayerId": 164,
+			"bO": 13,
+			"pA": 1,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2024-07-09 18:30:00" ,
+	    "opponent": "Los Diablos",
+	    "score": 28,
+	    "opponentScore": 15,
+	    "field": "Tingley #2",
+	    "wasHome": 1,
+	    "teamLeagueId": 20
+	}
+		{
+			"gameId": 119,
+			"teamLeaguePlayerId": 168,
+			"bO": 1,
+			"pA": 4,
+			"r": 3,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 119,
+			"teamLeaguePlayerId": 164,
+			"bO": 2,
+			"pA": 4,
+			"r": 2,
+			"rBI": 1,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 119,
+			"teamLeaguePlayerId": 162,
+			"bO": 3,
+			"pA": 4,
+			"r": 4,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 119,
+			"teamLeaguePlayerId": 158,
+			"bO": 4,
+			"pA": 4,
+			"r": 3,
+			"rBI": 4,
+			"b1": 1,
+			"b2": 1,
+			"b3": 1,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 119,
+			"teamLeaguePlayerId": 172,
+			"bO": 5,
+			"pA": 4,
+			"r": 3,
+			"rBI": 4,
+			"b1": 4,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 119,
+			"teamLeaguePlayerId": 166,
+			"bO": 6,
+			"pA": 4,
+			"r": 3,
+			"rBI": 1,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 119,
+			"teamLeaguePlayerId": 167,
+			"bO": 7,
+			"pA": 4,
+			"r": 3,
+			"rBI": 3,
+			"b1": 2,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 119,
+			"teamLeaguePlayerId": 160,
+			"bO": 8,
+			"pA": 4,
+			"r": 4,
+			"rBI": 3,
+			"b1": 2,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 119,
+			"teamLeaguePlayerId": 163,
+			"bO": 9,
+			"pA": 4,
+			"r": 1,
+			"rBI": 4,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 119,
+			"teamLeaguePlayerId": 170,
+			"bO": 10,
+			"pA": 4,
+			"r": 0,
+			"rBI": 2,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 119,
+			"teamLeaguePlayerId": 173,
+			"bO": 11,
+			"pA": 4,
+			"r": 1,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 119,
+			"teamLeaguePlayerId": 161,
+			"bO": 12,
+			"pA": 4,
+			"r": 1,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2024-06-04 20:30:00" ,
+	    "opponent": "Stormrage",
+	    "score": 14,
+	    "opponentScore": 11,
+	    "field": "Vietnam Vets #1",
+	    "wasHome": 1,
+	    "teamLeagueId": 20
+	}
+		{
+			"gameId": 120,
+			"teamLeaguePlayerId": 165,
+			"bO": 1,
+			"pA": 4,
+			"r": 2,
+			"rBI": 2,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 120,
+			"teamLeaguePlayerId": 162,
+			"bO": 2,
+			"pA": 4,
+			"r": 1,
+			"rBI": 1,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 120,
+			"teamLeaguePlayerId": 159,
+			"bO": 3,
+			"pA": 4,
+			"r": 2,
+			"rBI": 0,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 120,
+			"teamLeaguePlayerId": 171,
+			"bO": 4,
+			"pA": 4,
+			"r": 1,
+			"rBI": 3,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 120,
+			"teamLeaguePlayerId": 166,
+			"bO": 5,
+			"pA": 4,
+			"r": 0,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 120,
+			"teamLeaguePlayerId": 172,
+			"bO": 6,
+			"pA": 4,
+			"r": 0,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 120,
+			"teamLeaguePlayerId": 167,
+			"bO": 7,
+			"pA": 4,
+			"r": 2,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 120,
+			"teamLeaguePlayerId": 160,
+			"bO": 8,
+			"pA": 4,
+			"r": 1,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 120,
+			"teamLeaguePlayerId": 170,
+			"bO": 9,
+			"pA": 4,
+			"r": 2,
+			"rBI": 2,
+			"b1": 1,
+			"b2": 0,
+			"b3": 1,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 120,
+			"teamLeaguePlayerId": 173,
+			"bO": 10,
+			"pA": 3,
+			"r": 2,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 120,
+			"teamLeaguePlayerId": 164,
+			"bO": 11,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2024-07-16 19:30:00" ,
+	    "opponent": "Lazer Show",
+	    "score": 13,
+	    "opponentScore": 8,
+	    "field": "Vietnam Vets #1",
+	    "wasHome": 0,
+	    "teamLeagueId": 20
+	}
+		{
+			"gameId": 121,
+			"teamLeaguePlayerId": 162,
+			"bO": 1,
+			"pA": 4,
+			"r": 1,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 1,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 121,
+			"teamLeaguePlayerId": 169,
+			"bO": 2,
+			"pA": 4,
+			"r": 3,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 121,
+			"teamLeaguePlayerId": 172,
+			"bO": 3,
+			"pA": 4,
+			"r": 3,
+			"rBI": 2,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 121,
+			"teamLeaguePlayerId": 158,
+			"bO": 4,
+			"pA": 4,
+			"r": 1,
+			"rBI": 1,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 121,
+			"teamLeaguePlayerId": 159,
+			"bO": 5,
+			"pA": 4,
+			"r": 0,
+			"rBI": 2,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 121,
+			"teamLeaguePlayerId": 166,
+			"bO": 6,
+			"pA": 4,
+			"r": 0,
+			"rBI": 4,
+			"b1": 4,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 121,
+			"teamLeaguePlayerId": 167,
+			"bO": 7,
+			"pA": 4,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 121,
+			"teamLeaguePlayerId": 161,
+			"bO": 8,
+			"pA": 4,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 121,
+			"teamLeaguePlayerId": 173,
+			"bO": 9,
+			"pA": 3,
+			"r": 2,
+			"rBI": 2,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 121,
+			"teamLeaguePlayerId": 171,
+			"bO": 10,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 121,
+			"teamLeaguePlayerId": 163,
+			"bO": 11,
+			"pA": 3,
+			"r": 1,
+			"rBI": 2,
+			"b1": 0,
+			"b2": 0,
+			"b3": 1,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2024-07-23 19:30:00" ,
+	    "opponent": "McGlovin",
+	    "score": 5,
+	    "opponentScore": 12,
+	    "field": "Tingley #2",
+	    "wasHome": 1,
+	    "teamLeagueId": 20
+	}
+		{
+			"gameId": 122,
+			"teamLeaguePlayerId": 169,
+			"bO": 1,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 122,
+			"teamLeaguePlayerId": 162,
+			"bO": 2,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 122,
+			"teamLeaguePlayerId": 158,
+			"bO": 3,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 1,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 122,
+			"teamLeaguePlayerId": 159,
+			"bO": 4,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 122,
+			"teamLeaguePlayerId": 171,
+			"bO": 5,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 122,
+			"teamLeaguePlayerId": 172,
+			"bO": 6,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 122,
+			"teamLeaguePlayerId": 163,
+			"bO": 7,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 122,
+			"teamLeaguePlayerId": 161,
+			"bO": 8,
+			"pA": 2,
+			"r": 0,
+			"rBI": 2,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 122,
+			"teamLeaguePlayerId": 170,
+			"bO": 9,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 122,
+			"teamLeaguePlayerId": 165,
+			"bO": 10,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 122,
+			"teamLeaguePlayerId": 173,
+			"bO": 11,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 122,
+			"teamLeaguePlayerId": 164,
+			"bO": 12,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2024-07-30 18:30:00" ,
+	    "opponent": "Guns",
+	    "score": 11,
+	    "opponentScore": 18,
+	    "field": "Vietnam Vets #1",
+	    "wasHome": 0,
+	    "teamLeagueId": 20
+	}
+       {
+			"gameId": 123,
+			"teamLeaguePlayerId": 172,
+			"bO": 1,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 123,
+			"teamLeaguePlayerId": 159,
+			"bO": 2,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 123,
+			"teamLeaguePlayerId": 158,
+			"bO": 3,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 123,
+			"teamLeaguePlayerId": 167,
+			"bO": 4,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 123,
+			"teamLeaguePlayerId": 162,
+			"bO": 5,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 123,
+			"teamLeaguePlayerId": 163,
+			"bO": 6,
+			"pA": 3,
+			"r": 2,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 123,
+			"teamLeaguePlayerId": 160,
+			"bO": 7,
+			"pA": 3,
+			"r": 2,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 123,
+			"teamLeaguePlayerId": 169,
+			"bO": 8,
+			"pA": 2,
+			"r": 1,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 123,
+			"teamLeaguePlayerId": 161,
+			"bO": 9,
+			"pA": 2,
+			"r": 0,
+			"rBI": 1,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 123,
+			"teamLeaguePlayerId": 165,
+			"bO": 10,
+			"pA": 2,
+			"r": 1,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 1,
+			"lOB": 0
+		}
+		{
+			"gameId": 123,
+			"teamLeaguePlayerId": 168,
+			"bO": 11,
+			"pA": 2,
+			"r": 1,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 123,
+			"teamLeaguePlayerId": 164,
+			"bO": 12,
+			"pA": 2,
+			"r": 1,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2024-08-20 19:30:00" ,
+	    "opponent": "ASM Crew",
+	    "score": 6,
+	    "opponentScore": 20,
+	    "field": "Vietnam Vets #1",
+	    "wasHome": 1,
+	    "teamLeagueId": 20
+	}
+		{
+			"gameId": 124,
+			"teamLeaguePlayerId": 172,
+			"bO": 1,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 124,
+			"teamLeaguePlayerId": 162,
+			"bO": 2,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 124,
+			"teamLeaguePlayerId": 158,
+			"bO": 3,
+			"pA": 3,
+			"r": 0,
+			"rBI": 1,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 124,
+			"teamLeaguePlayerId": 159,
+			"bO": 4,
+			"pA": 3,
+			"r": 1,
+			"rBI": 3,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 1,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 124,
+			"teamLeaguePlayerId": 171,
+			"bO": 5,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 124,
+			"teamLeaguePlayerId": 166,
+			"bO": 6,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 124,
+			"teamLeaguePlayerId": 160,
+			"bO": 7,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 124,
+			"teamLeaguePlayerId": 167,
+			"bO": 8,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 1,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 124,
+			"teamLeaguePlayerId": 163,
+			"bO": 9,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 124,
+			"teamLeaguePlayerId": 161,
+			"bO": 10,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 124,
+			"teamLeaguePlayerId": 165,
+			"bO": 11,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 124,
+			"teamLeaguePlayerId": 173,
+			"bO": 12,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 124,
+			"teamLeaguePlayerId": 164,
+			"bO": 13,
+			"pA": 2,
+			"r": 1,
+			"rBI": 1,
 			"b1": 2,
 			"b2": 0,
 			"b3": 0,
