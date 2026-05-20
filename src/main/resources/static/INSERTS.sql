@@ -106,6 +106,11 @@
 	)
 	VALUES('City', 'Spring 2025');
 
+	INSERT INTO public.league(
+		name, season
+	)
+	VALUES('City', 'Summer 2025');
+
 -- TEAMLEAGUE ASSOCIATIONS
 	-- Chups Fall 2018 City
 	INSERT INTO public.team_league(
@@ -274,6 +279,14 @@
 	SELECT team.id, league.id 
 	FROM public.team AS team, public.league AS league 
 	WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025';
+
+	-- Softball-Reference.com Summer 2025 City
+	INSERT INTO public.team_league(
+		team_id, league_id
+	)
+	SELECT team.id, league.id 
+	FROM public.team AS team, public.league AS league 
+	WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2025';
 
 -- +++++++++++++++++++++++
 -- THIS COVERS THE PLAYERS
@@ -483,2566 +496,2807 @@
 
 -- ROSTER/SEASON LINKAGES
 
--- GH Summer 2021
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Pat Barnes';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Andrew Stuart';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Brady Key';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Jason Rogers';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Linn Reece';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Tim Tribou';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Alex Gibbs';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Jon Pinsonneault';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Mike Parrish';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Brett Reece';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Dave Penasa';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Blake Reece';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Jamie Dickey';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Rob';
-
--- Chupacabras Summer 2021
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Jacob Coffman';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Michael Rubio';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Tyler Black';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Zak Kupferer';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Mike Romero';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Shawn Guerrero';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Ray Sanchez';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Gabe Davilla';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Ronnie Black';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Justin Bowie';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Jeremy Lachmann';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Chris Coffman';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Chris Boren';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE '';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Nate Burrock';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Jorie Cordova';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'JJ Maloney';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Keith';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Chris Torres';
+	-- GH Summer 2021
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Pat Barnes';
 
 		INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Tyler Cheshire';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Brady Key';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
-	AND player.name LIKE 'Drew Macphee';
-
--- Sb-Ref.com Spring 2022
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND player.name LIKE 'Pat Barnes';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND player.name LIKE 'Andrew Stuart';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND player.name LIKE 'Brady Key';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND player.name LIKE 'Jason Rogers';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND player.name LIKE 'Linn Reece';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND player.name LIKE 'Tim Tribou';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND player.name LIKE 'Alex Gibbs';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND player.name LIKE 'Jon Pinsonneault';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND player.name LIKE 'Mike Parrish';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND player.name LIKE 'Brett Reece';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND player.name LIKE 'Dave Penasa';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND player.name LIKE 'Blake Reece';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND player.name LIKE 'Jamie Dickey';
-
--- Chupacabras Spring 2022
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND player.name LIKE 'Jacob Coffman';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND player.name LIKE 'Michael Rubio';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND player.name LIKE 'Tyler Black';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND player.name LIKE 'Zak Kupferer';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND player.name LIKE 'Mike Romero';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND player.name LIKE 'Shawn Guerrero';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND player.name LIKE 'Ray Sanchez';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND player.name LIKE 'Gabe Davilla';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND player.name LIKE 'Ronnie Black';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND player.name LIKE 'Justin Bowie';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND player.name LIKE 'Jeremy Lachmann';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND player.name LIKE 'Chris Coffman';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND player.name LIKE 'Brady Key';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
-	AND player.name LIKE 'Steve Turos';
-
--- Sb-Ref.com Summer 2022
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND player.name LIKE 'Brady Key';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND player.name LIKE 'Jason Rogers';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND player.name LIKE 'Linn Reece';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND player.name LIKE 'Tim Tribou';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND player.name LIKE 'Alex Gibbs';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND player.name LIKE 'Jon Pinsonneault';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND player.name LIKE 'Brett Reece';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND player.name LIKE 'Dave Penasa';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND player.name LIKE 'Blake Reece';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND player.name LIKE 'Jamie Dickey';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND player.name LIKE 'Dan Watkins';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND player.name LIKE 'Andrew Stuart';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND player.name LIKE 'Mike Parrish';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND player.name LIKE 'Sean';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND player.name LIKE 'Brendon';
-
--- Chupacabras Summer 2022
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND player.name LIKE 'Jacob Coffman';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND player.name LIKE 'Michael Rubio';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND player.name LIKE 'Tyler Black';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND player.name LIKE 'Zak Kupferer';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND player.name LIKE 'Mike Romero';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND player.name LIKE 'Shawn Guerrero';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND player.name LIKE 'Ray Sanchez';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND player.name LIKE 'Gabe Davilla';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND player.name LIKE 'Ronnie Black';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND player.name LIKE 'Justin Bowie';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND player.name LIKE 'Jeremy Lachmann';
-	
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND player.name LIKE 'Chris Coffman';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND player.name LIKE 'Brady Key';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND player.name LIKE 'JJ Maloney';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND player.name LIKE 'Keith';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
-	AND player.name LIKE 'Chris Boren';
-
--- Sb-Ref.com Fall 2022
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
-	AND player.name LIKE 'Brady Key';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
-	AND player.name LIKE 'Jason Rogers';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
-	AND player.name LIKE 'Linn Reece';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
-	AND player.name LIKE 'Tim Tribou';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
-	AND player.name LIKE 'Alex Gibbs';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
-	AND player.name LIKE 'Jon Pinsonneault';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
-	AND player.name LIKE 'Brett Reece';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
-	AND player.name LIKE 'Dave Penasa';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
-	AND player.name LIKE 'Blake Reece';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
-	AND player.name LIKE 'Jamie Dickey';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
-	AND player.name LIKE 'Dan Watkins';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
-	AND player.name LIKE 'Andrew Stuart';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
-	AND player.name LIKE 'Mike Parrish';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
-	AND player.name LIKE 'Sean Babiniec';
-
--- Sb-Ref.com Spring 2023
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
-	AND player.name LIKE 'Brady Key';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
-	AND player.name LIKE 'Jason Rogers';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
-	AND player.name LIKE 'Linn Reece';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
-	AND player.name LIKE 'Tim Tribou';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
-	AND player.name LIKE 'Alex Gibbs';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
-	AND player.name LIKE 'Jon Pinsonneault';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
-	AND player.name LIKE 'Brett Reece';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
-	AND player.name LIKE 'Dave Penasa';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
-	AND player.name LIKE 'Blake Reece';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
-	AND player.name LIKE 'Jamie Dickey';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
-	AND player.name LIKE 'Dan Watkins';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
-	AND player.name LIKE 'Andrew Stuart';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
-	AND player.name LIKE 'Mike Parrish';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
-	AND player.name LIKE 'Sean Babiniec';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
-	AND player.name LIKE 'Brendon';
-
--- Sb-Ref.com Summer 2023
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND player.name LIKE 'Brady Key';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND player.name LIKE 'Jason Rogers';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND player.name LIKE 'Linn Reece';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND player.name LIKE 'Tim Tribou';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND player.name LIKE 'Alex Gibbs';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND player.name LIKE 'Jon Pinsonneault';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND player.name LIKE 'Brett Reece';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND player.name LIKE 'Dave Penasa';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND player.name LIKE 'Blake Reece';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND player.name LIKE 'Jamie Dickey';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND player.name LIKE 'Dan Watkins';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND player.name LIKE 'Andrew Stuart';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND player.name LIKE 'Mike Parrish';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND player.name LIKE 'Sean Babiniec';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND player.name LIKE 'Brendon';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND player.name LIKE 'Isaiah';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
-	AND player.name LIKE 'Josh Bien';
-
--- Sb-Ref.com Spring 2024
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
-	AND player.name LIKE 'Brady Key';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
-	AND player.name LIKE 'Jason Rogers';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
-	AND player.name LIKE 'Linn Reece';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
-	AND player.name LIKE 'Tim Tribou';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
-	AND player.name LIKE 'Alex Gibbs';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
-	AND player.name LIKE 'Jon Pinsonneault';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
-	AND player.name LIKE 'Brett Reece';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
-	AND player.name LIKE 'Dave Penasa';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
-	AND player.name LIKE 'Blake Reece';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
-	AND player.name LIKE 'Jamie Dickey';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
-	AND player.name LIKE 'Dan Watkins';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
-	AND player.name LIKE 'Andrew Stuart';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
-	AND player.name LIKE 'Mike Parrish';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
-	AND player.name LIKE 'Sean Babiniec';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
-	AND player.name LIKE 'Tyler Cheshire';
-
--- Sb-Ref.com Spring 2025
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
-	AND player.name LIKE 'Brady Key';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
-	AND player.name LIKE 'Jason Rogers';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
-	AND player.name LIKE 'Linn Reece';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
-	AND player.name LIKE 'Tim Tribou';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
-	AND player.name LIKE 'Alex Gibbs';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
-	AND player.name LIKE 'Jon Pinsonneault';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
-	AND player.name LIKE 'Brett Reece';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
-	AND player.name LIKE 'Dave Penasa';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
-	AND player.name LIKE 'Blake Reece';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
-	AND player.name LIKE 'Jamie Dickey';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
-	AND player.name LIKE 'Dan Watkins';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
-	AND player.name LIKE 'Andrew Stuart';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
-	AND player.name LIKE 'Mike Parrish';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
-	AND player.name LIKE 'Sean Babiniec';
-
-	INSERT INTO public.team_league_player(
-		team_league_id, player_id
-	)
-	SELECT team_league.id, player.id 
-	FROM public.team_league AS team_league, public.player AS player 
-	WHERE team_league.team_id IN 
-		(SELECT team.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
-	AND team_league.league_id IN
-		(SELECT league.id
-		FROM public.team AS team, public.league AS league 
-		WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
-	AND player.name LIKE 'Tyler Cheshire';
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Andrew Stuart';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Brady Key';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Jason Rogers';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Linn Reece';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Tim Tribou';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Alex Gibbs';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Jon Pinsonneault';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Mike Parrish';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Brett Reece';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Dave Penasa';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Blake Reece';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Jamie Dickey';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Garden Hosers' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Rob';
+
+	-- Chupacabras Summer 2021
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Jacob Coffman';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Michael Rubio';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Tyler Black';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Zak Kupferer';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Mike Romero';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Shawn Guerrero';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Ray Sanchez';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Gabe Davilla';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Ronnie Black';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Justin Bowie';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Jeremy Lachmann';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Chris Coffman';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Chris Boren';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE '';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Nate Burrock';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Jorie Cordova';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'JJ Maloney';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Keith';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Chris Torres';
+
+			INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Tyler Cheshire';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Brady Key';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2021')
+		AND player.name LIKE 'Drew Macphee';
+
+	-- Sb-Ref.com Spring 2022
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND player.name LIKE 'Pat Barnes';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND player.name LIKE 'Andrew Stuart';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND player.name LIKE 'Brady Key';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND player.name LIKE 'Jason Rogers';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND player.name LIKE 'Linn Reece';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND player.name LIKE 'Tim Tribou';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND player.name LIKE 'Alex Gibbs';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND player.name LIKE 'Jon Pinsonneault';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND player.name LIKE 'Mike Parrish';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND player.name LIKE 'Brett Reece';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND player.name LIKE 'Dave Penasa';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND player.name LIKE 'Blake Reece';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND player.name LIKE 'Jamie Dickey';
+
+	-- Chupacabras Spring 2022
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND player.name LIKE 'Jacob Coffman';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND player.name LIKE 'Michael Rubio';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND player.name LIKE 'Tyler Black';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND player.name LIKE 'Zak Kupferer';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND player.name LIKE 'Mike Romero';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND player.name LIKE 'Shawn Guerrero';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND player.name LIKE 'Ray Sanchez';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND player.name LIKE 'Gabe Davilla';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND player.name LIKE 'Ronnie Black';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND player.name LIKE 'Justin Bowie';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND player.name LIKE 'Jeremy Lachmann';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND player.name LIKE 'Chris Coffman';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND player.name LIKE 'Brady Key';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2022')
+		AND player.name LIKE 'Steve Turos';
+
+	-- Sb-Ref.com Summer 2022
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND player.name LIKE 'Brady Key';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND player.name LIKE 'Jason Rogers';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND player.name LIKE 'Linn Reece';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND player.name LIKE 'Tim Tribou';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND player.name LIKE 'Alex Gibbs';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND player.name LIKE 'Jon Pinsonneault';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND player.name LIKE 'Brett Reece';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND player.name LIKE 'Dave Penasa';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND player.name LIKE 'Blake Reece';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND player.name LIKE 'Jamie Dickey';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND player.name LIKE 'Dan Watkins';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND player.name LIKE 'Andrew Stuart';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND player.name LIKE 'Mike Parrish';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND player.name LIKE 'Sean';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND player.name LIKE 'Brendon';
+
+	-- Chupacabras Summer 2022
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND player.name LIKE 'Jacob Coffman';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND player.name LIKE 'Michael Rubio';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND player.name LIKE 'Tyler Black';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND player.name LIKE 'Zak Kupferer';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND player.name LIKE 'Mike Romero';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND player.name LIKE 'Shawn Guerrero';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND player.name LIKE 'Ray Sanchez';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND player.name LIKE 'Gabe Davilla';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND player.name LIKE 'Ronnie Black';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND player.name LIKE 'Justin Bowie';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND player.name LIKE 'Jeremy Lachmann';
+		
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND player.name LIKE 'Chris Coffman';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND player.name LIKE 'Brady Key';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND player.name LIKE 'JJ Maloney';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND player.name LIKE 'Keith';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Chupacabras' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2022')
+		AND player.name LIKE 'Chris Boren';
+
+	-- Sb-Ref.com Fall 2022
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
+		AND player.name LIKE 'Brady Key';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
+		AND player.name LIKE 'Jason Rogers';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
+		AND player.name LIKE 'Linn Reece';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
+		AND player.name LIKE 'Tim Tribou';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
+		AND player.name LIKE 'Alex Gibbs';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
+		AND player.name LIKE 'Jon Pinsonneault';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
+		AND player.name LIKE 'Brett Reece';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
+		AND player.name LIKE 'Dave Penasa';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
+		AND player.name LIKE 'Blake Reece';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
+		AND player.name LIKE 'Jamie Dickey';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
+		AND player.name LIKE 'Dan Watkins';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
+		AND player.name LIKE 'Andrew Stuart';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
+		AND player.name LIKE 'Mike Parrish';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Fall 2022')
+		AND player.name LIKE 'Sean Babiniec';
+
+	-- Sb-Ref.com Spring 2023
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
+		AND player.name LIKE 'Brady Key';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
+		AND player.name LIKE 'Jason Rogers';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
+		AND player.name LIKE 'Linn Reece';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
+		AND player.name LIKE 'Tim Tribou';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
+		AND player.name LIKE 'Alex Gibbs';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
+		AND player.name LIKE 'Jon Pinsonneault';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
+		AND player.name LIKE 'Brett Reece';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
+		AND player.name LIKE 'Dave Penasa';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
+		AND player.name LIKE 'Blake Reece';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
+		AND player.name LIKE 'Jamie Dickey';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
+		AND player.name LIKE 'Dan Watkins';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
+		AND player.name LIKE 'Andrew Stuart';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
+		AND player.name LIKE 'Mike Parrish';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
+		AND player.name LIKE 'Sean Babiniec';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2023')
+		AND player.name LIKE 'Brendon';
+
+	-- Sb-Ref.com Summer 2023
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND player.name LIKE 'Brady Key';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND player.name LIKE 'Jason Rogers';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND player.name LIKE 'Linn Reece';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND player.name LIKE 'Tim Tribou';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND player.name LIKE 'Alex Gibbs';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND player.name LIKE 'Jon Pinsonneault';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND player.name LIKE 'Brett Reece';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND player.name LIKE 'Dave Penasa';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND player.name LIKE 'Blake Reece';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND player.name LIKE 'Jamie Dickey';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND player.name LIKE 'Dan Watkins';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND player.name LIKE 'Andrew Stuart';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND player.name LIKE 'Mike Parrish';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND player.name LIKE 'Sean Babiniec';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND player.name LIKE 'Brendon';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND player.name LIKE 'Isaiah';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2023')
+		AND player.name LIKE 'Josh Bien';
+
+	-- Sb-Ref.com Spring 2024
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+		AND player.name LIKE 'Brady Key';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+		AND player.name LIKE 'Jason Rogers';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+		AND player.name LIKE 'Linn Reece';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+		AND player.name LIKE 'Tim Tribou';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+		AND player.name LIKE 'Alex Gibbs';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+		AND player.name LIKE 'Jon Pinsonneault';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+		AND player.name LIKE 'Brett Reece';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+		AND player.name LIKE 'Dave Penasa';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+		AND player.name LIKE 'Blake Reece';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+		AND player.name LIKE 'Jamie Dickey';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+		AND player.name LIKE 'Dan Watkins';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+		AND player.name LIKE 'Andrew Stuart';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+		AND player.name LIKE 'Mike Parrish';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+		AND player.name LIKE 'Sean Babiniec';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2024')
+		AND player.name LIKE 'Tyler Cheshire';
+
+	-- Sb-Ref.com Spring 2025
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+		AND player.name LIKE 'Brady Key';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+		AND player.name LIKE 'Jason Rogers';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+		AND player.name LIKE 'Linn Reece';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+		AND player.name LIKE 'Tim Tribou';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+		AND player.name LIKE 'Alex Gibbs';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+		AND player.name LIKE 'Jon Pinsonneault';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+		AND player.name LIKE 'Brett Reece';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+		AND player.name LIKE 'Dave Penasa';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+		AND player.name LIKE 'Blake Reece';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+		AND player.name LIKE 'Jamie Dickey';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+		AND player.name LIKE 'Dan Watkins';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+		AND player.name LIKE 'Andrew Stuart';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+		AND player.name LIKE 'Mike Parrish';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+		AND player.name LIKE 'Sean Babiniec';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+		AND player.name LIKE 'Tyler Cheshire';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Spring 2025')
+		AND player.name LIKE 'Dan Watkins';
+
+	-- Sb-Ref.com Summer 2025
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2025')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2025')
+		AND player.name LIKE 'Brady Key';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2025')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2025')
+		AND player.name LIKE 'Jason Rogers';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2025')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2025')
+		AND player.name LIKE 'Linn Reece';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2025')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2025')
+		AND player.name LIKE 'Tim Tribou';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2025')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2025')
+		AND player.name LIKE 'Alex Gibbs';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2025')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2025')
+		AND player.name LIKE 'Jon Pinsonneault';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2025')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2025')
+		AND player.name LIKE 'Brett Reece';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2025')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2025')
+		AND player.name LIKE 'Dave Penasa';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2025')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2025')
+		AND player.name LIKE 'Blake Reece';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2025')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2025')
+		AND player.name LIKE 'Jamie Dickey';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2025')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2025')
+		AND player.name LIKE 'Dan Watkins';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2025')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2025')
+		AND player.name LIKE 'Andrew Stuart';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2025')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2025')
+		AND player.name LIKE 'Mike Parrish';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2025')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2025')
+		AND player.name LIKE 'Sean Babiniec';
+
+		INSERT INTO public.team_league_player(
+			team_league_id, player_id
+		)
+		SELECT team_league.id, player.id 
+		FROM public.team_league AS team_league, public.player AS player 
+		WHERE team_league.team_id IN 
+			(SELECT team.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2025')
+		AND team_league.league_id IN
+			(SELECT league.id
+			FROM public.team AS team, public.league AS league 
+			WHERE team.name LIKE 'Softball-Reference.com' AND league.name LIKE 'City' AND league.season LIKE 'Summer 2025')
+		AND player.name LIKE 'Tyler Cheshire';
 
 
 -- GAMES (JSON)
@@ -29848,6 +30102,5148 @@
 			"r": 1,
 			"rBI": 1,
 			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+
+-- SBRef.com Spring 2025
+	{
+	    "date": "2025-03-11 18:30:00" ,
+	    "opponent": "Prince of Peace",
+	    "score": 11,
+	    "opponentScore": 8,
+	    "field": "Los Altos #2",
+	    "wasHome": 1,
+	    "teamLeagueId": 21
+	}
+		{
+			"gameId": 125,
+			"teamLeaguePlayerId": 178,
+			"bO": 1,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 125,
+			"teamLeaguePlayerId": 182,
+			"bO": 2,
+			"pA": 3,
+			"r": 0,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 1,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 125,
+			"teamLeaguePlayerId": 174,
+			"bO": 3,
+			"pA": 3,
+			"r": 2,
+			"rBI": 1,
+			"b1": 0,
+			"b2": 1,
+			"b3": 1,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 125,
+			"teamLeaguePlayerId": 175,
+			"bO": 4,
+			"pA": 3,
+			"r": 1,
+			"rBI": 2,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 125,
+			"teamLeaguePlayerId": 187,
+			"bO": 5,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 125,
+			"teamLeaguePlayerId": 188,
+			"bO": 6,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 125,
+			"teamLeaguePlayerId": 176,
+			"bO": 7,
+			"pA": 3,
+			"r": 0,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 125,
+			"teamLeaguePlayerId": 185,
+			"bO": 8,
+			"pA": 3,
+			"r": 0,
+			"rBI": 1,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 125,
+			"teamLeaguePlayerId": 183,
+			"bO": 9,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 125,
+			"teamLeaguePlayerId": 179,
+			"bO": 10,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 1,
+			"lOB": 0
+		}
+		{
+			"gameId": 125,
+			"teamLeaguePlayerId": 186,
+			"bO": 11,
+			"pA": 2,
+			"r": 2,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 125,
+			"teamLeaguePlayerId": 177,
+			"bO": 12,
+			"pA": 2,
+			"r": 0,
+			"rBI": 2,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 125,
+			"teamLeaguePlayerId": 181,
+			"bO": 13,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 125,
+			"teamLeaguePlayerId": 180,
+			"bO": 14,
+			"pA": 2,
+			"r": 1,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2025-03-11 19:30:00" ,
+	    "opponent": "Lizards",
+	    "score": 21,
+	    "opponentScore": 12,
+	    "field": "Los Altos #2",
+	    "wasHome": 0,
+	    "teamLeagueId": 21
+	}
+		{
+			"gameId": 126,
+			"teamLeaguePlayerId": 178,
+			"bO": 1,
+			"pA": 3,
+			"r": 3,
+			"rBI": 2,
+			"b1": 2,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 126,
+			"teamLeaguePlayerId": 182,
+			"bO": 2,
+			"pA": 3,
+			"r": 3,
+			"rBI": 0,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 126,
+			"teamLeaguePlayerId": 174,
+			"bO": 3,
+			"pA": 3,
+			"r": 3,
+			"rBI": 4,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 1,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 126,
+			"teamLeaguePlayerId": 175,
+			"bO": 4,
+			"pA": 3,
+			"r": 3,
+			"rBI": 2,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 1,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 126,
+			"teamLeaguePlayerId": 187,
+			"bO": 5,
+			"pA": 3,
+			"r": 2,
+			"rBI": 1,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 126,
+			"teamLeaguePlayerId": 188,
+			"bO": 6,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 126,
+			"teamLeaguePlayerId": 176,
+			"bO": 7,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 126,
+			"teamLeaguePlayerId": 185,
+			"bO": 8,
+			"pA": 3,
+			"r": 1,
+			"rBI": 3,
+			"b1": 1,
+			"b2": 0,
+			"b3": 2,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 126,
+			"teamLeaguePlayerId": 183,
+			"bO": 9,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 126,
+			"teamLeaguePlayerId": 179,
+			"bO": 10,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 0,
+			"b2": 0,
+			"b3": 1,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 126,
+			"teamLeaguePlayerId": 186,
+			"bO": 11,
+			"pA": 3,
+			"r": 0,
+			"rBI": 1,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 126,
+			"teamLeaguePlayerId": 177,
+			"bO": 12,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 126,
+			"teamLeaguePlayerId": 181,
+			"bO": 13,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 1,
+			"lOB": 0
+		}
+		{
+			"gameId": 126,
+			"teamLeaguePlayerId": 180,
+			"bO": 14,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 1,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2025-03-25 18:30:00" ,
+	    "opponent": "L.A.L.",
+	    "score": 25,
+	    "opponentScore": 15,
+	    "field": "Los Altos #3",
+	    "wasHome": 1,
+	    "teamLeagueId": 21
+	}
+		{
+			"gameId": 127,
+			"teamLeaguePlayerId": 178,
+			"bO": 1,
+			"pA": 4,
+			"r": 3,
+			"rBI": 1,
+			"b1": 4,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 127,
+			"teamLeaguePlayerId": 182,
+			"bO": 2,
+			"pA": 4,
+			"r": 2,
+			"rBI": 1,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 127,
+			"teamLeaguePlayerId": 174,
+			"bO": 3,
+			"pA": 4,
+			"r": 3,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 127,
+			"teamLeaguePlayerId": 175,
+			"bO": 4,
+			"pA": 4,
+			"r": 3,
+			"rBI": 5,
+			"b1": 1,
+			"b2": 2,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 127,
+			"teamLeaguePlayerId": 187,
+			"bO": 5,
+			"pA": 4,
+			"r": 2,
+			"rBI": 2,
+			"b1": 1,
+			"b2": 2,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 127,
+			"teamLeaguePlayerId": 188,
+			"bO": 6,
+			"pA": 4,
+			"r": 2,
+			"rBI": 2,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 127,
+			"teamLeaguePlayerId": 176,
+			"bO": 7,
+			"pA": 4,
+			"r": 2,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 2,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 127,
+			"teamLeaguePlayerId": 183,
+			"bO": 8,
+			"pA": 4,
+			"r": 2,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 127,
+			"teamLeaguePlayerId": 179,
+			"bO": 9,
+			"pA": 3,
+			"r": 2,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 127,
+			"teamLeaguePlayerId": 186,
+			"bO": 10,
+			"pA": 3,
+			"r": 2,
+			"rBI": 2,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 127,
+			"teamLeaguePlayerId": 177,
+			"bO": 11,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 127,
+			"teamLeaguePlayerId": 181,
+			"bO": 12,
+			"pA": 3,
+			"r": 1,
+			"rBI": 2,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2025-03-25 20:30:00" ,
+	    "opponent": "The Sandlot Kids",
+	    "score": 27,
+	    "opponentScore": 1,
+	    "field": "Los Altos #3",
+	    "wasHome": 1,
+	    "teamLeagueId": 21
+	}
+		{
+			"gameId": 128,
+			"teamLeaguePlayerId": 178,
+			"bO": 1,
+			"pA": 3,
+			"r": 2,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 128,
+			"teamLeaguePlayerId": 182,
+			"bO": 2,
+			"pA": 3,
+			"r": 3,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 128,
+			"teamLeaguePlayerId": 174,
+			"bO": 3,
+			"pA": 3,
+			"r": 3,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 128,
+			"teamLeaguePlayerId": 175,
+			"bO": 4,
+			"pA": 3,
+			"r": 3,
+			"rBI": 7,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 1,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 128,
+			"teamLeaguePlayerId": 187,
+			"bO": 5,
+			"pA": 3,
+			"r": 2,
+			"rBI": 3,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 1,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 128,
+			"teamLeaguePlayerId": 188,
+			"bO": 6,
+			"pA": 3,
+			"r": 2,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 128,
+			"teamLeaguePlayerId": 176,
+			"bO": 7,
+			"pA": 3,
+			"r": 3,
+			"rBI": 2,
+			"b1": 1,
+			"b2": 1,
+			"b3": 1,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 128,
+			"teamLeaguePlayerId": 183,
+			"bO": 8,
+			"pA": 3,
+			"r": 2,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 128,
+			"teamLeaguePlayerId": 179,
+			"bO": 9,
+			"pA": 3,
+			"r": 2,
+			"rBI": 5,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 1,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 128,
+			"teamLeaguePlayerId": 186,
+			"bO": 10,
+			"pA": 3,
+			"r": 2,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 128,
+			"teamLeaguePlayerId": 177,
+			"bO": 11,
+			"pA": 3,
+			"r": 2,
+			"rBI": 3,
+			"b1": 2,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 128,
+			"teamLeaguePlayerId": 181,
+			"bO": 12,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 1,
+			"lOB": 0
+		}
+	{
+	    "date": "2025-04-01 18:30:00" ,
+	    "opponent": "Red Tails",
+	    "score": 13,
+	    "opponentScore": 32,
+	    "field": "Los Altos #3",
+	    "wasHome": 0,
+	    "teamLeagueId": 21
+	}
+		{
+			"gameId": 129,
+			"teamLeaguePlayerId": 178,
+			"bO": 1,
+			"pA": 3,
+			"r": 2,
+			"rBI": 2,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 129,
+			"teamLeaguePlayerId": 185,
+			"bO": 2,
+			"pA": 3,
+			"r": 2,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 129,
+			"teamLeaguePlayerId": 174,
+			"bO": 3,
+			"pA": 3,
+			"r": 2,
+			"rBI": 1,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 129,
+			"teamLeaguePlayerId": 187,
+			"bO": 4,
+			"pA": 3,
+			"r": 1,
+			"rBI": 3,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 1,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 1,
+			"lOB": 0
+		}
+		{
+			"gameId": 129,
+			"teamLeaguePlayerId": 188,
+			"bO": 5,
+			"pA": 3,
+			"r": 2,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 1,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 129,
+			"teamLeaguePlayerId": 176,
+			"bO": 6,
+			"pA": 2,
+			"r": 1,
+			"rBI": 2,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 129,
+			"teamLeaguePlayerId": 183,
+			"bO": 7,
+			"pA": 2,
+			"r": 0,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 129,
+			"teamLeaguePlayerId": 179,
+			"bO": 8,
+			"pA": 2,
+			"r": 0,
+			"rBI": 1,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 129,
+			"teamLeaguePlayerId": 186,
+			"bO": 9,
+			"pA": 2,
+			"r": 1,
+			"rBI": 1,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 1,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 129,
+			"teamLeaguePlayerId": 177,
+			"bO": 10,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 1,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 129,
+			"teamLeaguePlayerId": 181,
+			"bO": 11,
+			"pA": 2,
+			"r": 2,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 129,
+			"teamLeaguePlayerId": 182,
+			"bO": 12,
+			"pA": 2,
+			"r": 0,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2025-04-01 19:30:00" ,
+	    "opponent": "Gallos",
+	    "score": 15,
+	    "opponentScore": 30,
+	    "field": "Los Altos #2",
+	    "wasHome": 0,
+	    "teamLeagueId": 21
+	}
+		{
+			"gameId": 130,
+			"teamLeaguePlayerId": 178,
+			"bO": 1,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 130,
+			"teamLeaguePlayerId": 185,
+			"bO": 2,
+			"pA": 3,
+			"r": 2,
+			"rBI": 2,
+			"b1": 2,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 130,
+			"teamLeaguePlayerId": 174,
+			"bO": 3,
+			"pA": 3,
+			"r": 1,
+			"rBI": 3,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 1,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 130,
+			"teamLeaguePlayerId": 187,
+			"bO": 4,
+			"pA": 3,
+			"r": 2,
+			"rBI": 3,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 2,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 130,
+			"teamLeaguePlayerId": 188,
+			"bO": 5,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 130,
+			"teamLeaguePlayerId": 176,
+			"bO": 6,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 130,
+			"teamLeaguePlayerId": 183,
+			"bO": 7,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 130,
+			"teamLeaguePlayerId": 179,
+			"bO": 8,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 130,
+			"teamLeaguePlayerId": 186,
+			"bO": 9,
+			"pA": 3,
+			"r": 2,
+			"rBI": 2,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 130,
+			"teamLeaguePlayerId": 177,
+			"bO": 10,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 1,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 130,
+			"teamLeaguePlayerId": 181,
+			"bO": 11,
+			"pA": 2,
+			"r": 2,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 130,
+			"teamLeaguePlayerId": 182,
+			"bO": 12,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2025-04-08 18:30:00" ,
+	    "opponent": "Cold Brewers",
+	    "score": 12,
+	    "opponentScore": 15,
+	    "field": "Los Altos #1",
+	    "wasHome": 0,
+	    "teamLeagueId": 21
+	}
+		{
+			"gameId": 158,
+			"teamLeaguePlayerId": 178,
+			"bO": 1,
+			"pA": 4,
+			"r": 1,
+			"rBI": 0,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 158,
+			"teamLeaguePlayerId": 188,
+			"bO": 2,
+			"pA": 4,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 158,
+			"teamLeaguePlayerId": 174,
+			"bO": 3,
+			"pA": 3,
+			"r": 1,
+			"rBI": 2,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 158,
+			"teamLeaguePlayerId": 175,
+			"bO": 4,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 158,
+			"teamLeaguePlayerId": 187,
+			"bO": 5,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 0,
+			"b2": 2,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 158,
+			"teamLeaguePlayerId": 179,
+			"bO": 6,
+			"pA": 3,
+			"r": 0,
+			"rBI": 2,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 158,
+			"teamLeaguePlayerId": 176,
+			"bO": 7,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 158,
+			"teamLeaguePlayerId": 186,
+			"bO": 8,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 158,
+			"teamLeaguePlayerId": 183,
+			"bO": 9,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 158,
+			"teamLeaguePlayerId": 181,
+			"bO": 10,
+			"pA": 3,
+			"r": 1,
+			"rBI": 2,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 158,
+			"teamLeaguePlayerId": 207,
+			"bO": 11,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 158,
+			"teamLeaguePlayerId": 180,
+			"bO": 12,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2025-04-08 19:30:00" ,
+	    "opponent": "ABQ Guns",
+	    "score": 6,
+	    "opponentScore": 31,
+	    "field": "Los Altos #3",
+	    "wasHome": 1,
+	    "teamLeagueId": 21
+	}
+		{
+			"gameId": 159,
+			"teamLeaguePlayerId": 178,
+			"bO": 1,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 159,
+			"teamLeaguePlayerId": 188,
+			"bO": 2,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 159,
+			"teamLeaguePlayerId": 174,
+			"bO": 3,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 159,
+			"teamLeaguePlayerId": 175,
+			"bO": 4,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 159,
+			"teamLeaguePlayerId": 187,
+			"bO": 5,
+			"pA": 2,
+			"r": 2,
+			"rBI": 3,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 1,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 159,
+			"teamLeaguePlayerId": 179,
+			"bO": 6,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 159,
+			"teamLeaguePlayerId": 176,
+			"bO": 7,
+			"pA": 2,
+			"r": 0,
+			"rBI": 2,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 159,
+			"teamLeaguePlayerId": 186,
+			"bO": 8,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 159,
+			"teamLeaguePlayerId": 183,
+			"bO": 9,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 1,
+			"lOB": 0
+		}
+		{
+			"gameId": 159,
+			"teamLeaguePlayerId": 181,
+			"bO": 10,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 159,
+			"teamLeaguePlayerId": 207,
+			"bO": 11,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 159,
+			"teamLeaguePlayerId": 180,
+			"bO": 12,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+
+-- SBRef.com Summer 2025
+	{
+	    "date": "2025-04-22 20:30:00" ,
+	    "opponent": "McGlovin",
+	    "score": 18,
+	    "opponentScore": 2,
+	    "field": "Los Altos #1",
+	    "wasHome": 1,
+	    "teamLeagueId": 54
+	}
+		{
+			"gameId": 191,
+			"teamLeaguePlayerId": 244,
+			"bO": 1,
+			"pA": 4,
+			"r": 2,
+			"rBI": 2,
+			"b1": 1,
+			"b2": 2,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 191,
+			"teamLeaguePlayerId": 254,
+			"bO": 2,
+			"pA": 4,
+			"r": 3,
+			"rBI": 1,
+			"b1": 3,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 191,
+			"teamLeaguePlayerId": 240,
+			"bO": 3,
+			"pA": 4,
+			"r": 2,
+			"rBI": 4,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 1,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 191,
+			"teamLeaguePlayerId": 253,
+			"bO": 4,
+			"pA": 4,
+			"r": 3,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 191,
+			"teamLeaguePlayerId": 248,
+			"bO": 5,
+			"pA": 4,
+			"r": 3,
+			"rBI": 2,
+			"b1": 1,
+			"b2": 0,
+			"b3": 1,
+			"hR": 1,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 191,
+			"teamLeaguePlayerId": 252,
+			"bO": 6,
+			"pA": 4,
+			"r": 2,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 191,
+			"teamLeaguePlayerId": 242,
+			"bO": 7,
+			"pA": 4,
+			"r": 2,
+			"rBI": 2,
+			"b1": 2,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 191,
+			"teamLeaguePlayerId": 243,
+			"bO": 8,
+			"pA": 4,
+			"r": 0,
+			"rBI": 1,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 1,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 1,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 191,
+			"teamLeaguePlayerId": 249,
+			"bO": 9,
+			"pA": 4,
+			"r": 0,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 191,
+			"teamLeaguePlayerId": 246,
+			"bO": 10,
+			"pA": 3,
+			"r": 2,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2025-04-29 20:30:00" ,
+	    "opponent": "Hooligans",
+	    "score": 7,
+	    "opponentScore": 29,
+	    "field": "Los Altos #5",
+	    "wasHome": 1,
+	    "teamLeagueId": 54
+	}
+		{
+			"gameId": 192,
+			"teamLeaguePlayerId": 244,
+			"bO": 1,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 192,
+			"teamLeaguePlayerId": 254,
+			"bO": 2,
+			"pA": 3,
+			"r": 2,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 2,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 192,
+			"teamLeaguePlayerId": 240,
+			"bO": 3,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 192,
+			"teamLeaguePlayerId": 248,
+			"bO": 4,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 1,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 192,
+			"teamLeaguePlayerId": 245,
+			"bO": 5,
+			"pA": 2,
+			"r": 1,
+			"rBI": 2,
+			"b1": 0,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 192,
+			"teamLeaguePlayerId": 242,
+			"bO": 6,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 192,
+			"teamLeaguePlayerId": 247,
+			"bO": 7,
+			"pA": 2,
+			"r": 0,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 192,
+			"teamLeaguePlayerId": 243,
+			"bO": 8,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 1,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 192,
+			"teamLeaguePlayerId": 249,
+			"bO": 9,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 1,
+			"lOB": 0
+		}
+		{
+			"gameId": 192,
+			"teamLeaguePlayerId": 246,
+			"bO": 10,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 192,
+			"teamLeaguePlayerId": 250,
+			"bO": 11,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2025-05-20 18:30:00" ,
+	    "opponent": "Screaming Eagles",
+	    "score": 26,
+	    "opponentScore": 2,
+	    "field": "Los Altos #1",
+	    "wasHome": 0,
+	    "teamLeagueId": 54
+	}
+		{
+			"gameId": 193,
+			"teamLeaguePlayerId": 252,
+			"bO": 1,
+			"pA": 4,
+			"r": 4,
+			"rBI": 2,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 193,
+			"teamLeaguePlayerId": 249,
+			"bO": 2,
+			"pA": 4,
+			"r": 4,
+			"rBI": 4,
+			"b1": 2,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 193,
+			"teamLeaguePlayerId": 240,
+			"bO": 3,
+			"pA": 4,
+			"r": 1,
+			"rBI": 2,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 1,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 193,
+			"teamLeaguePlayerId": 248,
+			"bO": 4,
+			"pA": 4,
+			"r": 3,
+			"rBI": 2,
+			"b1": 2,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 193,
+			"teamLeaguePlayerId": 242,
+			"bO": 5,
+			"pA": 4,
+			"r": 3,
+			"rBI": 4,
+			"b1": 2,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 193,
+			"teamLeaguePlayerId": 244,
+			"bO": 6,
+			"pA": 4,
+			"r": 2,
+			"rBI": 3,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 193,
+			"teamLeaguePlayerId": 254,
+			"bO": 7,
+			"pA": 4,
+			"r": 1,
+			"rBI": 2,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 193,
+			"teamLeaguePlayerId": 241,
+			"bO": 8,
+			"pA": 4,
+			"r": 1,
+			"rBI": 2,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 193,
+			"teamLeaguePlayerId": 245,
+			"bO": 9,
+			"pA": 4,
+			"r": 0,
+			"rBI": 2,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 1,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 193,
+			"teamLeaguePlayerId": 243,
+			"bO": 10,
+			"pA": 4,
+			"r": 2,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 193,
+			"teamLeaguePlayerId": 246,
+			"bO": 11,
+			"pA": 4,
+			"r": 2,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 193,
+			"teamLeaguePlayerId": 250,
+			"bO": 12,
+			"pA": 3,
+			"r": 3,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2025-06-03 18:30:00" ,
+	    "opponent": "Syndicate",
+	    "score": 17,
+	    "opponentScore": 16,
+	    "field": "Los Altos #1",
+	    "wasHome": 1,
+	    "teamLeagueId": 54
+	}
+		{
+			"gameId": 194,
+			"teamLeaguePlayerId": 253,
+			"bO": 1,
+			"pA": 4,
+			"r": 2,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 194,
+			"teamLeaguePlayerId": 244,
+			"bO": 2,
+			"pA": 4,
+			"r": 2,
+			"rBI": 2,
+			"b1": 2,
+			"b2": 2,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 194,
+			"teamLeaguePlayerId": 240,
+			"bO": 3,
+			"pA": 4,
+			"r": 2,
+			"rBI": 3,
+			"b1": 2,
+			"b2": 0,
+			"b3": 1,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 194,
+			"teamLeaguePlayerId": 241,
+			"bO": 4,
+			"pA": 3,
+			"r": 1,
+			"rBI": 2,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 1,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 194,
+			"teamLeaguePlayerId": 254,
+			"bO": 5,
+			"pA": 3,
+			"r": 2,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 194,
+			"teamLeaguePlayerId": 248,
+			"bO": 6,
+			"pA": 3,
+			"r": 2,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 194,
+			"teamLeaguePlayerId": 249,
+			"bO": 7,
+			"pA": 3,
+			"r": 0,
+			"rBI": 2,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 2,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 194,
+			"teamLeaguePlayerId": 242,
+			"bO": 8,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 194,
+			"teamLeaguePlayerId": 243,
+			"bO": 9,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 1,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 194,
+			"teamLeaguePlayerId": 247,
+			"bO": 10,
+			"pA": 3,
+			"r": 1,
+			"rBI": 3,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 194,
+			"teamLeaguePlayerId": 246,
+			"bO": 11,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 1,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 194,
+			"teamLeaguePlayerId": 250,
+			"bO": 12,
+			"pA": 3,
+			"r": 2,
+			"rBI": 2,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2025-06-17 19:30:00" ,
+	    "opponent": "ABQ Guns",
+	    "score": 3,
+	    "opponentScore": 32,
+	    "field": "Los Altos #1",
+	    "wasHome": 1,
+	    "teamLeagueId": 54
+	}
+		{
+			"gameId": 195,
+			"teamLeaguePlayerId": 244,
+			"bO": 1,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 195,
+			"teamLeaguePlayerId": 254,
+			"bO": 2,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 195,
+			"teamLeaguePlayerId": 240,
+			"bO": 3,
+			"pA": 2,
+			"r": 0,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 195,
+			"teamLeaguePlayerId": 241,
+			"bO": 4,
+			"pA": 2,
+			"r": 0,
+			"rBI": 1,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 195,
+			"teamLeaguePlayerId": 248,
+			"bO": 5,
+			"pA": 2,
+			"r": 0,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 195,
+			"teamLeaguePlayerId": 242,
+			"bO": 6,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 1,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 195,
+			"teamLeaguePlayerId": 247,
+			"bO": 7,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 195,
+			"teamLeaguePlayerId": 243,
+			"bO": 8,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 195,
+			"teamLeaguePlayerId": 246,
+			"bO": 9,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 195,
+			"teamLeaguePlayerId": 250,
+			"bO": 10,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2025-05-06 19:30:00" ,
+	    "opponent": "Lizards",
+	    "score": 4,
+	    "opponentScore": 28,
+	    "field": "Los Altos #1",
+	    "wasHome": 0,
+	    "teamLeagueId": 54
+	}
+		{
+			"gameId": 196,
+			"teamLeaguePlayerId": 244,
+			"bO": 1,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 196,
+			"teamLeaguePlayerId": 254,
+			"bO": 2,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 196,
+			"teamLeaguePlayerId": 253,
+			"bO": 3,
+			"pA": 2,
+			"r": 1,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 1,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 196,
+			"teamLeaguePlayerId": 241,
+			"bO": 4,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 196,
+			"teamLeaguePlayerId": 245,
+			"bO": 5,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 1,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 196,
+			"teamLeaguePlayerId": 242,
+			"bO": 6,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 196,
+			"teamLeaguePlayerId": 252,
+			"bO": 7,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 1,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 196,
+			"teamLeaguePlayerId": 249,
+			"bO": 8,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 196,
+			"teamLeaguePlayerId": 246,
+			"bO": 9,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 196,
+			"teamLeaguePlayerId": 250,
+			"bO": 10,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2025-05-13 19:30:00" ,
+	    "opponent": "BKK",
+	    "score": 5,
+	    "opponentScore": 22,
+	    "field": "Barelas #1",
+	    "wasHome": 1,
+	    "teamLeagueId": 54
+	}
+		{
+			"gameId": 197,
+			"teamLeaguePlayerId": 244,
+			"bO": 1,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 197,
+			"teamLeaguePlayerId": 254,
+			"bO": 2,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 197,
+			"teamLeaguePlayerId": 253,
+			"bO": 3,
+			"pA": 3,
+			"r": 0,
+			"rBI": 1,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 197,
+			"teamLeaguePlayerId": 241,
+			"bO": 4,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 0,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 1,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 197,
+			"teamLeaguePlayerId": 248,
+			"bO": 5,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 197,
+			"teamLeaguePlayerId": 252,
+			"bO": 6,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 197,
+			"teamLeaguePlayerId": 247,
+			"bO": 7,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 1,
+			"lOB": 0
+		}
+		{
+			"gameId": 197,
+			"teamLeaguePlayerId": 243,
+			"bO": 8,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 197,
+			"teamLeaguePlayerId": 249,
+			"bO": 9,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 197,
+			"teamLeaguePlayerId": 246,
+			"bO": 10,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 197,
+			"teamLeaguePlayerId": 250,
+			"bO": 11,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2025-07-01 20:30:00" ,
+	    "opponent": "Duke City Hooligans",
+	    "score": 2,
+	    "opponentScore": 18,
+	    "field": "Los Altos #1",
+	    "wasHome": 0,
+	    "teamLeagueId": 54
+	}
+		{
+			"gameId": 224,
+			"teamLeaguePlayerId": 244,
+			"bO": 1,
+			"pA": 3,
+			"r": 2,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 1,
+			"lOB": 0
+		}
+		{
+			"gameId": 224,
+			"teamLeaguePlayerId": 254,
+			"bO": 2,
+			"pA": 2,
+			"r": 0,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 224,
+			"teamLeaguePlayerId": 240,
+			"bO": 3,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 1,
+			"lOB": 0
+		}
+		{
+			"gameId": 224,
+			"teamLeaguePlayerId": 253,
+			"bO": 4,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 224,
+			"teamLeaguePlayerId": 248,
+			"bO": 5,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 224,
+			"teamLeaguePlayerId": 245,
+			"bO": 6,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 1,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 224,
+			"teamLeaguePlayerId": 252,
+			"bO": 7,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 224,
+			"teamLeaguePlayerId": 249,
+			"bO": 8,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 224,
+			"teamLeaguePlayerId": 247,
+			"bO": 9,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 2,
+			"lOB": 0
+		}
+		{
+			"gameId": 224,
+			"teamLeaguePlayerId": 243,
+			"bO": 10,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 2,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 224,
+			"teamLeaguePlayerId": 246,
+			"bO": 11,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2025-07-08 20:30:00" ,
+	    "opponent": "Lizards",
+	    "score": 7,
+	    "opponentScore": 19,
+	    "field": "Los Altos #3",
+	    "wasHome": 1,
+	    "teamLeagueId": 54
+	}
+		{
+			"gameId": 225,
+			"teamLeaguePlayerId": 244,
+			"bO": 1,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 225,
+			"teamLeaguePlayerId": 248,
+			"bO": 2,
+			"pA": 3,
+			"r": 2,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 225,
+			"teamLeaguePlayerId": 240,
+			"bO": 3,
+			"pA": 3,
+			"r": 2,
+			"rBI": 1,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 225,
+			"teamLeaguePlayerId": 241,
+			"bO": 4,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 225,
+			"teamLeaguePlayerId": 242,
+			"bO": 5,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 225,
+			"teamLeaguePlayerId": 249,
+			"bO": 6,
+			"pA": 2,
+			"r": 1,
+			"rBI": 2,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 225,
+			"teamLeaguePlayerId": 245,
+			"bO": 7,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 225,
+			"teamLeaguePlayerId": 252,
+			"bO": 8,
+			"pA": 2,
+			"r": 0,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 225,
+			"teamLeaguePlayerId": 247,
+			"bO": 9,
+			"pA": 2,
+			"r": 0,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 225,
+			"teamLeaguePlayerId": 243,
+			"bO": 10,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 225,
+			"teamLeaguePlayerId": 246,
+			"bO": 11,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2025-07-15 18:30:00" ,
+	    "opponent": "BKK",
+	    "score": 8,
+	    "opponentScore": 18,
+	    "field": "Los Altos #2",
+	    "wasHome": 0,
+	    "teamLeagueId": 54
+	}
+		{
+			"gameId": 226,
+			"teamLeaguePlayerId": 244,
+			"bO": 1,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 226,
+			"teamLeaguePlayerId": 241,
+			"bO": 2,
+			"pA": 3,
+			"r": 2,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 1,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 226,
+			"teamLeaguePlayerId": 240,
+			"bO": 3,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 226,
+			"teamLeaguePlayerId": 254,
+			"bO": 4,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 226,
+			"teamLeaguePlayerId": 242,
+			"bO": 5,
+			"pA": 3,
+			"r": 0,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 226,
+			"teamLeaguePlayerId": 249,
+			"bO": 6,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 226,
+			"teamLeaguePlayerId": 245,
+			"bO": 7,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 226,
+			"teamLeaguePlayerId": 252,
+			"bO": 8,
+			"pA": 3,
+			"r": 0,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 226,
+			"teamLeaguePlayerId": 247,
+			"bO": 9,
+			"pA": 3,
+			"r": 0,
+			"rBI": 2,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 226,
+			"teamLeaguePlayerId": 250,
+			"bO": 10,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 226,
+			"teamLeaguePlayerId": 248,
+			"bO": 11,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2025-08-12 18:30:00" ,
+	    "opponent": "Them Other Truckers",
+	    "score": 10,
+	    "opponentScore": 12,
+	    "field": "Los Altos #1",
+	    "wasHome": 1,
+	    "teamLeagueId": 54
+	}
+		{
+			"gameId": 227,
+			"teamLeaguePlayerId": 254,
+			"bO": 1,
+			"pA": 3,
+			"r": 2,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 2,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 227,
+			"teamLeaguePlayerId": 248,
+			"bO": 2,
+			"pA": 3,
+			"r": 2,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 227,
+			"teamLeaguePlayerId": 240,
+			"bO": 3,
+			"pA": 3,
+			"r": 0,
+			"rBI": 2,
+			"b1": 0,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 227,
+			"teamLeaguePlayerId": 241,
+			"bO": 4,
+			"pA": 3,
+			"r": 2,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 227,
+			"teamLeaguePlayerId": 253,
+			"bO": 5,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 1,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 227,
+			"teamLeaguePlayerId": 242,
+			"bO": 6,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 227,
+			"teamLeaguePlayerId": 249,
+			"bO": 7,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 227,
+			"teamLeaguePlayerId": 252,
+			"bO": 8,
+			"pA": 3,
+			"r": 2,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 227,
+			"teamLeaguePlayerId": 245,
+			"bO": 9,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 1,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 227,
+			"teamLeaguePlayerId": 247,
+			"bO": 10,
+			"pA": 3,
+			"r": 0,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 227,
+			"teamLeaguePlayerId": 250,
+			"bO": 11,
+			"pA": 2,
+			"r": 0,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 227,
+			"teamLeaguePlayerId": 243,
+			"bO": 12,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 1,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 227,
+			"teamLeaguePlayerId": 246,
+			"bO": 13,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2025-08-19 20:30:00" ,
+	    "opponent": "ABQ Guns",
+	    "score": 5,
+	    "opponentScore": 26,
+	    "field": "Los Altos #4",
+	    "wasHome": 1,
+	    "teamLeagueId": 54
+	}
+		{
+			"gameId": 228,
+			"teamLeaguePlayerId": 244,
+			"bO": 1,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 228,
+			"teamLeaguePlayerId": 254,
+			"bO": 2,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 228,
+			"teamLeaguePlayerId": 240,
+			"bO": 3,
+			"pA": 2,
+			"r": 1,
+			"rBI": 3,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 1,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 228,
+			"teamLeaguePlayerId": 241,
+			"bO": 4,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 228,
+			"teamLeaguePlayerId": 253,
+			"bO": 5,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 228,
+			"teamLeaguePlayerId": 248,
+			"bO": 6,
+			"pA": 2,
+			"r": 1,
+			"rBI": 1,
+			"b1": 0,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 228,
+			"teamLeaguePlayerId": 252,
+			"bO": 7,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 228,
+			"teamLeaguePlayerId": 249,
+			"bO": 8,
+			"pA": 2,
+			"r": 0,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 228,
+			"teamLeaguePlayerId": 245,
+			"bO": 9,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 228,
+			"teamLeaguePlayerId": 250,
+			"bO": 10,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 228,
+			"teamLeaguePlayerId": 247,
+			"bO": 11,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 228,
+			"teamLeaguePlayerId": 243,
+			"bO": 12,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 228,
+			"teamLeaguePlayerId": 246,
+			"bO": 13,
+			"pA": 1,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2025-09-02 18:30:00" ,
+	    "opponent": "Screaming Eagles",
+	    "score": 28,
+	    "opponentScore": 8,
+	    "field": "Los Altos #5",
+	    "wasHome": 1,
+	    "teamLeagueId": 54
+	}
+		{
+			"gameId": 229,
+			"teamLeaguePlayerId": 244,
+			"bO": 1,
+			"pA": 4,
+			"r": 3,
+			"rBI": 2,
+			"b1": 4,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 229,
+			"teamLeaguePlayerId": 254,
+			"bO": 2,
+			"pA": 4,
+			"r": 3,
+			"rBI": 4,
+			"b1": 1,
+			"b2": 2,
+			"b3": 1,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 229,
+			"teamLeaguePlayerId": 240,
+			"bO": 3,
+			"pA": 4,
+			"r": 1,
+			"rBI": 4,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 229,
+			"teamLeaguePlayerId": 241,
+			"bO": 4,
+			"pA": 4,
+			"r": 4,
+			"rBI": 3,
+			"b1": 2,
+			"b2": 1,
+			"b3": 0,
+			"hR": 1,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 229,
+			"teamLeaguePlayerId": 253,
+			"bO": 5,
+			"pA": 4,
+			"r": 4,
+			"rBI": 3,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 2,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 229,
+			"teamLeaguePlayerId": 242,
+			"bO": 6,
+			"pA": 4,
+			"r": 3,
+			"rBI": 1,
+			"b1": 3,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 229,
+			"teamLeaguePlayerId": 249,
+			"bO": 7,
+			"pA": 4,
+			"r": 1,
+			"rBI": 3,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 229,
+			"teamLeaguePlayerId": 252,
+			"bO": 8,
+			"pA": 4,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 229,
+			"teamLeaguePlayerId": 245,
+			"bO": 9,
+			"pA": 4,
+			"r": 1,
+			"rBI": 3,
+			"b1": 2,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 229,
+			"teamLeaguePlayerId": 250,
+			"bO": 10,
+			"pA": 3,
+			"r": 2,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 229,
+			"teamLeaguePlayerId": 247,
+			"bO": 11,
+			"pA": 3,
+			"r": 3,
+			"rBI": 1,
+			"b1": 2,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 229,
+			"teamLeaguePlayerId": 246,
+			"bO": 12,
+			"pA": 3,
+			"r": 2,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 1,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+	{
+	    "date": "2025-09-02 19:30:00" ,
+	    "opponent": "McGlovin",
+	    "score": 9,
+	    "opponentScore": 14,
+	    "field": "Los Altos #5",
+	    "wasHome": 0,
+	    "teamLeagueId": 54
+	}
+		{
+			"gameId": 230,
+			"teamLeaguePlayerId": 244,
+			"bO": 1,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 230,
+			"teamLeaguePlayerId": 254,
+			"bO": 2,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 2,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 230,
+			"teamLeaguePlayerId": 240,
+			"bO": 3,
+			"pA": 3,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 230,
+			"teamLeaguePlayerId": 241,
+			"bO": 4,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 0,
+			"b2": 0,
+			"b3": 0,
+			"hR": 1,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 230,
+			"teamLeaguePlayerId": 253,
+			"bO": 5,
+			"pA": 3,
+			"r": 1,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 1,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 1,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 230,
+			"teamLeaguePlayerId": 242,
+			"bO": 6,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 230,
+			"teamLeaguePlayerId": 249,
+			"bO": 7,
+			"pA": 3,
+			"r": 0,
+			"rBI": 2,
+			"b1": 1,
+			"b2": 1,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 230,
+			"teamLeaguePlayerId": 252,
+			"bO": 8,
+			"pA": 3,
+			"r": 1,
+			"rBI": 0,
+			"b1": 0,
+			"b2": 0,
+			"b3": 1,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 230,
+			"teamLeaguePlayerId": 245,
+			"bO": 9,
+			"pA": 2,
+			"r": 0,
+			"rBI": 1,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 230,
+			"teamLeaguePlayerId": 250,
+			"bO": 10,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 230,
+			"teamLeaguePlayerId": 247,
+			"bO": 11,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 0,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 1,
+			"lOB": 0
+		}
+		{
+			"gameId": 230,
+			"teamLeaguePlayerId": 246,
+			"bO": 12,
+			"pA": 2,
+			"r": 1,
+			"rBI": 0,
+			"b1": 1,
+			"b2": 0,
+			"b3": 0,
+			"hR": 0,
+			"bB": 1,
+			"sO": 0,
+			"sAC": 0,
+			"hR4O": 0,
+			"fO": 0,
+			"gIDP": 0,
+			"lOB": 0
+		}
+		{
+			"gameId": 230,
+			"teamLeaguePlayerId": 248,
+			"bO": 13,
+			"pA": 2,
+			"r": 0,
+			"rBI": 0,
+			"b1": 1,
 			"b2": 0,
 			"b3": 0,
 			"hR": 0,
