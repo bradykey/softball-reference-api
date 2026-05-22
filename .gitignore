@@ -34,3 +34,6 @@ build/
 
 # Ugh, mac...
 .DS_Store
+
+# Local-only Spring profile overrides (DB URL, admin creds, JWT secret, etc.)
+src/main/resources/application-local.properties
