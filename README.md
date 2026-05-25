@@ -211,9 +211,44 @@ https://help.heroku.com/NH44MODG/my-root-domain-isn-t-working-what-s-wrong
 
 ### Running Locally
 
+#### Local config via the `local` Spring profile
+
+To avoid committing secrets (DB URL, admin password hash, JWT secret) into the tracked `application.properties`, this project uses Spring Boot's profile-specific properties pattern. There's a gitignored file at `src/main/resources/application-local.properties` that holds your local-only overrides. When the `local` profile is active, anything in that file overrides the matching key in `application.properties`. When the profile isn't active (e.g. on Heroku), the file is ignored entirely — and on Heroku the buildpack-exported `SPRING_DATASOURCE_URL` env var wins regardless because env vars outrank properties files in Spring's precedence.
+
+**One-time setup:**
+
+1. Create `src/main/resources/application-local.properties` (it's already in `.gitignore`).
+2. Populate it with the values you need locally. Get the current Heroku values with `heroku run env` (for `SPRING_DATASOURCE_URL`). Example shape:
+
+   ```properties
+    # Local-only overrides. Gitignored. Activated with -Dspring-boot.run.profiles=local
+    # (or SPRING_PROFILES_ACTIVE=local). Anything set here overrides application.properties.
+    # On Heroku this file is absent and the buildpack-exported SPRING_DATASOURCE_URL wins.
+
+    # DB connection used when running locally. Get the current value with `heroku run env`.
+    spring.datasource.url=
+
+    # Force the local port to be 8081 to avoid front-end collision
+    server.port=8081
+   ```
+
+3. Activate the profile when running. Pick whichever fits your workflow:
+   - **Maven CLI:** `mvn spring-boot:run -Dspring-boot.run.profiles=local`
+   - **VS Code launch config:** add `"vmArgs": "-Dspring.profiles.active=local"` to the `Launch SoftballReferenceApiApplication` entry below.
+   - **Shell env var:** `export SPRING_PROFILES_ACTIVE=local` before `mvn spring-boot:run`.
+
+If you forget to activate the profile, Spring falls back to the values in `application.properties` (which should be blank/safe for the secret fields), and the app will fail to connect to the DB or to log in as admin — that's the intended signal.
+
+> NOTE: To run locally, the ADMIN_USERNAME, ADMIN_PASSWORD_HASH, and JWT_SECRET env vars need to be set in the session.
+> export ADMIN_USERNAME=bradykey
+> export ADMIN_PASSWORD_HASH=$(htpasswd -nbBC 10 "" 'TESTPASSWORD' | tr -d ':\n' | sed 's/^ //')
+> export JWT_SECRET=$(openssl rand -base64 48)
+
+#### Just running it
+
 If you want to run the SpringBoot API locally, you can just run:
 
->> mvn spring-boot:run
+>> mvn spring-boot:run -Dspring-boot.run.profiles=local
 
 This will build everything for you. However, you can also create a `.launch.json` file in the .vscode folder with the following content:
 
