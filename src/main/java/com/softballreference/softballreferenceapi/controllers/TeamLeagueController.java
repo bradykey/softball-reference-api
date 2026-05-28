@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.softballreference.softballreferenceapi.exception.RecordNotFoundException;
 import com.softballreference.softballreferenceapi.model.dao.GameDao;
 import com.softballreference.softballreferenceapi.model.dao.TeamLeagueDao;
+import com.softballreference.softballreferenceapi.model.dao.TeamLeaguePlayerDao;
 import com.softballreference.softballreferenceapi.model.entity.TeamLeague;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.GameSummaryResponse;
 import com.softballreference.softballreferenceapi.model.entity.response_dto.PlayerBindResponse;
@@ -56,7 +57,7 @@ public class TeamLeagueController {
      * in Id.
      * 
      * The @GetMapping annotation ties this method to the /teamleagues/{id} URI from
-     * aGET http request, while the @PathVariable annotation binds the template
+     * a GET http request, while the @PathVariable annotation binds the template
      * variable from therequest URI mapping to the method parameter. If they have
      * the same name then you don't need to qualify the annotation with the string
      * name.
@@ -71,13 +72,38 @@ public class TeamLeagueController {
      *                                 not need to declare it as "throwable".
      */
     @GetMapping("/{id}")
-    public ResponseEntity<SummaryStatLineResponse> getTeamLeagueById(@PathVariable("id") Long teamLeagueId) {
+    public ResponseEntity<SummaryStatLineResponse> getSummaryStatLineByTeamLeagueId(
+            @PathVariable("id") Long teamLeagueId) {
         SummaryStatLineResponse response = restService.getSummaryStatLineResponseByTeamLeagueId(teamLeagueId);
 
         if (response == null)
             throw new RecordNotFoundException("No teamleague exists for given id", teamLeagueId);
 
         return new ResponseEntity<SummaryStatLineResponse>(response, new HttpHeaders(), HttpStatus.OK);
+    }
+
+    /**
+    * Returns the {@link TeamLeagueBindResponse} from the {@link TeamLeagueDao}
+    * that matches the passed in Id.
+    *
+    * @param teamLeagueId
+    * @return the {@link TeamLeagueBindResponse} associated with the
+    *         {@code Long} Id as part of an HttpStatus.OK response.
+    * @throws RecordNotFoundException The exception is thrown if now
+    *                                 {@link TeamLeague} is associated with the
+    *                                 Id. NOTE: This exception is of type
+    *                                 {@link RuntimeException} so this method
+    *                                 does not need to declare it as
+    *                                 "throwable".
+    */
+    @GetMapping("/{id}/info")
+    public ResponseEntity<TeamLeagueBindResponse> getTeamLeagueByTeamLeagueId(@PathVariable("id") Long teamLeagueId) {
+        TeamLeagueBindResponse response = restService.getTeamLeagueByTeamLeagueId(teamLeagueId);
+
+        if (response == null)
+            throw new RecordNotFoundException("No teamleague exists for given id", teamLeagueId);
+
+        return new ResponseEntity<TeamLeagueBindResponse>(response, new HttpHeaders(), HttpStatus.OK);
     }
 
     /**
