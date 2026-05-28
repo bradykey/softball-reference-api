@@ -74,7 +74,7 @@ public class RestService {
 	StatLineDao statLineDao;
 
 	/*
-	 * One-off dropdown populaters
+	 * One-off dropdown populaters and utility calls
 	 */
 
 	/**
@@ -128,6 +128,25 @@ public class RestService {
 	 */
 	public boolean doesTeamLeagueExistById(Long teamLeagueId) {
 		return teamLeagueDao.existsById(teamLeagueId);
+	}
+
+	/**
+	 * Fetches the single {@link TeamLeague} object associated with the passed in
+	 * {@code teamLeagueId} and wrapped in a {@link TeamLeagueBindResponse}.
+	 * 
+	 * @param teamLeagueId the {@code Long} Id associated with the
+	 *                     {@link TeamLeague} to fetch.
+	 * @return a {@link TeamLeagueBindResponse} object built from the
+	 *         {@link TeamLeague} entity associated with the {@code teamLeagueId},
+	 *         or {@code null} if one doesn't exist in the db.
+	 */
+	public TeamLeagueBindResponse getTeamLeagueByTeamLeagueId(Long teamLeagueId) {
+		Optional<TeamLeague> teamLeagueOptional = teamLeagueDao.findById(teamLeagueId);
+
+		if (teamLeagueOptional.isPresent())
+			return ResponseAndEntityBuilder.buildTeamLeagueBindResponse(teamLeagueOptional.get());
+		else
+			return null;
 	}
 
 	/**
