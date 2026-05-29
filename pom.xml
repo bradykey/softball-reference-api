@@ -74,6 +74,12 @@
 			<version>42.5.4</version>
 		</dependency>
 
+		<!-- Flyway: code-first DB migrations from src/main/resources/db/migration -->
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+		</dependency>
+
 		<!-- Used for auto-generated Entity and Response POJO/DTO builders -->
 		<dependency>
 			<groupId>org.mapstruct</groupId>
